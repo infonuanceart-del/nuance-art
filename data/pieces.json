@@ -1,0 +1,52 @@
+{
+  "pieces": [
+    {
+      "cle": "salon-loft",
+      "nom": "Salon loft",
+      "image": "/media/pieces/salon-loft.webp",
+      "ratio": 1.4981,
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cozy_interior_with_a_sofa_(Unsplash).jpg"
+    },
+    {
+      "cle": "sejour-clair",
+      "nom": "Séjour lumineux",
+      "image": "/media/pieces/sejour-clair.webp",
+      "ratio": 1.561,
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:120_E_8th_St,_Los_Angeles,_United_States_(Unsplash).jpg"
+    },
+    {
+      "cle": "salle-a-manger",
+      "nom": "Salle à manger",
+      "image": "/media/pieces/salle-a-manger.webp",
+      "ratio": 1.5166,
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Stylish_meeting_room_(Unsplash).jpg"
+    },
+    {
+      "cle": "chambre",
+      "nom": "Chambre",
+      "image": "/media/pieces/chambre.webp",
+      "ratio": 1.4981,
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Warsaw_Sunrise_(Unsplash).jpg"
+    },
+    {
+      "cle": "coin-repas",
+      "nom": "Coin repas",
+      "image": "/media/pieces/coin-repas.webp",
+      "ratio": 1.5152,
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Minimal_creative_interior_(Unsplash).jpg"
+    },
+    {
+      "cle": "chambre-douce",
+      "nom": "Chambre douce",
+      "image": "/media/pieces/chambre-douce.webp",
+      "ratio": 1.4995,
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ali_Inay_2015-02-25_(Unsplash).jpg"
+    }
+  ]
+}

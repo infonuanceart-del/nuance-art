@@ -1,0 +1,338 @@
+/* Compléments de style propres au studio d'essayage et aux écrans annexes.
+   Séparé de globals.css pour garder le design system lisible. */
+
+/* .frame déclare position:relative ; dans la scène du héros l'œuvre doit rester
+   absolue pour se poser au bon endroit du mur. Cette feuille est chargée après
+   globals.css, donc elle a le dernier mot. */
+.scene .scene-art { position: absolute; }
+
+/* les libellés du menu ne doivent jamais passer à la ligne */
+.nav-link { white-space: nowrap; }
+
+/* Le studio est parfois posé sur la section sombre de l'accueil : son panneau
+   de réglages garde son fond papier, donc il doit reprendre l'encre en couleur
+   de texte au lieu d'hériter du blanc de la section. */
+.studio-teaser .panel,
+.studio-teaser .stage-aide { color: var(--ink); }
+.studio-teaser .panel .hint,
+.studio-teaser .panel .muted { color: var(--muted); }
+.studio-teaser .studio-note { color: rgba(252, 250, 246, 0.55); border-top-color: rgba(255, 255, 255, 0.12); }
+
+/* Titres de cartes sur deux lignes maximum : les prix restent alignés. */
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.5em;
+}
+.card-sub {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bento des collections : 1 grande + 4 moyennes + 2 larges = grille pleine. */
+@media (min-width: 780px) {
+  .collections > *:nth-child(6),
+  .collections > *:nth-child(7) { grid-column: span 2; }
+}
+
+.piece-cote {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.stage-aide {
+  position: absolute;
+  left: 0.65rem;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(8px);
+  border-radius: var(--r-m);
+  padding: 0.7rem 2.3rem 0.7rem 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  box-shadow: var(--sh-s);
+}
+.stage-aide b { color: var(--clay); }
+.stage-aide button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.55rem;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--muted);
+}
+.stage-aide button:hover { background: var(--sand); color: var(--ink); }
+
+.studio-total {
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+.studio-total b { font-family: var(--font-display), serif; font-size: 1.25rem; }
+
+/* --- bouton favori sur la carte produit --- */
+.card-coeur {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(252, 250, 246, 0.9);
+  backdrop-filter: blur(6px);
+  color: var(--ink-soft);
+  box-shadow: var(--sh-s);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.24s var(--ease), transform 0.24s var(--ease), color 0.2s var(--ease);
+}
+.card:hover .card-coeur,
+.card:focus-within .card-coeur,
+.card-coeur[aria-pressed="true"] { opacity: 1; transform: scale(1); }
+.card-coeur:hover { color: var(--clay); }
+@media (hover: none) { .card-coeur { opacity: 1; transform: none; } }
+
+/* --- bandeau « ils en parlent » --- */
+.presse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  flex-wrap: wrap;
+  padding-block: 1.75rem;
+  opacity: 0.62;
+}
+.presse span {
+  font-family: var(--font-display), serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* --- sélecteur de pièce (page d'accueil) --- */
+.piece-tabs {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* --- bloc éditorial deux colonnes --- */
+.duo {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+@media (min-width: 900px) { .duo { grid-template-columns: 1fr 1fr; } }
+.duo-img { border-radius: var(--r-m); overflow: hidden; box-shadow: var(--sh-m); }
+.duo-img img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+
+/* --- chiffres clés --- */
+.chiffres {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+}
+@media (min-width: 780px) { .chiffres { grid-template-columns: repeat(4, 1fr); } }
+.chiffres b {
+  display: block;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  line-height: 1;
+  font-weight: 400;
+  color: var(--clay);
+}
+.chiffres span { font-size: 0.83rem; color: var(--muted); }
+
+/* --- FAQ --- */
+.faq { max-width: 820px; margin-inline: auto; }
+
+/* --- FAQ dépliable --- */
+.acc-faq {
+  border-bottom: 1px solid var(--line);
+}
+.acc-faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.15rem 2.5rem 1.15rem 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.2s var(--ease);
+}
+.acc-faq summary::-webkit-details-marker { display: none; }
+.acc-faq summary:hover { color: var(--clay); }
+.acc-faq summary::after {
+  content: "";
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.25s var(--ease);
+}
+.acc-faq[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.acc-faq p {
+  padding-bottom: 1.3rem;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  max-width: 74ch;
+}
+
+/* --- appel à l'action de fin de page --- */
+.cta-final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  background: var(--sand);
+  border-radius: var(--r-l);
+  padding: clamp(1.75rem, 4vw, 3rem);
+}
+.cta-final .lede { margin-top: 0.6rem; font-size: 1rem; }
+
+/* --- fenêtre superposée (studio depuis la fiche produit) --- */
+.modale {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.5rem, 3vw, 2rem);
+}
+.modale-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 18, 14, 0.62);
+  backdrop-filter: blur(3px);
+  animation: fondu 0.25s var(--ease);
+}
+.modale-boite {
+  position: relative;
+  width: min(1180px, 100%);
+  max-height: 94vh;
+  overflow: auto;
+  background: var(--paper);
+  border-radius: var(--r-l);
+  box-shadow: var(--sh-l);
+  animation: monte 0.32s var(--ease-out);
+}
+.modale-tete {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem clamp(1rem, 3vw, 1.6rem);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.modale-corps { padding: clamp(1rem, 3vw, 1.6rem); }
+
+@keyframes fondu { from { opacity: 0; } to { opacity: 1; } }
+@keyframes monte { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* --- page favoris / vide --- */
+.vide {
+  text-align: center;
+  padding: clamp(2.5rem, 7vw, 5rem) 1rem;
+}
+.vide svg { margin: 0 auto 1rem; color: var(--sand-2); }
+
+/* --- étapes commande --- */
+.fil {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+.fil b { color: var(--ink); font-weight: 600; }
+.fil i { font-style: normal; opacity: 0.4; }
+
+/* --- carte de confirmation --- */
+.merci {
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  background: var(--paper-2);
+}
+.merci .rond {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1.2rem;
+}
+
+/* --- galerie mur de cadres (page studio) --- */
+.studio-hero {
+  background: var(--sand);
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- barre mobile de filtres --- */
+.filtres-mobile {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+@media (min-width: 1040px) { .filtres-mobile { display: none; } }
+
+.filtres-fermer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 1040px) { .filtres-fermer { display: none; } }
+
+.voile {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 18, 14, 0.45);
+  z-index: 94;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), visibility 0.3s;
+}
+.voile.on { opacity: 1; visibility: visible; }
+@media (min-width: 1040px) { .voile { display: none; } }
