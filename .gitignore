@@ -6,3 +6,5 @@ out
 .data
 public/uploads
 *.log
+data/snapshot.json
+out

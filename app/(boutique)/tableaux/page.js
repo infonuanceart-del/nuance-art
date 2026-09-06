@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import Catalogue from '@/components/Catalogue';
-import { lireProduits } from '@/lib/store';
+import { lireProduits } from '@/lib/catalogue';
 
 export const metadata = {
   title: 'Tous les tableaux — catalogue Nuance Art',

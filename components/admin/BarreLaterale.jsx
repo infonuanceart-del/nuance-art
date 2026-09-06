@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { effacerJeton } from '@/lib/api';
 import {
   IcoStats, IcoImage, IcoTiroir, IcoEtoile, IcoReglages, IcoSortie, IcoFleche,
 } from '@/components/Icones';
@@ -14,14 +15,15 @@ const LIENS = [
   { href: '/admin/reglages', nom: 'Réglages', Ico: IcoReglages },
 ];
 
-export default function BarreLaterale({ nom, email }) {
+export default function BarreLaterale() {
   const chemin = usePathname();
   const router = useRouter();
 
-  async function deconnecter() {
-    await fetch('/api/admin/deconnexion', { method: 'POST' });
+  function deconnecter() {
+    // Un jeton Bearer ne se revoque pas cote serveur : la deconnexion consiste
+    // a l'effacer vraiment du navigateur.
+    effacerJeton();
     router.replace('/admin/connexion');
-    router.refresh();
   }
 
   return (
@@ -49,9 +51,7 @@ export default function BarreLaterale({ nom, email }) {
           Déconnexion
         </button>
         <p className="tiny" style={{ padding: '0.9rem 0.8rem 0', opacity: 0.5 }}>
-          {nom}
-          <br />
-          {email}
+          Nuance Art — administration
         </p>
       </div>
     </nav>

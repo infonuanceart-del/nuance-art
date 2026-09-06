@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import FicheProduit from '@/components/FicheProduit';
 import CarteProduit from '@/components/CarteProduit';
-import { lireProduit, lireProduits, lireReglages } from '@/lib/store';
+import { lireProduit, lireProduits, lireReglages } from '@/lib/catalogue';
 import { nomTheme } from '@/lib/taxonomie';
 import donneesPieces from '@/data/pieces.json';
 

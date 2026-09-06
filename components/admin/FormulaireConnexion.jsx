@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { appeler, poserJeton } from '@/lib/api';
 
 export default function FormulaireConnexion() {
   const router = useRouter();
@@ -15,16 +16,13 @@ export default function FormulaireConnexion() {
     setErreur('');
     setEnvoi(true);
     try {
-      const r = await fetch('/api/admin/connexion', {
+      const data = await appeler('/api/admin/connexion', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, motDePasse }),
+        corps: { email, motDePasse },
       });
-      const data = await r.json();
-      if (!r.ok) throw new Error(data.erreur || 'Connexion impossible.');
-      // refresh() force le rendu serveur à relire le cookie qui vient d'être posé.
+      // L'API renvoie un jeton Bearer : c'est le navigateur qui le conserve.
+      poserJeton(data.jeton);
       router.replace('/admin');
-      router.refresh();
     } catch (err) {
       setErreur(err.message);
       setEnvoi(false);

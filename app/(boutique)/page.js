@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { lireProduits, lireReglages } from '@/lib/store';
+import { lireProduits, lireReglages } from '@/lib/catalogue';
 import { THEMES, PIECES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import CarteProduit from '@/components/CarteProduit';

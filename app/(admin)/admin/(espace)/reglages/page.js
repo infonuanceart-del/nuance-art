@@ -1,11 +1,13 @@
-import { store, REGLAGES_DEFAUT } from '@/lib/store';
+'use client';
+
+import { appeler } from '@/lib/api';
+import { useDonnees, EtatChargement } from '@/components/admin/useDonnees';
 import FormulaireReglages from '@/components/admin/FormulaireReglages';
 
-export const metadata = { title: 'Réglages' };
-export const dynamic = 'force-dynamic';
-
-export default async function PageReglages() {
-  const enregistres = await store().reglages.lire();
+export default function PageReglages() {
+  const { donnees, erreur, chargement } = useDonnees(
+    () => appeler('/api/reglages', { avecJeton: true }),
+  );
 
   return (
     <>
@@ -16,7 +18,8 @@ export default async function PageReglages() {
         </div>
       </div>
 
-      <FormulaireReglages reglages={{ ...REGLAGES_DEFAUT, ...(enregistres || {}) }} />
+      <EtatChargement chargement={chargement} erreur={erreur} />
+      {donnees && <FormulaireReglages reglages={donnees.reglages} />}
     </>
   );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { appeler } from '@/lib/api';
 import { THEMES, nomTheme } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 
@@ -10,8 +10,7 @@ import { dh } from '@/lib/prix';
  * (titre, texte, fin du compte à rebours, code) et la remise appliquée
  * en lot aux œuvres cochées.
  */
-export default function EcranPromotions({ produits, reglages }) {
-  const router = useRouter();
+export default function EcranPromotions({ produits, reglages, recharger }) {
 
   const [r, setR] = useState(reglages);
   const [enregistre, setEnregistre] = useState(false);
@@ -52,20 +51,18 @@ export default function EcranPromotions({ produits, reglages }) {
     setEnvoi(true);
     setErreur('');
     try {
-      const rep = await fetch('/api/reglages', {
+      await appeler('/api/reglages', {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        corps: {
           promoActive: r.promoActive,
           promoTitre: r.promoTitre,
           promoTexte: r.promoTexte,
           promoFin: r.promoFin,
           promoCode: r.promoCode,
-        }),
+        },
+        avecJeton: true,
       });
-      if (!rep.ok) throw new Error((await rep.json()).erreur || 'Enregistrement refusé.');
       setEnregistre(true);
-      router.refresh();
     } catch (err) {
       setErreur(err.message);
     } finally {
@@ -79,14 +76,13 @@ export default function EcranPromotions({ produits, reglages }) {
     setLot(true);
     setErreur('');
     try {
-      const rep = await fetch('/api/produits', {
+      await appeler('/api/produits', {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slugs: [...selection], promo: valeur }),
+        corps: { slugs: [...selection], promo: valeur },
+        avecJeton: true,
       });
-      if (!rep.ok) throw new Error((await rep.json()).erreur || 'Modification refusée.');
       setSelection(new Set());
-      router.refresh();
+      await recharger();
     } catch (err) {
       setErreur(err.message);
     } finally {

@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import Studio from '@/components/Studio';
 import StudioAmorce from '@/components/StudioAmorce';
-import { lireProduits } from '@/lib/store';
+import { lireProduits } from '@/lib/catalogue';
 import donneesPieces from '@/data/pieces.json';
 import { IcoCamera, IcoRegle, IcoTelecharger } from '@/components/Icones';
 

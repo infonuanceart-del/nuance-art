@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { appeler } from '@/lib/api';
 import { dh } from '@/lib/prix';
 import { STATUTS_COMMANDE, NOM_STATUT } from '@/lib/produit';
 import { nomCadre } from '@/lib/taxonomie';
@@ -14,8 +14,7 @@ const dateLongue = (iso) =>
     day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit',
   });
 
-export default function ListeCommandes({ commandes }) {
-  const router = useRouter();
+export default function ListeCommandes({ commandes, recharger }) {
   const [filtre, setFiltre] = useState('');
   const [ouverte, setOuverte] = useState(null);
   const [occupee, setOccupee] = useState('');
@@ -30,13 +29,12 @@ export default function ListeCommandes({ commandes }) {
     setOccupee(ref);
     setErreur('');
     try {
-      const r = await fetch('/api/commandes', {
+      await appeler('/api/commandes', {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ref, statut }),
+        corps: { ref, statut },
+        avecJeton: true,
       });
-      if (!r.ok) throw new Error((await r.json()).erreur || 'Changement refusé.');
-      router.refresh();
+      await recharger();
     } catch (e) {
       setErreur(e.message);
     } finally {

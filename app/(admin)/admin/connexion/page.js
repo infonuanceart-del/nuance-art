@@ -1,12 +1,17 @@
-import { redirect } from 'next/navigation';
-import { sessionAdmin } from '@/lib/auth';
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { lireJeton } from '@/lib/api';
 import FormulaireConnexion from '@/components/admin/FormulaireConnexion';
 
-export const metadata = { title: 'Connexion' };
+export default function PageConnexion() {
+  const router = useRouter();
 
-export default async function PageConnexion() {
-  // Déjà identifié : inutile de redemander le mot de passe.
-  if (await sessionAdmin()) redirect('/admin');
+  // Deja identifie : inutile de redemander le mot de passe.
+  useEffect(() => {
+    if (lireJeton()) router.replace('/admin');
+  }, [router]);
 
   return (
     <div className="login-page">

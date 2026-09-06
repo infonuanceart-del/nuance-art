@@ -1,14 +1,17 @@
-import { store, REGLAGES_DEFAUT } from '@/lib/store';
+'use client';
+
+import { appeler } from '@/lib/api';
+import { useDonnees, EtatChargement } from '@/components/admin/useDonnees';
 import EcranPromotions from '@/components/admin/EcranPromotions';
 
-export const metadata = { title: 'Promotions' };
-export const dynamic = 'force-dynamic';
-
-export default async function PagePromotionsAdmin() {
-  const [produits, enregistres] = await Promise.all([
-    store().produits.tous(),
-    store().reglages.lire(),
-  ]);
+export default function PagePromotionsAdmin() {
+  const { donnees, erreur, chargement, recharger } = useDonnees(async () => {
+    const [p, r] = await Promise.all([
+      appeler('/api/produits', { avecJeton: true }),
+      appeler('/api/reglages', { avecJeton: true }),
+    ]);
+    return { produits: p.produits, reglages: r.reglages };
+  });
 
   return (
     <>
@@ -19,10 +22,14 @@ export default async function PagePromotionsAdmin() {
         </div>
       </div>
 
-      <EcranPromotions
-        produits={produits}
-        reglages={{ ...REGLAGES_DEFAUT, ...(enregistres || {}) }}
-      />
+      <EtatChargement chargement={chargement} erreur={erreur} />
+      {donnees && (
+        <EcranPromotions
+          produits={donnees.produits}
+          reglages={donnees.reglages}
+          recharger={recharger}
+        />
+      )}
     </>
   );
 }

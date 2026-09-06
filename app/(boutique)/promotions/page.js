@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import Catalogue from '@/components/Catalogue';
 import Compteur from '@/components/Compteur';
-import { lireProduits, lireReglages } from '@/lib/store';
+import { lireProduits, lireReglages } from '@/lib/catalogue';
 import { dh } from '@/lib/prix';
 import { IcoCamion, IcoFleche } from '@/components/Icones';
 

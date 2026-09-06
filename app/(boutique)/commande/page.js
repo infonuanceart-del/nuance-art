@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Commande from '@/components/Commande';
-import { lireReglages } from '@/lib/store';
+import { lireReglages } from '@/lib/catalogue';
 
 export const metadata = {
   title: 'Commande',

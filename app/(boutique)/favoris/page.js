@@ -1,5 +1,5 @@
 import Favoris from '@/components/Favoris';
-import { lireProduits } from '@/lib/store';
+import { lireProduits } from '@/lib/catalogue';
 
 export const metadata = {
   title: 'Mes favoris',

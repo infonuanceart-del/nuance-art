@@ -1,17 +1,14 @@
-import { exigerAdmin } from '@/lib/auth';
-import BarreLaterale from '@/components/admin/BarreLaterale';
+import Garde from '@/components/admin/Garde';
 
 /**
- * Coquille des pages protégées. La page de connexion vit hors de ce groupe :
- * elle n'hérite donc pas de la garde et ne peut pas boucler sur elle-même.
+ * Coquille des pages protegees.
+ *
+ * La garde est passee cote navigateur : la vitrine et l'admin sont un export
+ * statique, il n'y a plus de rendu serveur pour lire un cookie. Ce n'est pas
+ * une faiblesse — la vraie barriere est l'API, qui refuse en 401 toute requete
+ * sans jeton valide. Cette garde ne fait qu'eviter d'afficher une interface
+ * vide a quelqu'un qui n'est pas connecte.
  */
-export default async function LayoutEspaceAdmin({ children }) {
-  const session = await exigerAdmin();
-
-  return (
-    <div className="admin-shell">
-      <BarreLaterale nom={session.nom} email={session.email} />
-      <div className="admin-main">{children}</div>
-    </div>
-  );
+export default function LayoutEspaceAdmin({ children }) {
+  return <Garde>{children}</Garde>;
 }

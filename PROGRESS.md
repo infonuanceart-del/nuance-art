@@ -138,23 +138,61 @@ l'autre, comme Para Lirana.
 Attention : l'export statique supprime `revalidatePath`, tout le mecanisme de
 rafraichissement decrit plus bas devient caduc de ce cote.
 
+### Vitrine et admin en export statique (2026-09-06) — etapes 2 et 3 sur 3
+
+L'architecture eclatee est complete. `npm run build` produit `out/`, 109 pages,
+aucun serveur Next en production.
+
+- `scripts/snapshot.mjs` (script **prebuild**, donc automatique) va chercher
+  `/api/catalogue` et ecrit `data/snapshot.json`. `lib/catalogue.js` remplace
+  `lib/store` cote vitrine et lit ce fichier — les pages n'ont eu qu'un import
+  a changer. Si l'API ne repond pas, le script reutilise l'instantane precedent
+  en le disant tres fort, et n'echoue que s'il n'y en a aucun.
+- **Consequence assumee : la vitrine ne se met plus a jour toute seule.** Elle
+  est figee a l'instantane du build. `revalidatePath` n'existe plus en export
+  statique : `lib/revalidation.js` et `app/api/` ont ete supprimes.
+- L'admin est devenue une **application cliente** : `lib/api.js` (jeton Bearer
+  dans localStorage), `components/admin/Garde.jsx` pour la redirection, et
+  `useDonnees.js` qui mutualise chargement / erreur / rechargement / sortie sur
+  401. `lib/auth.js` a disparu, l'authentification vit dans `serveur/auth.js`.
+- La fiche produit passe de `/admin/produits/[slug]` a
+  **`/admin/produits/editer?slug=…`** : un export statique ne peut pas fabriquer
+  une route dynamique pour un slug qui n'existe pas encore au build.
+- `/commande/merci` lisait `searchParams` cote serveur : converti en composant
+  client sous `Suspense`, exige par `useSearchParams`.
+- `next.config.mjs` : `output: 'export'`, `images.unoptimized`, `trailingSlash`
+  (chaque page devient un dossier avec son index.html, servi sans reecriture).
+  `npm start` ne peut plus etre `next start` : il sert `out/`.
+
+**Verifie pour de vrai** : build 109 pages, `out/` servi en local sur le port
+3210, toutes les pages en 200, accueil et fiches contenant bien le catalogue et
+les JSON-LD ; preflight CORS accepte depuis la vitrine ; commande reelle passee
+depuis la vitrine statique vers l'API (1280 DH, montant recalcule par le serveur
+et verifie contre le catalogue) ; dans un vrai navigateur (Edge sans interface) :
+`/admin/` sans jeton redirige vers la connexion sans laisser fuiter l'interface,
+et avec un jeton valide le tableau de bord se remplit depuis l'API (81 oeuvres).
+Donnees de test supprimees.
+
 ## Reste à faire (reprise)
 
-1. **Pages éditoriales** : `/a-propos`, `/contact`, `/livraison-retours`, `/cgv`
+1. **Héberger la vitrine** : publier `out/` (Hostinger, Netlify, Vercel statique…),
+   puis ajouter le domaine reel a `ORIGINES_AUTORISEES` sur Render — sinon le
+   navigateur bloquera tous les appels a l'API.
+2. **Pages éditoriales** : `/a-propos`, `/contact`, `/livraison-retours`, `/cgv`
    (dossiers créés dans `app/(boutique)/`, vides).
-2. **SEO** : `app/sitemap.js` (ou route handler), `robots`, image OG `public/og.jpg`.
-3. **Passe finale** : revue visuelle mobile, remplacer les coordonnées placeholder
+3. **SEO** : `app/sitemap.js` (ou route handler), `robots`, image OG `public/og.jpg`.
+4. **Passe finale** : revue visuelle mobile, remplacer les coordonnées placeholder
    (elles se changent maintenant depuis `/admin/reglages`, plus dans le code).
-4. Vérifier le studio au doigt sur un vrai téléphone (événements pointer).
-5. Confort d'admin, si le client le demande : recherche dans les commandes,
+5. Vérifier le studio au doigt sur un vrai téléphone (événements pointer).
+6. Confort d'admin, si le client le demande : recherche dans les commandes,
    export CSV, deuxième compte administrateur.
-6. **Faire tourner les identifiants exposes pendant la mise au point** : cle
+7. **Faire tourner les identifiants exposes pendant la mise au point** : cle
    Cloudinary, et mot de passe de l'utilisateur Atlas `infonuanceart_db_user`
    (Atlas > Database Access > Edit > Edit Password). Penser a reporter la
    nouvelle URI dans `.env.local` et dans Render.
-7. **Mot de passe admin `nuance2026`** : trop faible pour une vraie boutique.
+8. **Mot de passe admin `nuance2026`** : trop faible pour une vraie boutique.
    Le changer dans `.env.local` puis relancer `npm run seed`.
-8. `npm audit` signale sharp < 0.35 et postcss (via Next) en « high ». Antérieur à
+9. `npm audit` signale sharp < 0.35 et postcss (via Next) en « high ». Antérieur à
    Cloudinary ; à traiter dans une passe de mise à jour, le correctif est cassant.
 
 ## Pièges déjà rencontrés

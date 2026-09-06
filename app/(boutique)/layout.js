@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
 import { BoutiqueProvider } from '@/components/Boutique';
-import { lireProduits, lireReglages } from '@/lib/store';
+import { lireProduits, lireReglages } from '@/lib/catalogue';
 import { IcoWhatsapp } from '@/components/Icones';
 import '../globals.css';
 import '../studio.css';

@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Catalogue from '@/components/Catalogue';
-import { lireProduits } from '@/lib/store';
+import { lireProduits } from '@/lib/catalogue';
 import { THEMES, THEME_PAR_SLUG } from '@/lib/taxonomie';
 
 export function generateStaticParams() {

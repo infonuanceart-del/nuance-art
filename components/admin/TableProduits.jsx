@@ -2,13 +2,12 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { appeler } from '@/lib/api';
 import { THEMES, nomTheme } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import { IcoLoupe, IcoPoubelle } from '@/components/Icones';
 
-export default function TableProduits({ produits }) {
-  const router = useRouter();
+export default function TableProduits({ produits, recharger }) {
   const [q, setQ] = useState('');
   const [theme, setTheme] = useState('');
   const [etat, setEtat] = useState('');
@@ -27,18 +26,16 @@ export default function TableProduits({ produits }) {
     });
   }, [produits, q, theme, etat]);
 
-  /** Bascule optimiste impossible ici : on rafraîchit la page rendue par le serveur. */
   async function basculer(slug, champ, valeur) {
     setOccupe(slug);
     setErreur('');
     try {
-      const r = await fetch(`/api/produits/${slug}`, {
+      await appeler(`/api/produits/${slug}`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ [champ]: valeur }),
+        corps: { [champ]: valeur },
+        avecJeton: true,
       });
-      if (!r.ok) throw new Error((await r.json()).erreur || 'Modification refusée.');
-      router.refresh();
+      await recharger();
     } catch (e) {
       setErreur(e.message);
     } finally {
@@ -51,9 +48,8 @@ export default function TableProduits({ produits }) {
     setOccupe(p.slug);
     setErreur('');
     try {
-      const r = await fetch(`/api/produits/${p.slug}`, { method: 'DELETE' });
-      if (!r.ok) throw new Error((await r.json()).erreur || 'Suppression refusée.');
-      router.refresh();
+      await appeler(`/api/produits/${p.slug}`, { method: 'DELETE', avecJeton: true });
+      await recharger();
     } catch (e) {
       setErreur(e.message);
     } finally {
@@ -118,7 +114,7 @@ export default function TableProduits({ produits }) {
                     <img className="admin-thumb" src={p.thumb} alt="" loading="lazy" />
                   </td>
                   <td>
-                    <Link href={`/admin/produits/${p.slug}`}><b>{p.titre}</b></Link>
+                    <Link href={`/admin/produits/editer?slug=${p.slug}`}><b>{p.titre}</b></Link>
                     <br />
                     <span className="tiny" style={{ color: 'var(--muted)' }}>{p.artiste}</span>
                   </td>
@@ -141,7 +137,7 @@ export default function TableProduits({ produits }) {
                   </td>
                   <td>
                     <div className="row" style={{ gap: '0.35rem', flexWrap: 'nowrap' }}>
-                      <Link href={`/admin/produits/${p.slug}`} className="btn btn-ghost btn-sm">Modifier</Link>
+                      <Link href={`/admin/produits/editer?slug=${p.slug}`} className="btn btn-ghost btn-sm">Modifier</Link>
                       <button
                         type="button"
                         className="icone-danger"

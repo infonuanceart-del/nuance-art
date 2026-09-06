@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { appeler } from '@/lib/api';
 import { SEUIL_LIVRAISON, FRAIS_LIVRAISON, dh } from '@/lib/prix';
 
 /** Coordonnées reprises par le pied de page, le bouton WhatsApp et le JSON-LD. */
@@ -13,7 +13,6 @@ const CHAMPS = [
 ];
 
 export default function FormulaireReglages({ reglages }) {
-  const router = useRouter();
   const [r, setR] = useState(reglages);
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState('');
@@ -29,14 +28,12 @@ export default function FormulaireReglages({ reglages }) {
     setEnvoi(true);
     setErreur('');
     try {
-      const rep = await fetch('/api/reglages', {
+      await appeler('/api/reglages', {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(CHAMPS.map((c) => [c.cle, r[c.cle]]))),
+        corps: Object.fromEntries(CHAMPS.map((c) => [c.cle, r[c.cle]])),
+        avecJeton: true,
       });
-      if (!rep.ok) throw new Error((await rep.json()).erreur || 'Enregistrement refusé.');
       setOk(true);
-      router.refresh();
     } catch (err) {
       setErreur(err.message);
     } finally {

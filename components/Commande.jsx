@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { appeler } from '@/lib/api';
 import { useState } from 'react';
 import { useBoutique } from './Boutique';
 import { dh, fraisLivraison } from '@/lib/prix';
@@ -50,10 +51,11 @@ export default function Commande({ whatsapp }) {
 
     setEnvoi(true);
     try {
-      const res = await fetch('/api/commandes', {
+      // La vitrine est statique : la commande part vers l'API deployee a part,
+      // qui recalcule tous les prix avant d'enregistrer quoi que ce soit.
+      const data = await appeler('/api/commandes', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        corps: {
           client: {
             nom: form.nom, tel: form.tel, email: form.email,
             ville: form.ville, adresse: form.adresse, note: form.note,
@@ -63,10 +65,8 @@ export default function Commande({ whatsapp }) {
             passe: a.passe, prixUnit: a.prixUnit, qte: a.qte,
           })),
           paiement: form.paiement,
-        }),
+        },
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.erreur || 'Envoi impossible');
       vider();
       router.push(`/commande/merci?ref=${encodeURIComponent(data.ref)}`);
     } catch (err) {

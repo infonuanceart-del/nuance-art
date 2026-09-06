@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { appeler, envoyerFichier } from '@/lib/api';
 import { THEMES, FORMATS, COULEURS, PIECES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import { IcoPlus, IcoPoubelle, IcoImage } from '@/components/Icones';
@@ -61,9 +62,7 @@ export default function FormulaireProduit({ produit }) {
       const corps = new FormData();
       corps.append('fichier', fichier);
       corps.append('nom', f.titre || fichier.name);
-      const r = await fetch('/api/televersement', { method: 'POST', body: corps });
-      const data = await r.json();
-      if (!r.ok) throw new Error(data.erreur || 'Téléversement impossible.');
+      const data = await envoyerFichier('/api/televersement', corps);
       setF((p) => ({ ...p, image: data.image, thumb: data.thumb, ratio: data.ratio }));
     } catch (e) {
       setErreur(e.message);
@@ -77,16 +76,12 @@ export default function FormulaireProduit({ produit }) {
     setErreur('');
     setEnvoi(true);
     try {
-      const url = creation ? '/api/produits' : `/api/produits/${produit.slug}`;
-      const r = await fetch(url, {
+      await appeler(creation ? '/api/produits' : `/api/produits/${produit.slug}`, {
         method: creation ? 'POST' : 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(f),
+        corps: f,
+        avecJeton: true,
       });
-      const data = await r.json();
-      if (!r.ok) throw new Error(data.erreur || 'Enregistrement refusé.');
       router.push('/admin/produits');
-      router.refresh();
     } catch (err) {
       setErreur(err.message);
       setEnvoi(false);
