@@ -107,6 +107,37 @@ URI Atlas, `npm run seed` et le site basculent sur MongoDB sans changer une page
 - Vérifié : envoi réel d'un PNG 1600×1000 par l'API admin, ratio 1.6 déduit, les deux
   URL renvoient bien du `image/webp`. Fichier de test supprimé du compte ensuite.
 
+### API separee sur Render (2026-09-06) — etape 1 sur 3 de l'architecture eclatee
+
+Choix client : vitrine exportee en statique hebergee d'un cote, API Node de
+l'autre, comme Para Lirana.
+
+- `serveur/` : service Express autonome. `render.yaml` a la racine le decrit
+  (build, sonde `/sante`, variables attendues) — deployable via Blueprint.
+- **Base MongoDB Atlas obligatoire** : le service refuse de demarrer sans
+  `MONGODB_URI`, plutot que de tomber en silence sur un store fichier que Render
+  efface a chaque deploiement. Cluster `cluster0.xtuikmn.mongodb.net`, base
+  `nuanceart`, seede avec les 81 oeuvres.
+- **Jeton Bearer et non cookie httpOnly** : la vitrine statique sera servie
+  depuis un autre domaine, elle ne peut pas recevoir de cookie de l'API. Le
+  jeton vit dans `localStorage` — d'ou 12 h de validite et un secret long.
+- **`serveur/partage/` est genere**, jamais edite : `scripts/sync-partage.mjs`
+  recopie `lib/{taxonomie,prix,produit,cloudinary}.js` et `lib/store/mongo.js`.
+  La copie est necessaire parce que le `package.json` de la racine ne declare
+  pas `"type": "module"` — importes tels quels, ces fichiers seraient lus comme
+  du CommonJS et leur `export` rejete. Modifier `lib/`, jamais `partage/`.
+- CORS pilote par `ORIGINES_AUTORISEES` (liste separee par des virgules). Sans
+  le vrai domaine de la vitrine, le navigateur bloquera chaque appel.
+- Verifie contre le vrai cluster : catalogue public, connexion et refus, CRUD
+  complet, bridage des valeurs, commande publique avec recalcul des prix, refus
+  d'une oeuvre inconnue, changement de statut, reglages, televersement
+  Cloudinary de bout en bout. Donnees de test supprimees ensuite.
+
+**Reste de l'architecture eclatee** : (2) instantane de pre-build + `output:
+'export'` pour la vitrine, (3) admin en application cliente appelant l'API.
+Attention : l'export statique supprime `revalidatePath`, tout le mecanisme de
+rafraichissement decrit plus bas devient caduc de ce cote.
+
 ## Reste à faire (reprise)
 
 1. **Pages éditoriales** : `/a-propos`, `/contact`, `/livraison-retours`, `/cgv`
@@ -117,10 +148,13 @@ URI Atlas, `npm run seed` et le site basculent sur MongoDB sans changer une page
 4. Vérifier le studio au doigt sur un vrai téléphone (événements pointer).
 5. Confort d'admin, si le client le demande : recherche dans les commandes,
    export CSV, deuxième compte administrateur.
-6. **Faire tourner la clé Cloudinary** : celle en place a été exposée pendant la mise
-   au point. En générer une dédiée dans la console, la coller dans `.env.local`, puis
-   supprimer les anciennes.
-7. `npm audit` signale sharp < 0.35 et postcss (via Next) en « high ». Antérieur à
+6. **Faire tourner les identifiants exposes pendant la mise au point** : cle
+   Cloudinary, et mot de passe de l'utilisateur Atlas `infonuanceart_db_user`
+   (Atlas > Database Access > Edit > Edit Password). Penser a reporter la
+   nouvelle URI dans `.env.local` et dans Render.
+7. **Mot de passe admin `nuance2026`** : trop faible pour une vraie boutique.
+   Le changer dans `.env.local` puis relancer `npm run seed`.
+8. `npm audit` signale sharp < 0.35 et postcss (via Next) en « high ». Antérieur à
    Cloudinary ; à traiter dans une passe de mise à jour, le correctif est cassant.
 
 ## Pièges déjà rencontrés
