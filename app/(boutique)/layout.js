@@ -65,8 +65,6 @@ export default async function RootLayout({ children }) {
     theme: p.theme, thumb: p.thumb, prixMin: p.prixMin,
   }));
 
-  const vedette = produits.find((p) => p.bestseller) || produits[0] || null;
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Store',
@@ -96,7 +94,7 @@ export default async function RootLayout({ children }) {
         />
         <BoutiqueProvider>
           <a href="#contenu" className="skip">Aller au contenu</a>
-          <Header vedette={vedette} indexRecherche={indexRecherche} />
+          <Header indexRecherche={indexRecherche} />
           <main id="contenu">{children}</main>
           <Footer reglages={reglages} />
           <Toast />

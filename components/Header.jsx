@@ -7,7 +7,7 @@ import { useBoutique } from './Boutique';
 import { THEMES, FORMATS, COULEURS, PIECES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import {
-  IcoChevron, IcoCroix, IcoLoupe, IcoMenu, IcoPanier, IcoCoeur, IcoPinceau,
+  IcoChevron, IcoCroix, IcoLoupe, IcoMenu, IcoPanier, IcoCoeur,
 } from './Icones';
 
 const MENUS = [
@@ -37,7 +37,7 @@ const MENUS = [
   },
 ];
 
-export default function Header({ vedette, indexRecherche = [] }) {
+export default function Header({ indexRecherche = [] }) {
   const chemin = usePathname();
   const { nombre, favoris } = useBoutique();
   const [ouvert, setOuvert] = useState(null);
@@ -153,20 +153,11 @@ export default function Header({ vedette, indexRecherche = [] }) {
                       </div>
                     </div>
                   ))}
-
-                  <Link href="/studio" className="mega-promo">
-                    {vedette && <img src={vedette.thumb} alt="" />}
-                    <div>
-                      <strong>Essayez sur votre mur</strong>
-                      <span>Photo de votre pièce, taille réelle, en 10 secondes.</span>
-                    </div>
-                  </Link>
                 </div>
               </div>
             ))}
 
             <Link href="/tableaux" className="nav-link">Toutes les œuvres</Link>
-            <Link href="/studio" className="nav-link">Studio</Link>
             <Link href="/promotions" className="nav-link accent">Promotions</Link>
           </nav>
 
@@ -181,9 +172,6 @@ export default function Header({ vedette, indexRecherche = [] }) {
             <Link href="/panier" className="icon-btn" aria-label="Mon panier">
               <IcoPanier />
               {nombre > 0 && <span className="count">{nombre}</span>}
-            </Link>
-            <Link href="/studio" className="btn btn-primary btn-sm header-cta">
-              <IcoPinceau size={16} /> Tester chez moi
             </Link>
             <button className="icon-btn burger" onClick={() => setDrawer(true)} aria-label="Ouvrir le menu">
               <IcoMenu />
@@ -256,14 +244,9 @@ export default function Header({ vedette, indexRecherche = [] }) {
               </div>
             ))}
             <div className="acc-item"><Link className="acc-btn" href="/tableaux">Toutes les œuvres</Link></div>
-            <div className="acc-item"><Link className="acc-btn" href="/studio">Studio — voir chez moi</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/promotions" style={{ color: 'var(--clay)' }}>Promotions</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/a-propos">L’atelier</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/contact">Contact</Link></div>
-
-            <Link href="/studio" className="btn btn-primary btn-block mt-3">
-              <IcoPinceau size={16} /> Tester sur mon mur
-            </Link>
           </div>
         </div>
       </div>
