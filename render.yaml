@@ -1,0 +1,51 @@
+# Deploiement de l'API Nuance Art sur Render.
+#
+# A utiliser via « New + » > « Blueprint » en pointant ce depot : Render lit ce
+# fichier et cree le service. Les valeurs marquees `sync: false` ne sont jamais
+# ecrites ici — Render les demande a la creation, ou se renseignent ensuite dans
+# l'onglet Environment du service.
+#
+# Seule l'API est deployee ici. La vitrine est exportee en statique et hebergee
+# separement (voir PROGRESS.md).
+
+services:
+  - type: web
+    name: nuance-art-api
+    runtime: node
+    plan: free
+    region: frankfurt
+    rootDir: serveur
+    # sync-partage recopie lib/ depuis la racine du depot avant l'installation.
+    buildCommand: node scripts/sync-partage.mjs && npm install
+    startCommand: node index.js
+    healthCheckPath: /sante
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+
+      # Cluster MongoDB Atlas. Obligatoire : le disque de Render est efface a
+      # chaque deploiement, une base fichier y perdrait tout.
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: nuanceart
+
+      # Signe les jetons d'administration. Render en genere une valeur aleatoire.
+      - key: AUTH_SECRET
+        generateValue: true
+
+      # Domaines autorises a appeler l'API, separes par des virgules.
+      # A completer avec l'adresse reelle de la vitrine une fois en ligne.
+      - key: ORIGINES_AUTORISEES
+        value: http://localhost:3210
+
+      # Stockage des images televersees depuis l'administration.
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: CLOUDINARY_DOSSIER
+        value: nuance-art
