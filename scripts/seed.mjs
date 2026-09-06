@@ -128,8 +128,12 @@ async function main() {
     await fs.writeFile(fichier, JSON.stringify(db, null, 2));
     console.log(`Fichier .data/db.json : ${produits.length} œuvres, 1 admin.`);
   }
-  console.log(`Connexion admin : ${email} / ${motDePasse}`);
-  if (!process.env.ADMIN_PASSWORD) {
+  // On n'affiche le mot de passe que lorsqu'il vient d'etre tire au hasard :
+  // sinon il finirait dans un journal de build ou un copier-coller.
+  if (process.env.ADMIN_PASSWORD) {
+    console.log(`Compte admin : ${email} (mot de passe repris de ADMIN_PASSWORD).`);
+  } else {
+    console.log(`Compte admin : ${email} / ${motDePasse}`);
     console.log('Mot de passe tire au hasard : notez-le, ou fixez ADMIN_PASSWORD dans .env.local.');
   }
 }

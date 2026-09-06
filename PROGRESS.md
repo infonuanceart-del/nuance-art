@@ -190,8 +190,10 @@ Donnees de test supprimees.
    Cloudinary, et mot de passe de l'utilisateur Atlas `infonuanceart_db_user`
    (Atlas > Database Access > Edit > Edit Password). Penser a reporter la
    nouvelle URI dans `.env.local` et dans Render.
-8. **Mot de passe admin `nuance2026`** : trop faible pour une vraie boutique.
-   Le changer dans `.env.local` puis relancer `npm run seed`.
+8. **Mot de passe administrateur** : celui du seed initial est trop faible pour une
+   boutique en ligne, et l'API est publique. Choisir une valeur forte dans
+   `ADMIN_PASSWORD` (`.env.local`) puis relancer `npm run seed`. Ne jamais ecrire
+   un mot de passe reel dans ce fichier : il est publie.
 9. `npm audit` signale sharp < 0.35 et postcss (via Next) en « high ». Antérieur à
    Cloudinary ; à traiter dans une passe de mise à jour, le correctif est cassant.
 
