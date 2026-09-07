@@ -1,4 +1,4 @@
-import { Fraunces, Manrope } from 'next/font/google';
+import { Bodoni_Moda, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
@@ -8,17 +8,18 @@ import { IcoWhatsapp } from '@/components/Icones';
 import '../globals.css';
 import '../studio.css';
 
-const display = Fraunces({
+// Didone a fort contraste pour les titres : le caractere des cartels de musee.
+// L'axe optique est variable, Next sert donc la bonne graisse a chaque taille.
+const display = Bodoni_Moda({
   subsets: ['latin'],
-  // police variable : on laisse Next servir l'axe de graisse complet
-  axes: ['SOFT', 'WONK'],
+  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const sans = Manrope({
+// Grotesque neutre pour tout le reste : lisible a 13 px comme a 20 px.
+const sans = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
@@ -28,15 +29,16 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3210';
 export const metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: 'Nuance Art — Tableaux et affiches d’art au Maroc',
+    default: 'Nuance Art — Art traditionnel encadré au Maroc',
     template: '%s | Nuance Art',
   },
   description:
-    'Galerie en ligne de tableaux, affiches et calligraphies imprimés et encadrés à Casablanca. '
-    + 'Essayez chaque œuvre sur la photo de votre mur avant d’acheter. Livraison 48 h partout au Maroc.',
+    'Galerie en ligne d’art traditionnel : calligraphie arabe, zellige, tapis anciens et '
+    + 'enluminures, imprimés et encadrés à Casablanca. Livraison 48 h partout au Maroc.',
   keywords: [
-    'tableau maroc', 'tableau decoration murale', 'affiche art casablanca',
-    'calligraphie arabe tableau', 'toile imprimee maroc', 'cadre mural rabat',
+    'tableau maroc', 'calligraphie arabe tableau', 'tableau zellige',
+    'art islamique tableau', 'decoration marocaine murale', 'tableau salon marocain',
+    'toile imprimee maroc', 'cadre mural casablanca',
   ],
   openGraph: {
     type: 'website',
@@ -44,7 +46,7 @@ export const metadata = {
     siteName: 'Nuance Art',
     title: 'Nuance Art — L’art qui trouve sa place',
     description:
-      'Tableaux imprimés et encadrés à Casablanca. Testez l’œuvre sur la photo de votre mur, à la taille réelle.',
+      'Calligraphie, zellige, tapis anciens et enluminures, imprimés et encadrés à Casablanca.',
   },
   robots: { index: true, follow: true },
   alternates: { canonical: '/' },
@@ -71,7 +73,7 @@ export default async function RootLayout({ children }) {
     name: 'Nuance Art',
     url: SITE,
     image: `${SITE}/og.jpg`,
-    description: 'Galerie d’art en ligne : tableaux, affiches et calligraphies imprimés et encadrés à Casablanca.',
+    description: 'Galerie d’art traditionnel en ligne : calligraphie, zellige, tapis et enluminures encadrés à Casablanca.',
     telephone: reglages.telephone,
     email: reglages.email,
     priceRange: '260 – 1900 DH',
@@ -87,7 +89,10 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="fr" className={`${display.variable} ${sans.variable}`}>
-      <body>
+      {/* Les extensions de navigateur (ColorZilla, gestionnaires de mots de passe)
+          posent leurs attributs sur <body> avant l'hydratation de React : on
+          tait l'avertissement pour cette balise seule, jamais pour ses enfants. */}
+      <body suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

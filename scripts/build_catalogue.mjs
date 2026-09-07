@@ -31,110 +31,81 @@ const DEP = {
 };
 
 // Un thème = une ou plusieurs requêtes Met + son identité côté boutique.
+//
+// La boutique s'adresse à une clientèle marocaine : le catalogue est donc bâti
+// sur l'art traditionnel du monde musulman et du Maghreb — département islamique
+// du Met (14) pour l'essentiel, complété par les peintres voyageurs pour le volet
+// orientaliste. Aucune requête ne vise plus la peinture européenne de salon.
 const THEMES = [
   {
-    slug: 'abstrait', nom: 'Abstrait & géométrique', n: 8,
+    slug: 'art-abstrait', nom: 'Art abstrait', n: 15,
+    // Le seul « abstrait » libre de droits est l'abstraction geometrique de
+    // l'art islamique : panneaux de carreaux, entrelacs, arabesques. Le Met
+    // les classe « Ceramics-Tiles » ou « Woodwork », d'ou la classification
+    // ouverte ; le motif exige en echange un decor, pas un objet.
+    classes: /tile|ceramic|woodwork|panel|textile|ornament|painting|drawing|print/i,
+    motif: /geometric|interlac|arabesque|star|polygon|ornament|pattern|lattice|mosaic|zellij|zillij|tile panel|strapwork|medallion|scroll/i,
     requetes: [
-      { q: 'geometric ornament', departmentId: DEP.islam },
-      { q: 'tile pattern', departmentId: DEP.islam },
-      { q: 'ornament design', departmentId: DEP.dessins_estampes },
-      { q: 'abstract', departmentId: DEP.dessins_estampes },
+      { q: 'geometric tile panel', departmentId: DEP.islam },
+      { q: 'star cross tile', departmentId: DEP.islam },
+      { q: 'arabesque ornament panel', departmentId: DEP.islam },
+      { q: 'interlace pattern design', departmentId: DEP.islam },
     ],
   },
   {
-    slug: 'calligraphie', nom: 'Calligraphie', n: 7,
+    slug: 'art-contemporain', nom: 'Art contemporain', n: 18,
+    // La collection ouverte du Met s'arrete aux annees 1930 : les modernes du
+    // domaine public (post-impressionnistes surtout) sont ce qu'elle offre de
+    // plus proche d'un accrochage contemporain.
+    motif: /gogh|monet|manet|degas|renoir|sisley|pissarro|cezanne|gauguin|morisot|caillebotte|seurat|signac|toulouse|bonnard|vuillard|redon|rousseau/i,
     requetes: [
-      { q: 'calligraphy', departmentId: DEP.islam },
-      { q: 'folio album', departmentId: DEP.islam },
-      { q: 'quran manuscript', departmentId: DEP.islam },
+      { q: 'Vincent van Gogh', medium: 'Paintings' },
+      { q: 'Paul Gauguin Cezanne', medium: 'Paintings' },
+      { q: 'Claude Monet', medium: 'Paintings' },
+      { q: 'Edgar Degas Renoir', medium: 'Paintings' },
+      { q: 'Seurat Signac Pissarro', medium: 'Paintings' },
     ],
   },
   {
-    slug: 'orient-maroc', nom: 'Orient & Maroc', n: 8,
+    slug: 'heritage-marocain', nom: 'Héritage marocain', n: 20,
+    // Delacroix et Gerome ont peint bien autre chose que le Maghreb : le motif
+    // exige que le sujet soit vraiment oriental, sinon « L'Enlevement de
+    // Rebecca » se retrouverait vendu comme un tableau marocain.
+    motif: /arab|moor|morocc|algier|tangier|cairo|egypt|nubian|mosque|orient|bashi|turk|harem|odalisque|desert|caravan|sultan|constantine|sahara|almeh|fellah|dervish|damascus|jerusalem/i,
     requetes: [
-      { q: 'morocco' },
-      { q: 'north africa', departmentId: DEP.peinture_euro },
-      { q: 'orientalist', departmentId: DEP.peinture_euro },
-      { q: 'tangier' },
-      { q: 'algiers' },
+      { q: 'Delacroix Arab Morocco', medium: 'Paintings' },
+      { q: 'Orientalist Arab', departmentId: DEP.peinture_euro },
+      { q: 'Gerome Egypt Cairo mosque', medium: 'Paintings' },
+      { q: 'Morocco', departmentId: DEP.peinture_euro },
+      { q: 'Fromentin Algeria', medium: 'Paintings' },
     ],
   },
   {
-    slug: 'nature-botanique', nom: 'Nature & botanique', n: 9,
+    slug: 'nature-paysage', nom: 'Nature & paysage', n: 23,
+    // Paysages peints et estampes japonaises se rejoignent ici : Hiroshige
+    // tient le mur aussi bien qu'un paysage a l'huile, et varie les formats.
+    motif: /landscape|garden|flower|bouquet|tree|river|mountain|sea|coast|forest|field|meadow|valley|lake|orchard|olive|iris|rose|poppy|snow|rain|fuji|tokaido|hiroshige|hokusai/i,
     requetes: [
-      { q: 'flowers', departmentId: DEP.peinture_euro, medium: 'Paintings' },
-      { q: 'botanical', departmentId: DEP.dessins_estampes },
-      { q: 'still life fruit', departmentId: DEP.peinture_euro },
-      { q: 'garden', departmentId: DEP.peinture_euro },
+      { q: 'landscape', medium: 'Paintings' },
+      { q: 'garden', medium: 'Paintings' },
+      { q: 'flowers bouquet', medium: 'Paintings' },
+      { q: 'Hiroshige landscape', departmentId: DEP.asie },
+      { q: 'Hokusai Fuji wave', departmentId: DEP.asie },
     ],
   },
   {
-    slug: 'villes-voyages', nom: 'Villes & voyages', n: 8,
+    slug: 'art-islamique', nom: 'Art islamique', n: 15,
+    // Le departement islamique classe ses peintures en « Codices » ou
+    // « Manuscripts » : la regle murale par defaut les rejetterait toutes. On
+    // ouvre donc la classification, et on exige en echange une miniature
+    // figurative — pas une page de texte nu.
+    classes: /codices|manuscript|folio|painting|calligraph|album|illustrat/i,
+    motif: /shahnama|khamsa|miniature|prince|hunt|court|garden|falcon|horse|battle|majnun|layla|bahram|album leaf|illustrated|painting/i,
     requetes: [
-      { q: 'view of venice', departmentId: DEP.peinture_euro },
-      { q: 'harbor', departmentId: DEP.peinture_euro },
-      { q: 'city street', departmentId: DEP.americain },
-      { q: 'seascape', departmentId: DEP.peinture_euro },
-    ],
-  },
-  {
-    slug: 'portraits', nom: 'Portraits', n: 7,
-    requetes: [
-      { q: 'portrait of a woman', departmentId: DEP.peinture_euro, medium: 'Paintings' },
-      { q: 'portrait of a young', departmentId: DEP.peinture_euro },
-      { q: 'portrait', departmentId: DEP.americain, medium: 'Paintings' },
-    ],
-  },
-  {
-    slug: 'chefs-doeuvre', nom: 'Chefs-d oeuvre', n: 8,
-    requetes: [
-      { q: 'painting', departmentId: DEP.peinture_euro, isHighlight: true },
-      { q: 'landscape', departmentId: DEP.peinture_euro, isHighlight: true },
-      { q: 'masterpiece', departmentId: DEP.americain, isHighlight: true },
-    ],
-  },
-  {
-    slug: 'japandi', nom: 'Japandi & estampes', n: 8,
-    requetes: [
-      { q: 'hiroshige', departmentId: DEP.asie },
-      { q: 'hokusai', departmentId: DEP.asie },
-      { q: 'woodblock print landscape', departmentId: DEP.asie },
-      { q: 'mount fuji', departmentId: DEP.asie },
-    ],
-  },
-  {
-    slug: 'affiches', nom: 'Affiches & lithographies', n: 7,
-    requetes: [
-      { q: 'poster' },
-      { q: 'lithograph advertisement' },
-      { q: 'toulouse-lautrec' },
-      { q: 'art nouveau print', departmentId: DEP.dessins_estampes },
-    ],
-  },
-  {
-    slug: 'noir-et-blanc', nom: 'Noir & blanc', n: 7,
-    requetes: [
-      { q: 'city', departmentId: DEP.photo },
-      { q: 'architecture', departmentId: DEP.photo },
-      { q: 'landscape', departmentId: DEP.photo },
-      { q: 'engraving view', departmentId: DEP.dessins_estampes },
-    ],
-  },
-  {
-    slug: 'animaux', nom: 'Animaux', n: 6,
-    requetes: [
-      { q: 'birds of america', departmentId: DEP.dessins_estampes },
-      { q: 'audubon' },
-      { q: 'horse', departmentId: DEP.peinture_euro, medium: 'Paintings' },
-      { q: 'bird study', departmentId: DEP.asie },
-    ],
-  },
-  {
-    slug: 'boheme-berbere', nom: 'Bohème & berbère', n: 6,
-    requetes: [
-      { q: 'carpet', departmentId: DEP.islam },
-      { q: 'textile pattern', departmentId: DEP.islam },
-      { q: 'embroidery', departmentId: DEP.islam },
+      { q: 'Shahnama illustrated folio', departmentId: DEP.islam },
+      { q: 'Mughal miniature painting', departmentId: DEP.islam },
+      { q: 'Persian painting album leaf', departmentId: DEP.islam },
+      { q: 'Khamsa Nizami illustrated', departmentId: DEP.islam },
     ],
   },
 ];
@@ -168,7 +139,30 @@ const GRILLES = {
 };
 
 // Classifications du Met qui se transposent réellement en tableau mural.
-const OK_CLASS = /painting|print|drawing|photograph|textile|watercolor|poster|codices|calligraph/i;
+const OK_CLASS = /painting|print|drawing|photograph|textile|watercolor|codices|calligraph|manuscript|folio|tile/i;
+
+// Le département islamique est surtout fait d'objets : une aiguière ou un
+// astrolabe passent la classification (« Ceramics », « Metalwork ») mais ne
+// font pas un tableau. On les écarte sur le nom de l'objet.
+// La boutique s'adresse a des foyers marocains : on ecarte l'iconographie
+// religieuse d'autres cultes, les divinites greco-romaines et les nus, qui
+// n'ont pas leur place au mur d'un salon a Casablanca.
+const HORS_SUJET = new RegExp(
+  'shiva|vishnu|krishna|devi|ganesha|hindu|jain|lohan|buddha|bodhisattva|tantric'
+  + '|christ|jesus|virgin mary|madonna|nativity|crucifix|apostle|evangelist|bishop'
+  + '|cope|chasuble|altar|baptism|annunciation|pieta|hail mary|herodias|salome'
+  + '|venus|diana|apollo|bacchus|jupiter|cupid|goddess|nymph|deity'
+  + '|nude|naked|bather|odalisque',
+  'i',
+);
+
+const HORS_MUR = new RegExp(
+  'bowl|jar|dish|ewer|bottle|vase|cup|plate|jug|flask|lamp|censer|candlestick|casket'
+  + '|beaker|basin|pitcher|incense|mirror|helmet|sword|dagger|coin|ring|pendant'
+  + '|necklace|bracelet|earring|astrolabe|chess|hilt|spoon|key|lock|tray|bucket'
+  + '|stand|jointed|fragment of a vessel|tombstone|capital|column',
+  'i',
+);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -214,12 +208,41 @@ async function jget(url, essais = 3) {
   return null;
 }
 
+/**
+ * L'API de recherche du Met est sensible a l'ORDRE des parametres : `q` doit
+ * etre pose en dernier, sinon les filtres sont appliques a la place de la
+ * recherche et le nombre de resultats s'effondre (9 au lieu de 587 pour
+ * « carpet » dans le departement islamique). D'ou la construction en deux temps.
+ */
 async function chercher(req) {
   const url = new URL(API + '/search');
   url.searchParams.set('hasImages', 'true');
-  for (const [k, v] of Object.entries(req)) url.searchParams.set(k, String(v));
+  for (const [k, v] of Object.entries(req)) if (k !== 'q') url.searchParams.set(k, String(v));
+  url.searchParams.set('q', String(req.q));
   const j = await jget(url.toString());
   return j && Array.isArray(j.objectIDs) ? j.objectIDs : [];
+}
+
+/**
+ * Execute `tache` sur chaque element, `largeur` en parallele.
+ *
+ * Le script passe son temps a attendre le Met — quelques centaines de
+ * millisecondes par fiche, plusieurs secondes par image. En sequentiel il
+ * consommait trois secondes de processeur pour dix minutes d'horloge : tout le
+ * reste etait de l'attente. Les requetes sont donc menees de front, en nombre
+ * modere pour ne pas se faire fermer la porte.
+ */
+async function enParallele(elements, largeur, tache) {
+  const resultats = new Array(elements.length);
+  let curseur = 0;
+  const ouvriers = Array.from({ length: Math.min(largeur, elements.length) }, async () => {
+    while (curseur < elements.length) {
+      const i = curseur++;
+      resultats[i] = await tache(elements[i], i);
+    }
+  });
+  await Promise.all(ouvriers);
+  return resultats;
 }
 
 async function main() {
@@ -236,35 +259,68 @@ async function main() {
     const listes = [];
     for (const req of theme.requetes) listes.push(await chercher(req));
     const ids = [];
-    for (let i = 0; i < 80; i++) for (const l of listes) if (l[i] !== undefined) ids.push(l[i]);
+    for (let i = 0; i < 220; i++) for (const l of listes) if (l[i] !== undefined) ids.push(l[i]);
 
-    let gardes = 0;
-    for (const id of ids) {
-      if (gardes >= theme.n) break;
-      if (vusId.has(id)) continue;
-      vusId.add(id);
+    // --- 1. les fiches, menees de front : c'est de l'attente reseau pure ---
+    // On en interroge un multiple de la cible, sachant qu'une bonne part sera
+    // ecartee par les filtres, et on s'arrete des qu'on en a largement assez.
+    const aTester = ids.filter((id) => !vusId.has(id)).slice(0, theme.n * 8);
+    for (const id of aTester) vusId.add(id);
 
-      const o = await jget(API + '/objects/' + id);
+    const fiches = await enParallele(aTester, 8, (id) => jget(API + '/objects/' + id));
+
+    // --- 2. le tri, en serie : titres et slugs se dedupliquent l'un l'autre ---
+    const classes = theme.classes || OK_CLASS;
+    const retenus = [];
+    for (const o of fiches) {
+      if (retenus.length >= theme.n) break;
       if (!o || !o.isPublicDomain || !o.primaryImage) continue;
-      if (!OK_CLASS.test(o.classification || '') && !OK_CLASS.test(o.objectName || '')) continue;
+      if (!classes.test(o.classification || '') && !classes.test(o.objectName || '')) continue;
+      if (HORS_MUR.test(o.objectName || '')) continue;
+
+      // Le sujet reel de l'oeuvre, tel qu'il sera lu par un client marocain.
+      const sujet = [o.title, o.objectName, o.classification, o.medium, o.culture, o.period]
+        .filter(Boolean).join(' ');
+      if (HORS_SUJET.test(sujet)) continue;
+      // La recherche du Met reste approximative : on exige que l'oeuvre parle
+      // vraiment du theme sous lequel on s'apprete a la vendre.
+      if (theme.motif && !theme.motif.test(sujet)) continue;
       if (!o.title || o.title.length < 3) continue;
-      const titre = nettoyerTitre(o.title);
-      if (vusTitre.has(titre.toLowerCase())) continue;
+      let titre = nettoyerTitre(o.title);
 
-      let slug = slugify(titre + '-' + id);
-      if (!slug || vusSlug.has(slug)) slug = slug + '-' + id;
+      // Le Met nomme des centaines de pieces a l'identique — « Tile Panel »
+      // huit fois, « Star-Shaped Tile » sept fois. Les ecarter comme doublons
+      // affamait la categorie ; les vendre sous le meme nom serait pire. On
+      // les distingue donc par leur origine, ce qui fait au passage un
+      // meilleur intitule de fiche : « Panneau de carreaux — Iran, XIVe s. ».
+      if (vusTitre.has(titre.toLowerCase())) {
+        const precision = [o.culture, o.objectDate].filter(Boolean).join(', ').trim();
+        if (!precision) continue;
+        titre = `${titre} — ${precision}`;
+        if (vusTitre.has(titre.toLowerCase())) continue;
+      }
+      vusTitre.add(titre.toLowerCase());
 
+      let slug = slugify(titre + '-' + o.objectID);
+      if (!slug || vusSlug.has(slug)) slug = slug + '-' + o.objectID;
+      vusSlug.add(slug);
+
+      retenus.push({ o, titre, slug });
+    }
+
+    // --- 3. les images, quatre de front : chacune pese plusieurs megaoctets ---
+    const traites = await enParallele(retenus, 4, async ({ o, titre, slug }) => {
       try {
         const res = await fetch(o.primaryImage);
-        if (!res.ok) continue;
+        if (!res.ok) return null;
         const buf = Buffer.from(await res.arrayBuffer());
 
         const img = sharp(buf);
         const meta = await img.metadata();
-        if (!meta.width || !meta.height || meta.width < 640 || meta.height < 640) continue;
+        if (!meta.width || !meta.height || meta.width < 640 || meta.height < 640) return null;
 
         const ratio = meta.width / meta.height;
-        if (ratio > 2.4 || ratio < 0.42) continue; // formats inaccrochables
+        if (ratio > 2.4 || ratio < 0.42) return null; // formats inaccrochables
 
         await img.clone().resize({ width: 1400, withoutEnlargement: true })
           .webp({ quality: 82 }).toFile(path.join(OUT_IMG, slug + '.webp'));
@@ -281,29 +337,37 @@ async function main() {
           g: mix(st.dominant.g, moy[1]),
           b: mix(st.dominant.b, moy[2]),
         };
-        vusSlug.add(slug);
-        gardes++;
-        produits.push({
-          slug,
-          titre,
-          artiste: (o.artistDisplayName || '').trim() || 'Artiste anonyme',
-          epoque: (o.objectDate || '').trim(),
-          technique: (o.medium || '').trim(),
-          theme: theme.slug,
-          format: ratio > 1.15 ? 'paysage' : ratio < 0.87 ? 'portrait' : 'carre',
-          couleur: pickColor(teinte.r, teinte.g, teinte.b),
-          ratio: Number(ratio.toFixed(4)),
-          image: '/media/art/' + slug + '.webp',
-          thumb: '/media/art/' + slug + '-thumb.webp',
-          source: o.objectURL || '',
-        });
-        vusTitre.add(titre.toLowerCase());
-        console.log(theme.slug + '  ' + gardes + '/' + theme.n + '  ' + titre.slice(0, 46));
+
+        return { o, titre, slug, ratio, teinte };
       } catch (e) {
         console.warn('  x ' + slug + ' : ' + e.message);
+        return null;
       }
-      await sleep(60);
+    });
+
+    let gardes = 0;
+    for (const t of traites) {
+      if (!t) continue;
+      const { o, titre, slug, ratio, teinte } = t;
+      gardes++;
+      produits.push({
+        slug,
+        titre,
+        artiste: nettoyerArtiste(o.artistDisplayName, o.culture),
+        epoque: (o.objectDate || '').slice(0, 40),
+        technique: (o.medium || '').slice(0, 90),
+        description: descriptionDe(o),
+        theme: theme.slug,
+        format: formatDe(ratio),
+        couleur: couleurDe(teinte),
+        ratio: Math.round(ratio * 1000) / 1000,
+        image: '/media/art/' + slug + '.webp',
+        thumb: '/media/art/' + slug + '-thumb.webp',
+        source: o.objectURL || '',
+      });
+      console.log(theme.slug + '  ' + gardes + '/' + theme.n + '  ' + titre.slice(0, 46));
     }
+
     if (gardes < theme.n) console.warn('  ! ' + theme.slug + ' : ' + gardes + '/' + theme.n);
   }
 

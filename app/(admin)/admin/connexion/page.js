@@ -17,6 +17,7 @@ export default function PageConnexion() {
     <div className="login-page">
       <div className="login-card">
         <p className="logo" style={{ fontSize: '1.5rem' }}>
+          <img src="/logo.png" alt="" className="logo-mark logo-mark-lg" width="384" height="384" />
           Nuance<span style={{ color: 'var(--clay)' }}>&nbsp;Art</span>
         </p>
         <p className="eyebrow" style={{ marginTop: '0.9rem' }}>Espace d’administration</p>

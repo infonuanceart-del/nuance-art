@@ -25,18 +25,18 @@ for (const f of ['.env.local', '.env']) {
 }
 
 const AMBIANCES = {
-  'chefs-doeuvre': 'Une icône de l’histoire de l’art, imprimée en très haute définition pour retrouver la matière du tableau original.',
-  'orient-maroc': 'La lumière du Sud, les murs ocre et les patios : une pièce qui réchauffe immédiatement un intérieur.',
   calligraphie: 'Le geste de la plume, l’encre et l’or : une présence calme, qui se lit autant qu’elle se regarde.',
-  abstrait: 'Des formes pures qui structurent un mur sans jamais l’alourdir — le complément parfait d’un intérieur épuré.',
+  abstrait: 'La géométrie du zellige, transposée au mur : elle structure une pièce sans jamais l’alourdir.',
+  'orient-maroc': 'La lumière du Sud, les murs ocre et les patios : une pièce qui réchauffe immédiatement un intérieur.',
+  'boheme-berbere': 'Les motifs du tissage traditionnel, transposés au mur : chaleur, matière et artisanat.',
+  enluminure: 'L’or bruni et le lapis des manuscrits anciens, à hauteur de regard dans une entrée ou un salon.',
+  andalou: 'De Grenade à Fès : la mémoire andalouse, ses lustres et ses entrelacs, dans un intérieur contemporain.',
   'nature-botanique': 'Le végétal apaise une pièce. Cette planche apporte de la fraîcheur sans surcharger la décoration.',
-  japandi: 'L’équilibre japonais : des aplats calmes, une composition aérée, idéale au-dessus d’un lit ou d’une console.',
-  'villes-voyages': 'Une fenêtre ouverte sur ailleurs, qui donne de la profondeur à un mur trop plat.',
+  'villes-voyages': 'Une fenêtre ouverte sur la médina, qui donne de la profondeur à un mur trop plat.',
+  'chefs-doeuvre': 'Une pièce majeure des collections islamiques, imprimée en très haute définition pour retrouver la matière de l’original.',
+  animaux: 'Une planche animalière au dessin précis, valeur sûre en chambre d’enfant comme en bureau.',
   portraits: 'Un regard qui tient le mur à lui seul et donne du caractère à une entrée ou un bureau.',
   'noir-et-blanc': 'Le graphisme du noir et blanc s’accorde avec tout : bois clair, métal noir, murs colorés.',
-  affiches: 'L’esprit Belle Époque, à afficher en série dans un couloir ou une cage d’escalier.',
-  animaux: 'Une planche naturaliste au dessin précis, valeur sûre en chambre d’enfant comme en bureau.',
-  'boheme-berbere': 'Les motifs du tissage traditionnel, transposés au mur : chaleur, matière et artisanat.',
 };
 
 const FINITION =

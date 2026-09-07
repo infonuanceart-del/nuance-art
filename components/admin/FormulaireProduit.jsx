@@ -16,7 +16,7 @@ const TAILLES_DEFAUT = [
 
 const VIDE = {
   titre: '', artiste: '', epoque: '', technique: '', description: '',
-  theme: 'chefs-doeuvre', format: 'paysage', couleur: 'beige',
+  theme: 'art-islamique', format: 'paysage', couleur: 'beige',
   image: '', thumb: '', source: '', ratio: 0,
   tailles: TAILLES_DEFAUT, pieces: [],
   nouveaute: true, bestseller: false, promo: 0,

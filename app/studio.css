@@ -1,11 +1,6 @@
 /* Compléments de style propres au studio d'essayage et aux écrans annexes.
    Séparé de globals.css pour garder le design system lisible. */
 
-/* .frame déclare position:relative ; dans la scène du héros l'œuvre doit rester
-   absolue pour se poser au bon endroit du mur. Cette feuille est chargée après
-   globals.css, donc elle a le dernier mot. */
-.scene .scene-art { position: absolute; }
-
 /* les libellés du menu ne doivent jamais passer à la ligne */
 .nav-link { white-space: nowrap; }
 
@@ -87,7 +82,7 @@
   border-top: 1px solid var(--line);
   padding-top: 0.9rem;
 }
-.studio-total b { font-family: var(--font-display), serif; font-size: 1.25rem; }
+.studio-total b { font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif; font-size: 1.25rem; }
 
 /* --- bouton favori sur la carte produit --- */
 .card-coeur {
@@ -125,7 +120,7 @@
   opacity: 0.62;
 }
 .presse span {
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   font-size: clamp(0.95rem, 1.6vw, 1.2rem);
   letter-spacing: 0.06em;
   white-space: nowrap;
@@ -159,7 +154,7 @@
 @media (min-width: 780px) { .chiffres { grid-template-columns: repeat(4, 1fr); } }
 .chiffres b {
   display: block;
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   font-size: clamp(2rem, 3.6vw, 2.9rem);
   line-height: 1;
   font-weight: 400;

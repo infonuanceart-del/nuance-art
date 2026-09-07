@@ -1,4 +1,4 @@
-import { Fraunces, Manrope } from 'next/font/google';
+import { Bodoni_Moda, Inter } from 'next/font/google';
 import '../globals.css';
 
 /**
@@ -9,16 +9,15 @@ import '../globals.css';
  * les groupes entre parenthèses n'apparaissent jamais dans le chemin.
  */
 
-const display = Fraunces({
+const display = Bodoni_Moda({
   subsets: ['latin'],
-  axes: ['SOFT', 'WONK'],
+  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const sans = Manrope({
+const sans = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
@@ -34,7 +33,10 @@ export const viewport = { width: 'device-width', initialScale: 1 };
 export default function LayoutRacineAdmin({ children }) {
   return (
     <html lang="fr" className={`${display.variable} ${sans.variable}`}>
-      <body>{children}</body>
+      {/* Les extensions de navigateur (ColorZilla, gestionnaires de mots de passe)
+          posent leurs attributs sur <body> avant l'hydratation de React : on
+          tait l'avertissement pour cette balise seule, jamais pour ses enfants. */}
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

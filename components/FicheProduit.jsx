@@ -7,8 +7,25 @@ import { useBoutique } from './Boutique';
 import { CADRES } from '@/lib/taxonomie';
 import { dh, prixTaille, SEUIL_LIVRAISON } from '@/lib/prix';
 import {
-  IcoCamion, IcoCoeur, IcoCroix, IcoEtoile, IcoPanier, IcoPinceau, IcoRetour, IcoWhatsapp,
+  IcoBouclier, IcoCamion, IcoCheck, IcoCoeur, IcoCroix, IcoEtoile, IcoImage, IcoMoins,
+  IcoPanier, IcoPinceau, IcoPlus, IcoRegle, IcoRetour, IcoWhatsapp,
 } from './Icones';
+
+/* Ce que l'atelier garantit vraiment — repris des mentions de la fiche, pour
+   qu'aucune promesse affichee ici ne depasse ce que la boutique tient. */
+const GARANTIES = [
+  { Ico: IcoCamion, titre: 'Livré en 48 h', detail: 'Casablanca, Rabat, Marrakech, Tanger' },
+  { Ico: IcoBouclier, titre: 'Emballage renforcé', detail: 'Coins protégés, film et carton double' },
+  { Ico: IcoRetour, titre: 'Retour 14 jours', detail: 'Remboursé si l’œuvre ne vous va pas' },
+  { Ico: IcoCheck, titre: 'Paiement à la livraison', detail: 'Sans supplément, ou par virement' },
+];
+
+const FABRICATION = [
+  { Ico: IcoImage, texte: 'Impression pigmentaire douze couleurs' },
+  { Ico: IcoRegle, texte: 'Toile d’art 380 g ou papier mat 250 g' },
+  { Ico: IcoPinceau, texte: 'Moulure bois 20 mm, montage à la main' },
+  { Ico: IcoCheck, texte: 'Attaches et niveau à bulle fournis' },
+];
 
 /** Partie interactive de la fiche produit : visuel, taille, cadre, panier,
  *  et l'essai grandeur nature dans une fenêtre superposée. */
@@ -18,6 +35,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
   const [cadre, setCadre] = useState('noir');
   const [passe, setPasse] = useState(false);
   const [studio, setStudio] = useState(false);
+  const [qte, setQte] = useState(1);
 
   const prix = prixTaille(produit, taille, cadre);
   const aime = favoris.includes(produit.slug);
@@ -32,7 +50,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
     cadre,
     passe,
     prixUnit: prix.final,
-    qte: 1,
+    qte,
   });
 
   return (
@@ -112,6 +130,30 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
             </div>
           </div>
 
+          <div className="mt-3">
+            <h4 className="lab">Quantité</h4>
+            <div className="qte-choix">
+              <button
+                type="button"
+                onClick={() => setQte((n) => Math.max(1, n - 1))}
+                disabled={qte <= 1}
+                aria-label="Retirer un exemplaire"
+              >
+                <IcoMoins size={15} />
+              </button>
+              <span aria-live="polite">{qte}</span>
+              <button
+                type="button"
+                onClick={() => setQte((n) => Math.min(20, n + 1))}
+                disabled={qte >= 20}
+                aria-label="Ajouter un exemplaire"
+              >
+                <IcoPlus size={15} />
+              </button>
+              {qte > 1 && <em>{dh(prix.final * qte)} au total</em>}
+            </div>
+          </div>
+
           <div className="sticky-buy">
             <div className="row" style={{ flexWrap: 'nowrap' }}>
               <button className="btn btn-primary btn-lg" style={{ flex: 1 }} onClick={auPanier}>
@@ -136,10 +178,23 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
             </a>
           </div>
 
-          <div className="row mt-2" style={{ gap: '1.25rem' }}>
-            <span className="tiny muted row" style={{ gap: '0.4rem' }}><IcoCamion size={16} /> Livré en 48 h</span>
-            <span className="tiny muted row" style={{ gap: '0.4rem' }}><IcoRetour size={16} /> Retour 14 jours</span>
-          </div>
+          <ul className="rassurance">
+            {GARANTIES.map(({ Ico, titre, detail }) => (
+              <li key={titre}>
+                <Ico size={17} />
+                <div>
+                  <b>{titre}</b>
+                  <span>{detail}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <ul className="fabrication">
+            {FABRICATION.map(({ Ico, texte }) => (
+              <li key={texte}><Ico size={15} /> {texte}</li>
+            ))}
+          </ul>
 
           <div className="mt-3">
             <details className="acc-faq" open>

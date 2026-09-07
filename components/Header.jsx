@@ -115,6 +115,7 @@ export default function Header({ indexRecherche = [] }) {
       <header className={`header${scrolled ? ' scrolled' : ''}`}>
         <div className="wrap header-in">
           <Link href="/" className="logo" aria-label="Nuance Art, accueil">
+            <img src="/logo.png" alt="" className="logo-mark" width="384" height="384" />
             <b>Nuance<span>Art</span></b>
             <em>Casablanca</em>
           </Link>
@@ -157,6 +158,7 @@ export default function Header({ indexRecherche = [] }) {
               </div>
             ))}
 
+            <Link href="/bestsellers" className="nav-link">Best-sellers</Link>
             <Link href="/tableaux" className="nav-link">Toutes les œuvres</Link>
             <Link href="/promotions" className="nav-link accent">Promotions</Link>
           </nav>
@@ -221,7 +223,7 @@ export default function Header({ indexRecherche = [] }) {
         <div className="drawer-bg" onClick={() => setDrawer(false)} />
         <div className="drawer-panel">
           <div className="drawer-head">
-            <span className="logo"><b>Nuance<span>Art</span></b></span>
+            <span className="logo"><img src="/logo.png" alt="" className="logo-mark" width="384" height="384" /><b>Nuance<span>Art</span></b></span>
             <button className="icon-btn" onClick={() => setDrawer(false)} aria-label="Fermer le menu">
               <IcoCroix />
             </button>
@@ -243,6 +245,7 @@ export default function Header({ indexRecherche = [] }) {
                 </div>
               </div>
             ))}
+            <div className="acc-item"><Link className="acc-btn" href="/bestsellers">Best-sellers</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/tableaux">Toutes les œuvres</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/promotions" style={{ color: 'var(--clay)' }}>Promotions</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/a-propos">L’atelier</Link></div>

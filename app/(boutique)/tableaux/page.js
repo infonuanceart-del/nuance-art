@@ -6,9 +6,9 @@ import { lireProduits } from '@/lib/catalogue';
 export const metadata = {
   title: 'Tous les tableaux — catalogue Nuance Art',
   description:
-    'Parcourez le catalogue complet : abstrait, calligraphie, orientalisme, botanique, '
-    + 'estampes japonaises. Filtrez par format, couleur dominante et pièce, puis essayez '
-    + 'l’œuvre sur la photo de votre mur.',
+    'Parcourez le catalogue complet : calligraphie arabe, zellige, tapis anciens, '
+    + 'enluminures, scènes du Maroc et d’Andalousie. Filtrez par format, couleur '
+    + 'dominante et pièce de la maison.',
   alternates: { canonical: '/tableaux' },
 };
 

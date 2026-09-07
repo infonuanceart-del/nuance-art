@@ -71,9 +71,16 @@ body {
   font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.62;
+  /* Inter est dessine large : un poil de resserrement le pose bien sur le papier */
+  letter-spacing: -0.006em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* chiffres de meme chasse : les prix et les compteurs ne dansent plus */
+.price-now, .price-old, .hero-proof strong, .kpi b, .compteur, table td, table th {
+  font-variant-numeric: tabular-nums;
 }
 
 img, svg, video, canvas { display: block; max-width: 100%; }
@@ -98,18 +105,21 @@ ul, ol { list-style: none; padding: 0; }
 
 /* ------------------------------------------------------------ typographie */
 h1, h2, h3, h4 {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.015em;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
   color: var(--ink);
   text-wrap: balance;
+  /* le didone a un axe optique : on laisse le navigateur choisir la coupe */
+  font-optical-sizing: auto;
 }
 
-.d1 { font-size: clamp(2.6rem, 6.4vw, 5.1rem); }
-.d2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); }
-.d3 { font-size: clamp(1.5rem, 2.6vw, 2.15rem); }
-.d4 { font-size: clamp(1.15rem, 1.7vw, 1.4rem); line-height: 1.25; }
+/* Un didone gagne a etre resserre quand il grandit, et respire quand il rapetisse. */
+.d1 { font-size: clamp(2.55rem, 5.9vw, 4.8rem); line-height: 1; letter-spacing: -0.022em; }
+.d2 { font-size: clamp(2.05rem, 4.4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.016em; }
+.d3 { font-size: clamp(1.5rem, 2.6vw, 2.15rem); line-height: 1.12; letter-spacing: -0.01em; }
+.d4 { font-size: clamp(1.12rem, 1.7vw, 1.35rem); line-height: 1.28; letter-spacing: -0.004em; }
 
 .lede {
   font-size: clamp(1.02rem, 1.35vw, 1.2rem);
@@ -333,14 +343,26 @@ h1, h2, h3, h4 {
 
 .logo {
   display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  font-family: var(--font-display), serif;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   font-size: 1.42rem;
   letter-spacing: -0.02em;
   line-height: 1;
   flex-shrink: 0;
 }
+
+/* Le medaillon grave : PNG detoure sur fond transparent, il se pose aussi
+   bien sur le papier clair de l'entete que sur le fond sombre du pied. */
+.logo-mark {
+  display: block;
+  width: auto;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--r-full);
+}
+
+.logo-mark-lg { height: 84px; }
 
 .logo b { font-weight: 400; }
 .logo span {
@@ -353,11 +375,16 @@ h1, h2, h3, h4 {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--muted);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
   display: none;
 }
 
 @media (min-width: 1120px) { .logo em { display: inline; } }
+
+/* Le pied et l'admin posent le medaillon sur fond sombre : un peu plus grand,
+   il porte seul la marque au-dessus du texte courant. */
+.footer .logo-mark { height: 54px; }
+.admin-side .logo-mark { height: 34px; }
 
 .nav {
   display: none;
@@ -423,7 +450,7 @@ h1, h2, h3, h4 {
 }
 
 .mega-col h4 {
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -522,7 +549,7 @@ h1, h2, h3, h4 {
   border: 0;
   background: transparent;
   font-size: clamp(1.05rem, 2.4vw, 1.5rem);
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   padding: 0.35rem 0;
 }
 .search-in input::placeholder { color: var(--sand-2); }
@@ -628,24 +655,39 @@ h1, h2, h3, h4 {
 /* ================================================================== HERO */
 .hero {
   position: relative;
-  background: var(--sand);
+  isolation: isolate;
+  background: var(--paper-2);
   overflow: hidden;
+}
+
+/* Deux lavis chauds : la lumiere tombe du haut-droite, comme sous la verriere
+   de l'atelier, et l'argile remonte du coin bas-gauche. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(66% 58% at 84% 4%, rgba(195, 154, 78, 0.22), transparent 62%),
+    radial-gradient(72% 66% at 2% 100%, rgba(176, 81, 44, 0.10), transparent 58%),
+    linear-gradient(180deg, var(--sand) 0%, var(--paper-2) 74%, var(--paper) 100%);
 }
 
 .hero-grid {
   display: grid;
-  gap: clamp(2rem, 5vw, 3.5rem);
+  gap: clamp(2.25rem, 5vw, 4rem);
   align-items: center;
   padding-block: clamp(2.75rem, 6vw, 5.5rem);
 }
 
 @media (min-width: 940px) {
-  .hero-grid { grid-template-columns: 0.92fr 1.08fr; }
+  .hero-grid { grid-template-columns: 1fr 1.02fr; }
 }
 
 .hero-copy { position: relative; z-index: 2; }
-.hero-copy .d1 { margin: 0.9rem 0 1.1rem; }
+.hero-copy .d1 { margin: 1rem 0 1.15rem; text-wrap: pretty; }
 .hero-copy .d1 i { font-style: italic; color: var(--clay); }
+.hero-copy .lede { max-width: 44ch; }
 
 .hero-cta {
   display: flex;
@@ -654,66 +696,252 @@ h1, h2, h3, h4 {
   margin-top: 1.9rem;
 }
 
+/* entre 940 et 1180 px la colonne est trop juste : les deux boutons se
+   partagent la ligne au lieu de s'empiler avec deux largeurs differentes */
+@media (min-width: 940px) and (max-width: 1180px) {
+  .hero-cta .btn { flex: 1 1 200px; justify-content: center; }
+}
+
+/* La ligne de preuves : trois chiffres separes par des filets, pas des cartes.
+   Une grille plutot qu'un flex qui passe a la ligne — un filet orphelin en
+   deuxieme ligne se voit tout de suite. */
 .hero-proof {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-top: 2.25rem;
-  padding-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  justify-content: start;
+  margin-top: 2.4rem;
+  padding-top: 1.7rem;
   border-top: 1px solid var(--line);
-  flex-wrap: wrap;
+}
+
+.hero-proof div:not(:last-child) { padding-right: clamp(0.9rem, 2.2vw, 1.8rem); }
+
+.hero-proof div + div {
+  padding-left: clamp(0.9rem, 2.2vw, 1.8rem);
+  border-left: 1px solid var(--line-soft);
 }
 
 .hero-proof div strong {
   display: block;
-  font-family: var(--font-display), serif;
-  font-size: 1.55rem;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
+  font-size: 1.7rem;
   line-height: 1;
   font-weight: 400;
+  letter-spacing: -0.01em;
 }
-.hero-proof div span { font-size: 0.78rem; color: var(--muted); }
 
-/* la scène : un mur avec un tableau accroché */
-.scene {
+.hero-proof div span {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ------------------------------------------- la cimaise : une salle d'expo
+   Un mur de galerie, sa cimaise, la lumiere d'un eclairage de tableau, et le
+   cartel sous l'oeuvre. Le meme vocabulaire qu'une salle d'exposition. */
+.cimaise {
   position: relative;
-  aspect-ratio: 4 / 3.2;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: clamp(460px, 50vw, 640px);
   border-radius: var(--r-l);
   overflow: hidden;
   box-shadow: var(--sh-l);
-  background: #cdbfa9;
 }
 
-.scene > img.room {
+.cimaise-mur {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  z-index: 0;
+  background: linear-gradient(176deg, #f2e9d9 0%, #e7dcc8 54%, #d9ccb4 100%);
 }
 
-.scene-art {
+/* le grain du platre : une trame a la limite du visible, jamais du bruit gris */
+.cimaise-mur::after {
+  content: "";
   position: absolute;
-  transition: opacity 0.7s var(--ease);
+  inset: 0;
+  background:
+    repeating-linear-gradient(101deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(11deg, rgba(22, 18, 14, 0.012) 0 1px, transparent 1px 13px);
 }
 
-.scene-tag {
+/* le halo de l'eclairage de tableau, et l'ombre qui retombe vers le sol */
+.cimaise-lueur {
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
+  inset: 0;
+  background:
+    radial-gradient(44% 40% at 50% 30%, rgba(255, 250, 236, 0.9), transparent 70%),
+    radial-gradient(130% 80% at 50% 128%, rgba(22, 18, 14, 0.2), transparent 56%);
+}
+
+.cimaise-accroche {
+  position: relative;
+  z-index: 1;
+}
+
+/* la cimaise proprement dite : une moulure fine en haut du mur */
+.cimaise-rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7%;
+  height: 5px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(22, 18, 14, 0.13) 62%, rgba(22, 18, 14, 0.04));
+  box-shadow: 0 3px 6px rgba(22, 18, 14, 0.09);
+}
+
+/* le fil d'accrochage, du rail au bord haut du cadre */
+.cimaise-fil {
+  position: absolute;
+  left: 50%;
+  top: calc(7% + 4px);
+  height: 5%;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(22, 18, 14, 0.42), rgba(22, 18, 14, 0.2));
+}
+
+.cimaise-cadres {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 82%;
+  aspect-ratio: 3 / 4;
+}
+
+/* .frame se pose en relative ; ici les oeuvres s'empilent pour le fondu */
+.cimaise .cimaise-cadre {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(0.982);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.cimaise .cimaise-cadre.est-vue { opacity: 1; transform: none; }
+
+.cimaise .mat { height: 100%; }
+.cimaise .mat > img { width: 100%; height: 100%; object-fit: cover; }
+
+/* le cartel : ce que le musee accroche a cote de l'oeuvre */
+.cartel {
+  position: relative;
+  z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 0.75rem;
-  background: rgba(252, 250, 246, 0.92);
-  backdrop-filter: blur(8px);
+  gap: 0.85rem 1.5rem;
+  flex-wrap: wrap;
+  margin: 0 clamp(0.85rem, 2.2vw, 1.35rem) clamp(0.85rem, 2.2vw, 1.35rem);
+  padding: 0.95rem 1.1rem;
+  background: rgba(252, 250, 246, 0.93);
+  border: 1px solid rgba(22, 18, 14, 0.09);
   border-radius: var(--r-m);
-  padding: 0.7rem 0.75rem 0.7rem 1rem;
   box-shadow: var(--sh-m);
+  backdrop-filter: blur(8px);
 }
 
-.scene-tag strong { font-size: 0.9rem; display: block; }
-.scene-tag span { font-size: 0.76rem; color: var(--muted); }
+.cartel-texte { min-width: 0; }
+
+.cartel-texte strong {
+  display: block;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.12rem;
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+}
+
+.cartel-texte > span {
+  display: block;
+  font-size: 0.79rem;
+  color: var(--ink-soft);
+  margin-top: 0.2rem;
+}
+
+.cartel-texte i { font-style: italic; }
+.cartel-tech { font-size: 0.72rem !important; color: var(--muted) !important; }
+
+.cartel-prix {
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.cartel-des {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cartel-prix > strong {
+  display: block;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.cartel-prix .link-arrow { margin-top: 0.25rem; font-size: 0.8rem; }
+
+/* les pastilles de rotation, discretes en haut du mur */
+.cimaise-pastilles {
+  position: absolute;
+  z-index: 3;
+  top: clamp(0.85rem, 2.2vw, 1.35rem);
+  right: clamp(0.85rem, 2.2vw, 1.35rem);
+  display: flex;
+  gap: 0.4rem;
+}
+
+.cimaise-pastilles button {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(22, 18, 14, 0.17);
+  transition: background 0.3s var(--ease);
+}
+
+.cimaise-pastilles button:hover { background: rgba(22, 18, 14, 0.34); }
+.cimaise-pastilles button.est-vue { background: var(--clay); }
+
+/* Empilee, la cimaise prendrait toute la largeur : le mur s'etirerait en
+   panoramique et l'oeuvre y paraitrait perdue. On la ramene a un format d'affiche. */
+@media (max-width: 939px) {
+  .cimaise {
+    max-width: 540px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+
+/* Sur telephone les trois preuves tiennent en colonnes egales : un filet orphelin
+   en deuxieme ligne trahit tout de suite un gabarit qui a debordé. */
+@media (max-width: 640px) {
+  .hero-proof { grid-template-columns: repeat(3, 1fr); }
+  .hero-proof div + div { padding-left: 0.85rem; }
+  .hero-proof div:not(:last-child) { padding-right: 0.5rem; }
+  .hero-proof div strong { font-size: 1.35rem; }
+  .hero-proof div span { font-size: 0.63rem; letter-spacing: 0.05em; }
+}
+
+@media (max-width: 560px) {
+  /* deux boutons de largeurs differentes font une pile bancale */
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { justify-content: center; }
+
+  .cimaise { min-height: 430px; }
+  .cimaise-cadres { height: 78%; }
+  .cartel { align-items: flex-start; }
+  .cartel-prix { text-align: left; margin-left: 0; }
+}
 
 /* cadre réutilisable (hero, studio, fiche produit) */
 .frame {
@@ -872,7 +1100,7 @@ h1, h2, h3, h4 {
 .card-body { padding-top: 0.85rem; display: flex; flex-direction: column; gap: 0.15rem; }
 
 .card-title {
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   font-size: 1.02rem;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -1008,7 +1236,7 @@ h1, h2, h3, h4 {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.16);
   font-size: 0.82rem;
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
 }
 
 .step strong { display: block; font-size: 0.98rem; margin-bottom: 0.15rem; }
@@ -1115,7 +1343,7 @@ h1, h2, h3, h4 {
 }
 
 .panel h4 {
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1235,7 +1463,7 @@ h1, h2, h3, h4 {
 .fgroup:last-child { border-bottom: 0; }
 
 .fgroup h4 {
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1351,7 +1579,7 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
   margin: 1.1rem 0 0.35rem;
 }
-.price-now { font-size: 1.85rem; font-family: var(--font-display), serif; }
+.price-now { font-size: 1.85rem; font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif; }
 .price-old { color: var(--muted); text-decoration: line-through; }
 
 .size-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 0.5rem; }
@@ -1433,7 +1661,7 @@ h1, h2, h3, h4 {
 }
 .cd-box b {
   display: block;
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   font-size: 1.9rem;
   line-height: 1;
   font-weight: 400;
@@ -1451,7 +1679,7 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 .promo-strip > div { background: var(--paper); padding: 1.35rem; }
-.promo-strip b { font-family: var(--font-display), serif; font-size: 1.6rem; display: block; color: var(--clay); }
+.promo-strip b { font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif; font-size: 1.6rem; display: block; color: var(--clay); }
 
 /* ================================================================= PANIER */
 .cart-layout { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
@@ -1503,7 +1731,7 @@ h1, h2, h3, h4 {
   margin-top: 0.3rem;
   font-size: 1.15rem;
   font-weight: 650;
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
 }
 
 /* ================================================================ FORMS */
@@ -1576,7 +1804,7 @@ textarea.inp { min-height: 118px; resize: vertical; }
   background: var(--sand-2);
   display: grid;
   place-items: center;
-  font-family: var(--font-display), serif;
+  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
   font-size: 0.9rem;
 }
 
@@ -1590,7 +1818,7 @@ textarea.inp { min-height: 118px; resize: vertical; }
 
 .footer h4 {
   color: var(--paper);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1609,7 +1837,7 @@ textarea.inp { min-height: 118px; resize: vertical; }
 
 .footer a { font-size: 0.875rem; line-height: 2.05; transition: color 0.2s var(--ease); }
 .footer a:hover { color: var(--gold); }
-.footer .logo { color: var(--paper); margin-bottom: 0.9rem; }
+.footer .logo { color: var(--paper); margin-bottom: 0.9rem; align-items: center; }
 .footer .logo span { color: var(--gold); }
 .footer p { font-size: 0.875rem; }
 
@@ -1643,6 +1871,86 @@ textarea.inp { min-height: 118px; resize: vertical; }
   font-size: 0.66rem;
   letter-spacing: 0.06em;
 }
+
+/* ------------------------------------------------- fiche produit : achat */
+
+/* Choix de la quantite : trois cases collees, comme un compteur physique. */
+.qte-choix {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 0.55rem;
+}
+
+.qte-choix button {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.qte-choix button:first-of-type { border-radius: var(--r-s) 0 0 var(--r-s); }
+.qte-choix button:last-of-type { border-radius: 0 var(--r-s) var(--r-s) 0; }
+.qte-choix button:hover:not(:disabled) { background: var(--wash); }
+.qte-choix button:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.qte-choix span {
+  min-width: 52px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-block: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+}
+
+.qte-choix em {
+  font-style: normal;
+  margin-left: 0.85rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+/* Ce sur quoi la boutique s'engage : quatre promesses tenues, pas un decor. */
+.rassurance {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+@media (min-width: 520px) { .rassurance { grid-template-columns: 1fr 1fr; } }
+
+.rassurance li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.rassurance svg { color: var(--clay); flex-shrink: 0; margin-top: 0.15rem; }
+.rassurance div { display: grid; gap: 0.1rem; min-width: 0; }
+.rassurance b { font-size: 0.84rem; font-weight: 500; }
+.rassurance span { font-size: 0.76rem; color: var(--muted); }
+
+.fabrication {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.fabrication li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.fabrication svg { color: var(--muted); flex-shrink: 0; }
 
 /* =============================================================== WHATSAPP */
 .wa-float {
@@ -1709,7 +2017,7 @@ textarea.inp { min-height: 118px; resize: vertical; }
   padding: 1.15rem;
 }
 .kpi span { font-size: 0.76rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
-.kpi b { display: block; font-family: var(--font-display), serif; font-size: 1.9rem; font-weight: 400; margin-top: 0.3rem; }
+.kpi b { display: block; font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif; font-size: 1.9rem; font-weight: 400; margin-top: 0.3rem; }
 
 .table-wrap {
   background: var(--paper);
@@ -1744,6 +2052,163 @@ tbody tr:hover { background: var(--wash); }
 .tag.warn { background: #fdf1e4; color: #8a5a1c; }
 .tag.no { background: #fbe9e6; color: #8d3f21; }
 
+/* ------------------------------------------------- tableau de bord admin */
+
+/* Selecteur de periode : un seul choix a la fois, pose comme un segment. */
+.seg {
+  display: inline-flex;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-full);
+  padding: 3px;
+  gap: 2px;
+}
+
+.seg button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.79rem;
+  padding: 0.42rem 0.8rem;
+  border-radius: var(--r-full);
+  font-family: inherit;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.seg button:hover { color: var(--ink); }
+.seg button.on { background: var(--ink); color: var(--paper); }
+
+/* L'ecart accompagne le chiffre sans lui voler la vedette : le KPI reste le
+   nombre, l'evolution n'est qu'une glose. */
+.kpi-ecart {
+  font-style: normal;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  display: inline-block;
+  margin-top: 0.45rem;
+}
+
+.kpi-ecart.hausse { color: #3f5230; }
+.kpi-ecart.baisse { color: var(--clay-dark); }
+.kpi-ecart.stable { color: var(--muted); }
+
+.admin-note {
+  color: var(--muted);
+  margin: -1rem 0 1.5rem;
+}
+
+/* Rappel d'action : la seule zone du tableau de bord qui appelle un geste. */
+.admin-rappel {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #fdf1e4;
+  border: 1px solid rgba(138, 90, 28, 0.22);
+  border-radius: var(--r-m);
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1.5rem;
+  color: #8a5a1c;
+  transition: border-color 0.2s var(--ease);
+}
+
+.admin-rappel:hover { border-color: rgba(138, 90, 28, 0.5); }
+.admin-rappel > b { font-size: 1.5rem; font-family: var(--font-display), Georgia, serif; font-weight: 400; }
+.admin-rappel > span { font-size: 0.88rem; }
+.admin-rappel > em { margin-left: auto; font-style: normal; font-size: 0.82rem; white-space: nowrap; }
+
+.carte {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.carte-tete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+
+.carte-intro { font-size: 0.86rem; color: var(--muted); margin: -0.35rem 0 1rem; }
+
+.carte-pied {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line-soft);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.carte-pied b { color: var(--ink); font-weight: 500; }
+
+/* La carte fournit deja le cadre : la table qu'elle contient ne redouble pas. */
+.table-wrap.plat { border: 0; border-radius: 0; background: none; margin: -0.35rem -1.25rem -1.25rem; }
+.table-wrap.plat table { font-size: 0.85rem; }
+.table-wrap.plat th { padding-inline: 1.25rem; }
+.table-wrap.plat td { padding-inline: 1.25rem; }
+
+.grille-2 { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 1080px) { .grille-2 { grid-template-columns: 1fr 1fr; } }
+
+.graph { display: block; width: 100%; height: auto; overflow: visible; }
+
+.graph-bornes {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
+.barres { display: grid; gap: 0.7rem; }
+
+.barres li {
+  display: grid;
+  grid-template-columns: minmax(0, 8rem) 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.84rem;
+}
+
+.barres-nom { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink-soft); }
+.barres-piste { background: var(--sand); border-radius: var(--r-full); height: 8px; overflow: hidden; }
+.barres-jauge { display: block; height: 100%; background: var(--clay); border-radius: var(--r-full); min-width: 2px; }
+.barres b { font-weight: 500; white-space: nowrap; font-size: 0.82rem; }
+
+.classement { display: grid; gap: 0.2rem; }
+
+.classement li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 0.86rem;
+}
+
+.classement li:last-child { border-bottom: 0; }
+.classement-rang {
+  width: 1.4rem;
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+.classement img { width: 40px; height: 40px; object-fit: cover; border-radius: var(--r-xs); flex-shrink: 0; }
+.classement div { min-width: 0; flex: 1; display: grid; gap: 0.1rem; }
+.classement div > * { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.classement div .tiny { color: var(--muted); }
+.classement a:hover { color: var(--clay); }
+.classement > li > b { white-space: nowrap; font-weight: 500; }
+
 .login-page {
   min-height: 100vh;
   display: grid;
@@ -1751,6 +2216,15 @@ tbody tr:hover { background: var(--wash); }
   padding: var(--gutter);
   background: linear-gradient(140deg, var(--sand), var(--paper-2));
 }
+/* L'ecran de connexion presente le medaillon en pleine largeur, au-dessus
+   du mot-symbole plutot qu'a cote : la carte est etroite. */
+.login-card .logo {
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+  text-align: center;
+}
+
 .login-card {
   width: min(430px, 100%);
   background: var(--paper);

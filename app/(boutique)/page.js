@@ -4,19 +4,19 @@ import { THEMES, PIECES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import CarteProduit from '@/components/CarteProduit';
 import HeroScene from '@/components/HeroScene';
-import Studio from '@/components/Studio';
 import Reveal from '@/components/Reveal';
 import Compteur from '@/components/Compteur';
 import {
-  IcoBouclier, IcoCamion, IcoEtoile, IcoFleche, IcoPinceau, IcoRegle, IcoRetour,
+  IcoBouclier, IcoCamion, IcoEtoile, IcoFleche, IcoRegle, IcoRetour,
 } from '@/components/Icones';
 import donneesPieces from '@/data/pieces.json';
 
 export const metadata = {
-  title: 'Nuance Art — Tableaux et affiches d’art, testés sur votre mur',
+  title: 'Nuance Art — Calligraphie, zellige et art traditionnel encadrés',
   description:
-    'Tableaux, affiches et calligraphies imprimés et encadrés à Casablanca. Chargez la photo '
-    + 'de votre pièce et voyez l’œuvre à la taille réelle avant de commander. Livraison 48 h au Maroc.',
+    'Calligraphies arabes, zelliges, tapis anciens et enluminures, imprimés au pigment et '
+    + 'encadrés à Casablanca. Une galerie d’art traditionnel pensée pour les intérieurs '
+    + 'marocains. Livraison 48 h partout au Maroc.',
   alternates: { canonical: '/' },
 };
 
@@ -62,11 +62,25 @@ export default async function Accueil() {
   const [produits, reglages] = await Promise.all([lireProduits(), lireReglages()]);
   const pieces = donneesPieces.pieces;
 
-  const bestsellers = produits.filter((p) => p.bestseller).slice(0, 8);
+  const tousBest = produits.filter((p) => p.bestseller);
+  const bestsellers = tousBest.slice(0, 8);
+  const compteBest = tousBest.length;
   const nouveautes = produits.filter((p) => p.nouveaute).slice(0, 4);
   const promos = produits.filter((p) => p.promo > 0).slice(0, 4);
-  const heros = produits.filter((p) => p.format === 'portrait').slice(0, 4);
-  const pourStudio = produits.slice(0, 40);
+  // La cimaise du héros montre une œuvre par grande catégorie plutôt que les
+  // quatre premières du catalogue, pour que les quatre cadres ne se ressemblent
+  // pas. Format portrait : c'est celui du cadre accroché au mur.
+  const FAMILLES = ['heritage-marocain', 'art-contemporain', 'nature-paysage', 'art-islamique'];
+  const heros = FAMILLES
+    .map((t) => produits.find((p) => p.theme === t && p.format === 'portrait'))
+    .filter(Boolean);
+  // filet de sécurité si une famille venait à manquer d'œuvre verticale
+  if (heros.length < 3) {
+    for (const p of produits.filter((p) => p.format === 'portrait')) {
+      if (heros.length >= 4) break;
+      if (!heros.includes(p)) heros.push(p);
+    }
+  }
 
   // une image de couverture et un décompte par collection
   const couvertures = Object.fromEntries(
@@ -94,30 +108,30 @@ export default async function Accueil() {
           <div className="hero-copy">
             <span className="eyebrow">Atelier d’édition d’art — Casablanca</span>
             <h1 className="d1">
-              L’art qui trouve<br />sa place. <i>Vraiment.</i>
+              L’art qui trouve<br /><i>sa place.</i>
             </h1>
             <p className="lede">
-              Choisissez une œuvre, chargez la photo de votre pièce et voyez-la accrochée
-              à la taille réelle avant de commander. Impression et encadrement dans notre
-              atelier, livraison en 48 h au Maroc.
+              Calligraphies, zelliges, tapis anciens et enluminures des grandes collections,
+              réédités en haute définition, imprimés au pigment et encadrés à la main dans
+              notre atelier. Livrés prêts à accrocher, en 48 h partout au Maroc.
             </p>
             <div className="hero-cta">
-              <Link href="/studio" className="btn btn-primary btn-lg">
-                <IcoPinceau size={17} /> Tester sur mon mur
+              <Link href="/tableaux" className="btn btn-primary btn-lg">
+                Découvrir les {produits.length} œuvres <IcoFleche size={17} />
               </Link>
-              <Link href="/tableaux" className="btn btn-ghost btn-lg">
-                Voir les {produits.length} œuvres
-              </Link>
+              <a href="#collections" className="btn btn-ghost btn-lg">
+                Parcourir les collections
+              </a>
             </div>
 
             <div className="hero-proof">
               <div>
                 <strong>4,8/5</strong>
-                <span>sur 340 avis clients</span>
+                <span>sur 340 avis</span>
               </div>
               <div>
                 <strong>48 h</strong>
-                <span>livraison grandes villes</span>
+                <span>grandes villes</span>
               </div>
               <div>
                 <strong>14 j</strong>
@@ -126,7 +140,7 @@ export default async function Accueil() {
             </div>
           </div>
 
-          <HeroScene piece={pieces[0]} oeuvres={heros} />
+          <HeroScene oeuvres={heros} />
         </div>
       </section>
 
@@ -149,21 +163,44 @@ export default async function Accueil() {
       <div className="wrap">
         <div className="reassure">
           <div><IcoCamion size={22} /><div><strong>Livraison 48 h</strong><p>Casablanca, Rabat, Marrakech, Tanger — offerte dès 600 DH.</p></div></div>
-          <div><IcoRegle size={22} /><div><strong>Taille réelle</strong><p>Le studio calcule les centimètres, pas une vague vignette.</p></div></div>
+          <div><IcoRegle size={22} /><div><strong>Cinq formats</strong><p>Du 40 × 30 au 120 × 80, avec les centimètres annoncés.</p></div></div>
           <div><IcoBouclier size={22} /><div><strong>Paiement à la livraison</strong><p>Vous payez quand le colis est entre vos mains.</p></div></div>
           <div><IcoRetour size={22} /><div><strong>14 jours pour changer</strong><p>Mauvais format ? On échange, sans discussion.</p></div></div>
         </div>
       </div>
 
-      {/* --------------------------------------------------- COLLECTIONS */}
+      {/* ---------------------------------------------------- BESTSELLERS */}
       <section className="section wrap">
+        <Reveal className="sec-head">
+          <div>
+            <span className="eyebrow">Les plus accrochés</span>
+            <h2 className="d2">Ce que les Marocains choisissent</h2>
+            <p className="lede">
+              Les {compteBest} œuvres qui reviennent commande après commande, de Casablanca
+              à Tanger. Calligraphies, zelliges et tapis en tête.
+            </p>
+          </div>
+          <Link href="/bestsellers" className="btn btn-clay">
+            Voir les {compteBest} best-sellers <IcoFleche size={16} />
+          </Link>
+        </Reveal>
+
+        <div className="grid-produits">
+          {bestsellers.map((p, i) => (
+            <CarteProduit key={p.slug} produit={p} priority={i < 4} />
+          ))}
+        </div>
+      </section>
+
+      {/* --------------------------------------------------- COLLECTIONS */}
+      <section className="section wrap" id="collections">
         <Reveal className="sec-head">
           <div>
             <span className="eyebrow">Collections</span>
             <h2 className="d2">Douze univers, une même exigence</h2>
             <p className="lede">
-              Chaque collection est choisie pour vivre dans une pièce précise — pas pour
-              remplir un catalogue. Cliquez pour découvrir.
+              De la calligraphie coranique au zellige, du tapis ancien à l’enluminure :
+              chaque collection est choisie pour vivre dans un intérieur marocain.
             </p>
           </div>
           <Link href="/tableaux" className="link-arrow">Tout le catalogue <IcoFleche size={16} /></Link>
@@ -179,70 +216,6 @@ export default async function Accueil() {
               </div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------- BESTSELLERS */}
-      <section className="section-tight wrap">
-        <Reveal className="sec-head">
-          <div>
-            <span className="eyebrow">Les plus accrochés</span>
-            <h2 className="d2">Ce que les Marocains choisissent</h2>
-          </div>
-          <Link href="/tableaux?tri=populaires" className="link-arrow">Voir les best-sellers <IcoFleche size={16} /></Link>
-        </Reveal>
-
-        <div className="grid-produits">
-          {bestsellers.map((p, i) => (
-            <CarteProduit key={p.slug} produit={p} priority={i < 4} />
-          ))}
-        </div>
-      </section>
-
-      {/* --------------------------------------------------------- STUDIO */}
-      <section className="section studio-teaser" id="studio">
-        <div className="wrap studio-grid">
-          <div>
-            <span className="eyebrow">Le studio Nuance</span>
-            <h2 className="d2">Accrochez-la avant de l’acheter</h2>
-            <p className="lede">
-              La question n’est jamais « est-ce que c’est beau ». C’est « est-ce que
-              ça va chez moi, à cette taille, sur ce mur ». Le studio répond en dix secondes.
-            </p>
-            <Link href="/studio" className="btn btn-clay btn-lg mt-3">
-              <IcoPinceau size={17} /> Ouvrir le studio en grand
-            </Link>
-          </div>
-
-          <div>
-            <div className="steps" style={{ marginTop: 0 }}>
-              <div className="step">
-                <b>1</b>
-                <div>
-                  <strong>Photographiez votre mur</strong>
-                  <p>Depuis votre téléphone, de face, en gardant un meuble dans le cadre.</p>
-                </div>
-              </div>
-              <div className="step">
-                <b>2</b>
-                <div>
-                  <strong>Donnez l’échelle</strong>
-                  <p>Un curseur, la largeur du mur, et les centimètres deviennent justes.</p>
-                </div>
-              </div>
-              <div className="step">
-                <b>3</b>
-                <div>
-                  <strong>Essayez, comparez, partagez</strong>
-                  <p>Formats, cadres, mur de plusieurs cadres — puis téléchargez l’image.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="wrap" style={{ marginTop: 'clamp(2rem, 4vw, 3.25rem)' }}>
-          <Studio oeuvres={pourStudio} pieces={pieces} compact />
         </div>
       </section>
 

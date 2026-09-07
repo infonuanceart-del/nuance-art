@@ -28,7 +28,7 @@ export default function BarreLaterale() {
 
   return (
     <nav className="admin-side" aria-label="Navigation de l’administration">
-      <p className="logo">Nuance<span>&nbsp;Art</span></p>
+      <p className="logo"><img src="/logo.png" alt="" className="logo-mark" width="384" height="384" />Nuance<span>&nbsp;Art</span></p>
 
       {LIENS.map(({ href, nom: libelle, Ico }) => {
         // « actif » sur la section, mais /admin ne s'allume que sur lui-même.
