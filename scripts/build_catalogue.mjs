@@ -282,9 +282,15 @@ async function main() {
       const sujet = [o.title, o.objectName, o.classification, o.medium, o.culture, o.period]
         .filter(Boolean).join(' ');
       if (HORS_SUJET.test(sujet)) continue;
+
+      // Le nom de l'auteur n'entre que dans le test du theme, jamais dans les
+      // exclusions : une categorie peut se definir par ses peintres (« Van Gogh,
+      // Monet, Degas ») alors qu'un patronyme ne doit jamais faire ecarter une
+      // oeuvre — un « Christian » n'est pas une scene de la Nativite.
+      const sujetEtAuteur = sujet + ' ' + (o.artistDisplayName || '');
       // La recherche du Met reste approximative : on exige que l'oeuvre parle
       // vraiment du theme sous lequel on s'apprete a la vendre.
-      if (theme.motif && !theme.motif.test(sujet)) continue;
+      if (theme.motif && !theme.motif.test(sujetEtAuteur)) continue;
       if (!o.title || o.title.length < 3) continue;
       let titre = nettoyerTitre(o.title);
 
@@ -311,9 +317,22 @@ async function main() {
     // --- 3. les images, quatre de front : chacune pese plusieurs megaoctets ---
     const traites = await enParallele(retenus, 4, async ({ o, titre, slug }) => {
       try {
-        const res = await fetch(o.primaryImage);
-        if (!res.ok) return null;
-        const buf = Buffer.from(await res.arrayBuffer());
+        // Les masters du Met pesent plusieurs megaoctets et leur serveur est
+        // lent : « Arabs Crossing a Ford » demande 24 secondes. Sans delai
+        // explicite ni reprise, la connexion est coupee (« terminated ») et
+        // toute une categorie peut finir vide. On patiente, et on insiste.
+        let buf = null;
+        for (let essai = 0; essai < 3 && !buf; essai++) {
+          try {
+            const res = await fetch(o.primaryImage, { signal: AbortSignal.timeout(90000) });
+            if (!res.ok) return null;
+            buf = Buffer.from(await res.arrayBuffer());
+          } catch (e) {
+            if (essai === 2) throw e;
+            await sleep(1500 * (essai + 1));
+          }
+        }
+        if (!buf) return null;
 
         const img = sharp(buf);
         const meta = await img.metadata();
@@ -353,14 +372,13 @@ async function main() {
       produits.push({
         slug,
         titre,
-        artiste: nettoyerArtiste(o.artistDisplayName, o.culture),
-        epoque: (o.objectDate || '').slice(0, 40),
-        technique: (o.medium || '').slice(0, 90),
-        description: descriptionDe(o),
+        artiste: (o.artistDisplayName || '').trim() || 'Artiste anonyme',
+        epoque: (o.objectDate || '').trim(),
+        technique: (o.medium || '').trim(),
         theme: theme.slug,
-        format: formatDe(ratio),
-        couleur: couleurDe(teinte),
-        ratio: Math.round(ratio * 1000) / 1000,
+        format: ratio > 1.15 ? 'paysage' : ratio < 0.87 ? 'portrait' : 'carre',
+        couleur: pickColor(teinte.r, teinte.g, teinte.b),
+        ratio: Number(ratio.toFixed(4)),
         image: '/media/art/' + slug + '.webp',
         thumb: '/media/art/' + slug + '-thumb.webp',
         source: o.objectURL || '',

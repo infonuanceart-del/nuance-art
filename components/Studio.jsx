@@ -396,11 +396,28 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
             })}
           </div>
 
+          {/* Tant que le client regarde une piece d'exemple, l'essai ne lui parle
+              pas vraiment de chez lui : l'invitation a charger son propre mur
+              passe donc devant, et l'astuce d'echelle ne vient qu'apres. */}
           {aide && fond && !fond.perso && (
-            <div className="stage-aide">
-              <b>Astuce</b> — réglez d’abord la largeur du mur à droite : les tailles
-              s’affichent alors à l’échelle réelle.
-              <button onClick={() => setAide(false)} aria-label="Masquer l’astuce"><IcoCroix size={14} /></button>
+            <div className="stage-invite">
+              <button onClick={() => setAide(false)} className="stage-invite-fermer" aria-label="Masquer">
+                <IcoCroix size={14} />
+              </button>
+              <b>Voyez-la sur votre mur</b>
+              <p>
+                Chargez une photo de votre pièce : l’œuvre s’y pose à sa taille réelle,
+                cadre compris. Rien ne quitte votre appareil.
+              </p>
+              <div className="stage-invite-actions">
+                <button className="btn btn-primary btn-sm" onClick={() => fichier.current?.click()}>
+                  <IcoImage size={15} /> Charger la photo de mon mur
+                </button>
+                <button className="btn btn-ghost btn-sm" onClick={() => photo.current?.click()}>
+                  <IcoCamera size={15} /> Prendre la photo
+                </button>
+              </div>
+              <span>ou continuez sur cette pièce d’exemple</span>
             </div>
           )}
         </div>

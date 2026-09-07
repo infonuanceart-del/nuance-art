@@ -331,3 +331,65 @@
 }
 .voile.on { opacity: 1; visibility: visible; }
 @media (min-width: 1040px) { .voile { display: none; } }
+
+/* Invitation a charger son propre mur : elle occupe le centre de la scene
+   tant que le client regarde une piece d'exemple, parce que c'est le geste
+   qui transforme l'essai en decision d'achat. */
+.stage-invite {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  width: min(94%, 380px);
+  background: rgba(252, 250, 246, 0.97);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+  box-shadow: var(--sh-l);
+  padding: 1.35rem 1.25rem 1.15rem;
+  text-align: center;
+}
+
+.stage-invite b {
+  display: block;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.stage-invite p {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.stage-invite-actions {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.stage-invite-actions .btn { width: 100%; justify-content: center; }
+
+.stage-invite > span {
+  display: block;
+  margin-top: 0.85rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.stage-invite-fermer {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0.3rem;
+  line-height: 0;
+}
+
+.stage-invite-fermer:hover { color: var(--ink); }

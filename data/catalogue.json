@@ -1,19 +1,19 @@
 {
-  "genere": "2026-09-04T23:37:08.429Z",
+  "genere": "2026-09-07T21:03:18.111Z",
   "produits": [
     {
-      "slug": "design-for-a-frieze-with-grotesques-337568",
-      "titre": "Design for a Frieze with Grotesques",
-      "artiste": "Andrés de Melgar",
-      "epoque": "ca. 1545–60",
-      "technique": "Pen and brown ink",
-      "theme": "abstrait",
+      "slug": "eight-pointed-star-shaped-tile-444459",
+      "titre": "Eight-Pointed Star-Shaped Tile",
+      "artiste": "Artiste anonyme",
+      "epoque": "13th century",
+      "technique": "Stonepaste; inglaze painted in blue, luster-painted on opaque white glaze",
+      "theme": "art-abstrait",
       "format": "paysage",
-      "couleur": "beige",
-      "ratio": 2.2932,
-      "image": "/media/art/design-for-a-frieze-with-grotesques-337568.webp",
-      "thumb": "/media/art/design-for-a-frieze-with-grotesques-337568-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/337568",
+      "couleur": "gris",
+      "ratio": 1.8091,
+      "image": "/media/art/eight-pointed-star-shaped-tile-444459.webp",
+      "thumb": "/media/art/eight-pointed-star-shaped-tile-444459-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/444459",
       "tailles": [
         {
           "l": 40,
@@ -58,51 +58,51 @@
       "avis": 6
     },
     {
-      "slug": "frieze-design-with-acanthus-scrolls-hybrid-creatures-and-a-33756",
-      "titre": "Frieze Design with Acanthus Scrolls, Hybrid Creatures and a",
-      "artiste": "Andrés de Melgar",
-      "epoque": "ca. 1545–60",
-      "technique": "Pen and brown ink with brown wash",
-      "theme": "abstrait",
-      "format": "paysage",
-      "couleur": "beige",
-      "ratio": 2.3427,
-      "image": "/media/art/frieze-design-with-acanthus-scrolls-hybrid-creatures-and-a-33756.webp",
-      "thumb": "/media/art/frieze-design-with-acanthus-scrolls-hybrid-creatures-and-a-33756-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/337566",
+      "slug": "star-shaped-tile-445276",
+      "titre": "Star-Shaped Tile",
+      "artiste": "Artiste anonyme",
+      "epoque": "13th century",
+      "technique": "Stonepaste; inglaze painted in blue and turquoise and luster-painted on opaque white glaze",
+      "theme": "art-abstrait",
+      "format": "carre",
+      "couleur": "marron",
+      "ratio": 1.0058,
+      "image": "/media/art/star-shaped-tile-445276.webp",
+      "thumb": "/media/art/star-shaped-tile-445276-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/445276",
       "tailles": [
         {
-          "l": 40,
+          "l": 30,
           "h": 30,
-          "prix": 290,
-          "ref": "40x30"
+          "prix": 260,
+          "ref": "30x30"
+        },
+        {
+          "l": 40,
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
           "h": 60,
-          "prix": 850,
-          "ref": "90x60"
+          "prix": 640,
+          "ref": "60x60"
         },
         {
-          "l": 120,
+          "l": 80,
           "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
         }
       ],
-      "prixMin": 290,
+      "prixMin": 260,
       "pieces": [
         "salon-marocain",
         "chambre-enfant"
@@ -114,48 +114,48 @@
       "avis": 19
     },
     {
-      "slug": "basle-part-i-plate-5-from-liber-studiorum-382910",
-      "titre": "Basle, part I, plate 5 from \"Liber Studiorum",
-      "artiste": "Joseph Mallord William Turner",
-      "epoque": "June 11, 1807",
-      "technique": "Etching and mezzotint; first state of six (Finberg)",
-      "theme": "abstrait",
-      "format": "paysage",
-      "couleur": "beige",
-      "ratio": 1.3537,
-      "image": "/media/art/basle-part-i-plate-5-from-liber-studiorum-382910.webp",
-      "thumb": "/media/art/basle-part-i-plate-5-from-liber-studiorum-382910-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/382910",
+      "slug": "tunic-with-interlace-decoration-444376",
+      "titre": "Tunic with Interlace Decoration",
+      "artiste": "Artiste anonyme",
+      "epoque": "4th–8th century",
+      "technique": "Linen, wool",
+      "theme": "art-abstrait",
+      "format": "portrait",
+      "couleur": "gris",
+      "ratio": 0.7167,
+      "image": "/media/art/tunic-with-interlace-decoration-444376.webp",
+      "thumb": "/media/art/tunic-with-interlace-decoration-444376-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/444376",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -170,18 +170,18 @@
       "avis": 32
     },
     {
-      "slug": "design-for-the-salon-of-the-pleasure-pavilion-favorita-at-343233",
-      "titre": "Design for the Salon of the Pleasure Pavilion, Favorita, at",
-      "artiste": "Donato Giuseppe Frisoni",
-      "epoque": "1718",
-      "technique": "Pen with brown and gray ink, brush with gray, rose, and yellow green wash, highlighted with gold, over ruled construction; design framed with pen and brown ink outlines",
-      "theme": "abstrait",
+      "slug": "tile-panel-444949",
+      "titre": "Tile Panel",
+      "artiste": "Artiste anonyme",
+      "epoque": "first quarter 17th century",
+      "technique": "Stonepaste; polychrome glazed within black wax resist outlines (cuerda seca technique)",
+      "theme": "art-abstrait",
       "format": "paysage",
-      "couleur": "beige",
-      "ratio": 1.2881,
-      "image": "/media/art/design-for-the-salon-of-the-pleasure-pavilion-favorita-at-343233.webp",
-      "thumb": "/media/art/design-for-the-salon-of-the-pleasure-pavilion-favorita-at-343233-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/343233",
+      "couleur": "vert",
+      "ratio": 1.2277,
+      "image": "/media/art/tile-panel-444949.webp",
+      "thumb": "/media/art/tile-panel-444949-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/444949",
       "tailles": [
         {
           "l": 40,
@@ -226,130 +226,18 @@
       "avis": 45
     },
     {
-      "slug": "a-nymph-dancing-with-a-tambourine-908771",
-      "titre": "A Nymph dancing with a tambourine",
-      "artiste": "George Romney",
-      "epoque": "ca. 1776",
-      "technique": "Graphite and brown wash (recto); graphite (verso)",
-      "theme": "abstrait",
-      "format": "portrait",
-      "couleur": "beige",
-      "ratio": 0.6365,
-      "image": "/media/art/a-nymph-dancing-with-a-tambourine-908771.webp",
-      "thumb": "/media/art/a-nymph-dancing-with-a-tambourine-908771-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/908771",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "chambre",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.800000000000001,
-      "avis": 18
-    },
-    {
-      "slug": "designs-for-silver-335937",
-      "titre": "Designs for Silver",
-      "artiste": "Jean Guillaume Moitte",
-      "epoque": "",
-      "technique": "Pen and black ink, brush and black and gray wash, with framing lines in pen and black ink.",
-      "theme": "abstrait",
-      "format": "paysage",
-      "couleur": "beige",
-      "ratio": 1.5528,
-      "image": "/media/art/designs-for-silver-335937.webp",
-      "thumb": "/media/art/designs-for-silver-335937-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/335937",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "chambre-enfant",
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 25,
-      "note": 4.9,
-      "avis": 31
-    },
-    {
-      "slug": "design-fragment-for-the-left-side-of-the-fonte-gaia-in-siena-340",
-      "titre": "Design Fragment for the Left Side of the 'Fonte Gaia' in Siena",
-      "artiste": "Jacopo della Quercia (Jacopo di Pietro d’Angelo di Guarnieri)",
-      "epoque": "1415–16",
-      "technique": "Pen and medium brown ink, brush and brown wash, over traces of leadpoint and ruling, on vellum, glued onto secondary paper support",
-      "theme": "abstrait",
+      "slug": "carved-star-tile-448665",
+      "titre": "Carved Star Tile",
+      "artiste": "Artiste anonyme",
+      "epoque": "early 13th century",
+      "technique": "Stonepaste; carved and partially glazed",
+      "theme": "art-abstrait",
       "format": "carre",
-      "couleur": "rose",
-      "ratio": 1.0687,
-      "image": "/media/art/design-fragment-for-the-left-side-of-the-fonte-gaia-in-siena-340.webp",
-      "thumb": "/media/art/design-fragment-for-the-left-side-of-the-fonte-gaia-in-siena-340-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/340575",
+      "couleur": "terracotta",
+      "ratio": 1.0274,
+      "image": "/media/art/carved-star-tile-448665.webp",
+      "thumb": "/media/art/carved-star-tile-448665-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/448665",
       "tailles": [
         {
           "l": 30,
@@ -384,28 +272,28 @@
       ],
       "prixMin": 260,
       "pieces": [
-        "bureau",
-        "entree"
+        "chambre",
+        "chambre-enfant"
       ],
       "nouveaute": false,
       "bestseller": false,
       "promo": 0,
-      "note": 4.4,
-      "avis": 44
+      "note": 4.800000000000001,
+      "avis": 18
     },
     {
-      "slug": "caudieux-at-the-petit-casino-from-le-cafe-concert-333861",
-      "titre": "Caudieux at the Petit Casino (from Le Café Concert)",
-      "artiste": "Henri de Toulouse-Lautrec",
-      "epoque": "1893",
-      "technique": "Crayon and spatter lithograph with scraper printed in black on wove paper; only state",
-      "theme": "abstrait",
+      "slug": "fragmentary-loom-width-with-wavy-vine-pattern-451101",
+      "titre": "Fragmentary Loom Width with Wavy-Vine Pattern",
+      "artiste": "Artiste anonyme",
+      "epoque": "ca. 1565–80",
+      "technique": "Silk, metal wrapped thread; lampas (kemha)",
+      "theme": "art-abstrait",
       "format": "portrait",
-      "couleur": "beige",
-      "ratio": 0.7328,
-      "image": "/media/art/caudieux-at-the-petit-casino-from-le-cafe-concert-333861.webp",
-      "thumb": "/media/art/caudieux-at-the-petit-casino-from-le-cafe-concert-333861-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/333861",
+      "couleur": "gris",
+      "ratio": 0.5666,
+      "image": "/media/art/fragmentary-loom-width-with-wavy-vine-pattern-451101.webp",
+      "thumb": "/media/art/fragmentary-loom-width-with-wavy-vine-pattern-451101-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/451101",
       "tailles": [
         {
           "l": 30,
@@ -439,6 +327,118 @@
         }
       ],
       "prixMin": 290,
+      "pieces": [
+        "chambre-enfant",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 25,
+      "note": 4.9,
+      "avis": 31
+    },
+    {
+      "slug": "tile-panel-mid-16th-century-447625",
+      "titre": "Tile Panel — mid-16th century",
+      "artiste": "Artiste anonyme",
+      "epoque": "mid-16th century",
+      "technique": "Stonepaste, polychrome painted under transparent colorless glaze",
+      "theme": "art-abstrait",
+      "format": "portrait",
+      "couleur": "marron",
+      "ratio": 0.7143,
+      "image": "/media/art/tile-panel-mid-16th-century-447625.webp",
+      "thumb": "/media/art/tile-panel-mid-16th-century-447625-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/447625",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "bureau",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.4,
+      "avis": 44
+    },
+    {
+      "slug": "tile-panel-second-half-16th-century-447015",
+      "titre": "Tile Panel — second half 16th century",
+      "artiste": "Artiste anonyme",
+      "epoque": "second half 16th century",
+      "technique": "Stonepaste; polychrome painted under transparent glaze",
+      "theme": "art-abstrait",
+      "format": "carre",
+      "couleur": "gris",
+      "ratio": 1,
+      "image": "/media/art/tile-panel-second-half-16th-century-447015.webp",
+      "thumb": "/media/art/tile-panel-second-half-16th-century-447015-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/447015",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 30,
+          "prix": 260,
+          "ref": "30x30"
+        },
+        {
+          "l": 40,
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
+        },
+        {
+          "l": 60,
+          "h": 60,
+          "prix": 640,
+          "ref": "60x60"
+        },
+        {
+          "l": 80,
+          "h": 80,
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
+        }
+      ],
+      "prixMin": 260,
       "pieces": [
         "hotel-restaurant",
         "chambre-enfant"
@@ -450,51 +450,51 @@
       "avis": 17
     },
     {
-      "slug": "portrait-of-qilich-khan-turani-451277",
-      "titre": "Portrait of Qilich Khan Turani",
-      "artiste": "La'lchand",
-      "epoque": "recto: ca. 1640; verso: ca. 1530–50",
-      "technique": "Ink, opaque watercolor, and gold on paper",
-      "theme": "calligraphie",
-      "format": "portrait",
-      "couleur": "or",
-      "ratio": 0.6776,
-      "image": "/media/art/portrait-of-qilich-khan-turani-451277.webp",
-      "thumb": "/media/art/portrait-of-qilich-khan-turani-451277-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/451277",
+      "slug": "star-shaped-tile-14th-century-448196",
+      "titre": "Star-Shaped Tile — 14th century",
+      "artiste": "Artiste anonyme",
+      "epoque": "14th century",
+      "technique": "Stonepaste: inglaze painted in blue and turquoise and luster-painted on an opaque white glaze",
+      "theme": "art-abstrait",
+      "format": "carre",
+      "couleur": "marron",
+      "ratio": 1.0608,
+      "image": "/media/art/star-shaped-tile-14th-century-448196.webp",
+      "thumb": "/media/art/star-shaped-tile-14th-century-448196-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/448196",
       "tailles": [
         {
           "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
+          "h": 30,
+          "prix": 260,
+          "ref": "30x30"
         },
         {
           "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
         },
         {
           "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
+          "h": 60,
+          "prix": 640,
+          "ref": "60x60"
         },
         {
           "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
+          "h": 80,
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
         }
       ],
-      "prixMin": 290,
+      "prixMin": 260,
       "pieces": [
         "cabinet"
       ],
@@ -505,18 +505,74 @@
       "avis": 30
     },
     {
-      "slug": "study-of-a-nilgai-blue-bull-451261",
-      "titre": "Study of a Nilgai (Blue Bull)",
-      "artiste": "Mansur",
-      "epoque": "verso: ca. 1620; recto ca. 1540",
-      "technique": "Ink, opaque watercolor, and gold on paper",
-      "theme": "calligraphie",
+      "slug": "textile-fragment-with-interlace-pattern-443358",
+      "titre": "Textile Fragment with Interlace Pattern",
+      "artiste": "Artiste anonyme",
+      "epoque": "3rd–4th century",
+      "technique": "Wool, linen; plain weave, tapestry weave",
+      "theme": "art-abstrait",
+      "format": "carre",
+      "couleur": "gris",
+      "ratio": 1.0073,
+      "image": "/media/art/textile-fragment-with-interlace-pattern-443358.webp",
+      "thumb": "/media/art/textile-fragment-with-interlace-pattern-443358-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/443358",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 30,
+          "prix": 260,
+          "ref": "30x30"
+        },
+        {
+          "l": 40,
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
+        },
+        {
+          "l": 60,
+          "h": 60,
+          "prix": 640,
+          "ref": "60x60"
+        },
+        {
+          "l": 80,
+          "h": 80,
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
+        }
+      ],
+      "prixMin": 260,
+      "pieces": [
+        "salon-moderne",
+        "entree"
+      ],
+      "nouveaute": true,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.7,
+      "avis": 43
+    },
+    {
+      "slug": "tile-panel-early-17th-century-447017",
+      "titre": "Tile Panel — early 17th century",
+      "artiste": "Artiste anonyme",
+      "epoque": "early 17th century",
+      "technique": "Stonepaste; polychrome painted under transparent glaze",
+      "theme": "art-abstrait",
       "format": "paysage",
-      "couleur": "or",
-      "ratio": 1.5365,
-      "image": "/media/art/study-of-a-nilgai-blue-bull-451261.webp",
-      "thumb": "/media/art/study-of-a-nilgai-blue-bull-451261-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/451261",
+      "couleur": "marron",
+      "ratio": 1.2502,
+      "image": "/media/art/tile-panel-early-17th-century-447017.webp",
+      "thumb": "/media/art/tile-panel-early-17th-century-447017-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/447017",
       "tailles": [
         {
           "l": 40,
@@ -551,62 +607,6 @@
       ],
       "prixMin": 290,
       "pieces": [
-        "salon-moderne",
-        "entree"
-      ],
-      "nouveaute": true,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.7,
-      "avis": 43
-    },
-    {
-      "slug": "page-of-calligraphy-illuminated-with-animals-and-plants-in-a-451",
-      "titre": "Page of Calligraphy Illuminated with Animals and Plants in a",
-      "artiste": "Nanha",
-      "epoque": "verso: ca. 1610–15; recto: ca.1535–45",
-      "technique": "Ink, opaque watercolor, and gold on paper",
-      "theme": "calligraphie",
-      "format": "portrait",
-      "couleur": "or",
-      "ratio": 0.6895,
-      "image": "/media/art/page-of-calligraphy-illuminated-with-animals-and-plants-in-a-451.webp",
-      "thumb": "/media/art/page-of-calligraphy-illuminated-with-animals-and-plants-in-a-451-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/451287",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
         "salon-marocain",
         "chambre-enfant"
       ],
@@ -617,18 +617,18 @@
       "avis": 16
     },
     {
-      "slug": "folio-from-a-qur-an-manuscript-451677",
-      "titre": "Folio from a Qur'an Manuscript",
+      "slug": "panel-with-sketches-of-a-man-a-lion-and-an-arabesque-449927",
+      "titre": "Panel with Sketches of a Man, a Lion and an Arabesque",
       "artiste": "Artiste anonyme",
       "epoque": "9th century",
-      "technique": "Ink, opaque watercolor, and gold on parchment",
-      "theme": "calligraphie",
+      "technique": "Stucco; painted",
+      "theme": "art-abstrait",
       "format": "paysage",
-      "couleur": "rose",
-      "ratio": 1.8873,
-      "image": "/media/art/folio-from-a-qur-an-manuscript-451677.webp",
-      "thumb": "/media/art/folio-from-a-qur-an-manuscript-451677-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/451677",
+      "couleur": "beige",
+      "ratio": 1.2037,
+      "image": "/media/art/panel-with-sketches-of-a-man-a-lion-and-an-arabesque-449927.webp",
+      "thumb": "/media/art/panel-with-sketches-of-a-man-a-lion-and-an-arabesque-449927-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/449927",
       "tailles": [
         {
           "l": 40,
@@ -673,48 +673,48 @@
       "avis": 29
     },
     {
-      "slug": "bifolium-from-the-nurse-s-qur-an-mushaf-al-hadina-456074",
-      "titre": "Bifolium from the \"Nurse's Qur'an\" (Mushaf al-Hadina)",
+      "slug": "panel-with-geometric-pattern-and-benedictory-inscriptions-457717",
+      "titre": "Panel with Geometric Pattern and Benedictory Inscriptions",
       "artiste": "Artiste anonyme",
-      "epoque": "ca. 410 AH/1019–20 CE",
-      "technique": "Ink, opaque watercolor, and gold on parchment",
-      "theme": "calligraphie",
-      "format": "paysage",
+      "epoque": "late 13th–mid-14th century",
+      "technique": "Limestone; carved",
+      "theme": "art-abstrait",
+      "format": "portrait",
       "couleur": "beige",
-      "ratio": 1.3055,
-      "image": "/media/art/bifolium-from-the-nurse-s-qur-an-mushaf-al-hadina-456074.webp",
-      "thumb": "/media/art/bifolium-from-the-nurse-s-qur-an-mushaf-al-hadina-456074-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/456074",
+      "ratio": 0.6317,
+      "image": "/media/art/panel-with-geometric-pattern-and-benedictory-inscriptions-457717.webp",
+      "thumb": "/media/art/panel-with-geometric-pattern-and-benedictory-inscriptions-457717-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/457717",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -729,521 +729,18 @@
       "avis": 42
     },
     {
-      "slug": "divan-of-sultan-husayn-baiqara-453164",
-      "titre": "Divan of Sultan Husayn Baiqara",
-      "artiste": "Sultan 'Ali al-Mashhadi",
-      "epoque": "dated 905 AH/1500 CE",
-      "technique": "Ink, opaque watercolor, and gold on paper; lacquer binding",
-      "theme": "calligraphie",
-      "format": "paysage",
-      "couleur": "gris",
-      "ratio": 1.297,
-      "image": "/media/art/divan-of-sultan-husayn-baiqara-453164.webp",
-      "thumb": "/media/art/divan-of-sultan-husayn-baiqara-453164-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/453164",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "chambre",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.5,
-      "avis": 15
-    },
-    {
-      "slug": "chastisement-of-a-pupil-446180",
-      "titre": "Chastisement of a Pupil",
-      "artiste": "Muhammad Qasim",
-      "epoque": "dated 1014 AH/1605–6 CE",
-      "technique": "Ink, watercolor, and gold on paper",
-      "theme": "calligraphie",
-      "format": "portrait",
-      "couleur": "gris",
-      "ratio": 0.6726,
-      "image": "/media/art/chastisement-of-a-pupil-446180.webp",
-      "thumb": "/media/art/chastisement-of-a-pupil-446180-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/446180",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "chambre-enfant",
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.6000000000000005,
-      "avis": 28
-    },
-    {
-      "slug": "the-adoration-of-the-magi-436984",
-      "titre": "The Adoration of the Magi",
-      "artiste": "Quinten Massys",
-      "epoque": "1526",
-      "technique": "Oil on wood",
-      "theme": "orient-maroc",
-      "format": "portrait",
-      "couleur": "noir",
-      "ratio": 0.798,
-      "image": "/media/art/the-adoration-of-the-magi-436984.webp",
-      "thumb": "/media/art/the-adoration-of-the-magi-436984-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436984",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "bureau",
-        "entree"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 25,
-      "note": 4.7,
-      "avis": 41
-    },
-    {
-      "slug": "an-egyptian-peasant-woman-and-her-child-435711",
-      "titre": "An Egyptian Peasant Woman and Her Child",
-      "artiste": "Léon Bonnat",
-      "epoque": "1869–70",
+      "slug": "madame-roulin-and-her-baby-459123",
+      "titre": "Madame Roulin and Her Baby",
+      "artiste": "Vincent van Gogh",
+      "epoque": "1888",
       "technique": "Oil on canvas",
-      "theme": "orient-maroc",
+      "theme": "art-contemporain",
       "format": "portrait",
-      "couleur": "marron",
-      "ratio": 0.5438,
-      "image": "/media/art/an-egyptian-peasant-woman-and-her-child-435711.webp",
-      "thumb": "/media/art/an-egyptian-peasant-woman-and-her-child-435711-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435711",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "hotel-restaurant",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.800000000000001,
-      "avis": 14
-    },
-    {
-      "slug": "madame-jacques-louis-leblanc-francoise-poncelle-1788-1839-436703",
-      "titre": "Madame Jacques-Louis Leblanc (Françoise Poncelle, 1788–1839)",
-      "artiste": "Jean Auguste Dominique Ingres",
-      "epoque": "1823",
-      "technique": "Oil on canvas",
-      "theme": "orient-maroc",
-      "format": "portrait",
-      "couleur": "noir",
-      "ratio": 0.7843,
-      "image": "/media/art/madame-jacques-louis-leblanc-francoise-poncelle-1788-1839-436703.webp",
-      "thumb": "/media/art/madame-jacques-louis-leblanc-francoise-poncelle-1788-1839-436703-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436703",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": true,
-      "promo": 0,
-      "note": 4.9,
-      "avis": 27
-    },
-    {
-      "slug": "tangier-12430",
-      "titre": "Tangier",
-      "artiste": "John Singer Sargent",
-      "epoque": "1895",
-      "technique": "Watercolor, gouache, and graphite on white wove paper",
-      "theme": "orient-maroc",
-      "format": "portrait",
-      "couleur": "beige",
-      "ratio": 0.7222,
-      "image": "/media/art/tangier-12430.webp",
-      "thumb": "/media/art/tangier-12430-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/12430",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "salon-moderne",
-        "entree"
-      ],
-      "nouveaute": true,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.4,
-      "avis": 40
-    },
-    {
-      "slug": "sketch-for-reception-of-emperor-napoleon-iii-and-empress-441374",
-      "titre": "Sketch for \"Reception of Emperor Napoleon III and Empress",
-      "artiste": "Isidore Pils",
-      "epoque": "ca. 1862–67",
-      "technique": "Oil on canvas",
-      "theme": "orient-maroc",
-      "format": "paysage",
-      "couleur": "noir",
-      "ratio": 1.4787,
-      "image": "/media/art/sketch-for-reception-of-emperor-napoleon-iii-and-empress-441374.webp",
-      "thumb": "/media/art/sketch-for-reception-of-emperor-napoleon-iii-and-empress-441374-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/441374",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "salon-marocain",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.5,
-      "avis": 13
-    },
-    {
-      "slug": "ia-orana-maria-hail-mary-438821",
-      "titre": "Ia Orana Maria (Hail Mary)",
-      "artiste": "Paul Gauguin",
-      "epoque": "1891",
-      "technique": "Oil on canvas",
-      "theme": "orient-maroc",
-      "format": "portrait",
-      "couleur": "vert",
-      "ratio": 0.7867,
-      "image": "/media/art/ia-orana-maria-hail-mary-438821.webp",
-      "thumb": "/media/art/ia-orana-maria-hail-mary-438821-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/438821",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "entree",
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 40,
-      "note": 4.6000000000000005,
-      "avis": 26
-    },
-    {
-      "slug": "a-jewish-bride-in-tangier-336668",
-      "titre": "A Jewish Bride in Tangier",
-      "artiste": "Eugène Delacroix",
-      "epoque": "1833",
-      "technique": "Etching; first state of four",
-      "theme": "orient-maroc",
-      "format": "portrait",
-      "couleur": "beige",
-      "ratio": 0.7757,
-      "image": "/media/art/a-jewish-bride-in-tangier-336668.webp",
-      "thumb": "/media/art/a-jewish-bride-in-tangier-336668-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/336668",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "salle-a-manger",
-        "entree"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.7,
-      "avis": 39
-    },
-    {
-      "slug": "the-house-with-the-cracked-walls-435874",
-      "titre": "The House with the Cracked Walls",
-      "artiste": "Paul Cézanne",
-      "epoque": "1892–94",
-      "technique": "Oil on canvas",
-      "theme": "orient-maroc",
-      "format": "portrait",
-      "couleur": "vert",
-      "ratio": 0.8001,
-      "image": "/media/art/the-house-with-the-cracked-walls-435874.webp",
-      "thumb": "/media/art/the-house-with-the-cracked-walls-435874-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435874",
+      "couleur": "or",
+      "ratio": 0.8027,
+      "image": "/media/art/madame-roulin-and-her-baby-459123.webp",
+      "thumb": "/media/art/madame-roulin-and-her-baby-459123-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/459123",
       "tailles": [
         {
           "l": 30,
@@ -1284,399 +781,8 @@
       "nouveaute": false,
       "bestseller": false,
       "promo": 0,
-      "note": 4.800000000000001,
-      "avis": 12
-    },
-    {
-      "slug": "virgin-and-child-435762",
-      "titre": "Virgin and Child",
-      "artiste": "Dieric Bouts",
-      "epoque": "ca. 1455–60",
-      "technique": "Oil on wood",
-      "theme": "nature-botanique",
-      "format": "portrait",
-      "couleur": "noir",
-      "ratio": 0.7562,
-      "image": "/media/art/virgin-and-child-435762.webp",
-      "thumb": "/media/art/virgin-and-child-435762-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435762",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "chambre-enfant",
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.9,
-      "avis": 25
-    },
-    {
-      "slug": "still-life-with-a-skull-and-a-writing-quill-435904",
-      "titre": "Still Life with a Skull and a Writing Quill",
-      "artiste": "Pieter Claesz",
-      "epoque": "1628",
-      "technique": "Oil on wood",
-      "theme": "nature-botanique",
-      "format": "paysage",
-      "couleur": "noir",
-      "ratio": 1.4835,
-      "image": "/media/art/still-life-with-a-skull-and-a-writing-quill-435904.webp",
-      "thumb": "/media/art/still-life-with-a-skull-and-a-writing-quill-435904-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435904",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "bureau",
-        "entree"
-      ],
-      "nouveaute": false,
-      "bestseller": true,
-      "promo": 0,
-      "note": 4.4,
-      "avis": 38
-    },
-    {
-      "slug": "the-annunciation-437490",
-      "titre": "The Annunciation",
-      "artiste": "Hans Memling",
-      "epoque": "ca. 1465–70",
-      "technique": "Oil on wood",
-      "theme": "nature-botanique",
-      "format": "portrait",
-      "couleur": "marron",
-      "ratio": 0.6253,
-      "image": "/media/art/the-annunciation-437490.webp",
-      "thumb": "/media/art/the-annunciation-437490-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437490",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "hotel-restaurant",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 25,
       "note": 4.5,
-      "avis": 11
-    },
-    {
-      "slug": "tommaso-di-folco-portinari-1428-1501-maria-portinari-437056",
-      "titre": "Tommaso di Folco Portinari (1428–1501); Maria Portinari",
-      "artiste": "Hans Memling",
-      "epoque": "ca. 1470",
-      "technique": "Oil on oak",
-      "theme": "nature-botanique",
-      "format": "paysage",
-      "couleur": "noir",
-      "ratio": 1.5273,
-      "image": "/media/art/tommaso-di-folco-portinari-1428-1501-maria-portinari-437056.webp",
-      "thumb": "/media/art/tommaso-di-folco-portinari-1428-1501-maria-portinari-437056-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437056",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.6000000000000005,
-      "avis": 24
-    },
-    {
-      "slug": "basket-of-fruit-816624",
-      "titre": "Basket of Fruit",
-      "artiste": "Bartolomeo Cavarozzi",
-      "epoque": "ca. 1620",
-      "technique": "Oil on canvas",
-      "theme": "nature-botanique",
-      "format": "paysage",
-      "couleur": "noir",
-      "ratio": 1.3495,
-      "image": "/media/art/basket-of-fruit-816624.webp",
-      "thumb": "/media/art/basket-of-fruit-816624-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/816624",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "salon-moderne",
-        "entree"
-      ],
-      "nouveaute": true,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.7,
-      "avis": 37
-    },
-    {
-      "slug": "the-harvesters-435809",
-      "titre": "The Harvesters",
-      "artiste": "Pieter Bruegel the Elder",
-      "epoque": "1565",
-      "technique": "Oil on oak",
-      "theme": "nature-botanique",
-      "format": "paysage",
-      "couleur": "gris",
-      "ratio": 1.3567,
-      "image": "/media/art/the-harvesters-435809.webp",
-      "thumb": "/media/art/the-harvesters-435809-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435809",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "salon-marocain",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.800000000000001,
-      "avis": 10
-    },
-    {
-      "slug": "the-dream-of-the-shepherd-der-traum-des-hirten-634108",
-      "titre": "The Dream of the Shepherd (Der Traum des Hirten)",
-      "artiste": "Ferdinand Hodler",
-      "epoque": "1896",
-      "technique": "Oil on canvas",
-      "theme": "nature-botanique",
-      "format": "portrait",
-      "couleur": "rose",
-      "ratio": 0.5245,
-      "image": "/media/art/the-dream-of-the-shepherd-der-traum-des-hirten-634108.webp",
-      "thumb": "/media/art/the-dream-of-the-shepherd-der-traum-des-hirten-634108-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/634108",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "entree",
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.9,
-      "avis": 23
+      "avis": 15
     },
     {
       "slug": "still-life-with-teapot-and-fruit-437999",
@@ -1684,7 +790,7 @@
       "artiste": "Paul Gauguin",
       "epoque": "1896",
       "technique": "Oil on canvas",
-      "theme": "nature-botanique",
+      "theme": "art-contemporain",
       "format": "paysage",
       "couleur": "marron",
       "ratio": 1.3899,
@@ -1725,6 +831,900 @@
       ],
       "prixMin": 290,
       "pieces": [
+        "chambre-enfant",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.6000000000000005,
+      "avis": 28
+    },
+    {
+      "slug": "a-woman-seated-beside-a-vase-of-flowers-madame-paul-436121",
+      "titre": "A Woman Seated beside a Vase of Flowers (Madame Paul",
+      "artiste": "Edgar Degas",
+      "epoque": "1865",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "noir",
+      "ratio": 1.2285,
+      "image": "/media/art/a-woman-seated-beside-a-vase-of-flowers-madame-paul-436121.webp",
+      "thumb": "/media/art/a-woman-seated-beside-a-vase-of-flowers-madame-paul-436121-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436121",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "bureau",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 25,
+      "note": 4.7,
+      "avis": 41
+    },
+    {
+      "slug": "study-for-a-sunday-on-la-grande-jatte-437658",
+      "titre": "Study for \"A Sunday on La Grande Jatte",
+      "artiste": "Georges Seurat",
+      "epoque": "1884",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "vert",
+      "ratio": 1.4707,
+      "image": "/media/art/study-for-a-sunday-on-la-grande-jatte-437658.webp",
+      "thumb": "/media/art/study-for-a-sunday-on-la-grande-jatte-437658-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437658",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "hotel-restaurant",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.800000000000001,
+      "avis": 14
+    },
+    {
+      "slug": "shoes-436533",
+      "titre": "Shoes",
+      "artiste": "Vincent van Gogh",
+      "epoque": "1888",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "gris",
+      "ratio": 1.1959,
+      "image": "/media/art/shoes-436533.webp",
+      "thumb": "/media/art/shoes-436533-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436533",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": true,
+      "promo": 0,
+      "note": 4.9,
+      "avis": 27
+    },
+    {
+      "slug": "sulking-436162",
+      "titre": "Sulking",
+      "artiste": "Edgar Degas",
+      "epoque": "ca. 1870",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "noir",
+      "ratio": 1.403,
+      "image": "/media/art/sulking-436162.webp",
+      "thumb": "/media/art/sulking-436162-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436162",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salon-moderne",
+        "entree"
+      ],
+      "nouveaute": true,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.4,
+      "avis": 40
+    },
+    {
+      "slug": "circus-sideshow-parade-de-cirque-437654",
+      "titre": "Circus Sideshow (Parade de cirque)",
+      "artiste": "Georges Seurat",
+      "epoque": "1887–88",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "marron",
+      "ratio": 1.4956,
+      "image": "/media/art/circus-sideshow-parade-de-cirque-437654.webp",
+      "thumb": "/media/art/circus-sideshow-parade-de-cirque-437654-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437654",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salon-marocain",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.5,
+      "avis": 13
+    },
+    {
+      "slug": "irises-436528",
+      "titre": "Irises",
+      "artiste": "Vincent van Gogh",
+      "epoque": "1890",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "beige",
+      "ratio": 1.261,
+      "image": "/media/art/irises-436528.webp",
+      "thumb": "/media/art/irises-436528-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436528",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "entree",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 40,
+      "note": 4.6000000000000005,
+      "avis": 26
+    },
+    {
+      "slug": "dancers-practicing-at-the-barre-436139",
+      "titre": "Dancers Practicing at the Barre",
+      "artiste": "Edgar Degas",
+      "epoque": "1877",
+      "technique": "Mixed media on canvas",
+      "theme": "art-contemporain",
+      "format": "carre",
+      "couleur": "vert",
+      "ratio": 1.0821,
+      "image": "/media/art/dancers-practicing-at-the-barre-436139.webp",
+      "thumb": "/media/art/dancers-practicing-at-the-barre-436139-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436139",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 30,
+          "prix": 260,
+          "ref": "30x30"
+        },
+        {
+          "l": 40,
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
+        },
+        {
+          "l": 60,
+          "h": 60,
+          "prix": 640,
+          "ref": "60x60"
+        },
+        {
+          "l": 80,
+          "h": 80,
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
+        }
+      ],
+      "prixMin": 260,
+      "pieces": [
+        "salle-a-manger",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.7,
+      "avis": 39
+    },
+    {
+      "slug": "the-harvest-pontoise-la-recolte-pontoise-459108",
+      "titre": "The Harvest, Pontoise (La Récolte, Pontoise)",
+      "artiste": "Camille Pissarro",
+      "epoque": "1881",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "marron",
+      "ratio": 1.2026,
+      "image": "/media/art/the-harvest-pontoise-la-recolte-pontoise-459108.webp",
+      "thumb": "/media/art/the-harvest-pontoise-la-recolte-pontoise-459108-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/459108",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "chambre",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.800000000000001,
+      "avis": 12
+    },
+    {
+      "slug": "self-portrait-with-a-straw-hat-obverse-the-potato-peeler-436532",
+      "titre": "Self-Portrait with a Straw Hat (obverse: The Potato Peeler)",
+      "artiste": "Vincent van Gogh",
+      "epoque": "1887",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "portrait",
+      "couleur": "or",
+      "ratio": 0.8037,
+      "image": "/media/art/self-portrait-with-a-straw-hat-obverse-the-potato-peeler-436532.webp",
+      "thumb": "/media/art/self-portrait-with-a-straw-hat-obverse-the-potato-peeler-436532-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436532",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "chambre-enfant",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.9,
+      "avis": 25
+    },
+    {
+      "slug": "james-jacques-joseph-tissot-1836-1902-436144",
+      "titre": "James-Jacques-Joseph Tissot (1836–1902)",
+      "artiste": "Edgar Degas",
+      "epoque": "ca. 1867–68",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "portrait",
+      "couleur": "noir",
+      "ratio": 0.7505,
+      "image": "/media/art/james-jacques-joseph-tissot-1836-1902-436144.webp",
+      "thumb": "/media/art/james-jacques-joseph-tissot-1836-1902-436144-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436144",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "bureau",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": true,
+      "promo": 0,
+      "note": 4.4,
+      "avis": 38
+    },
+    {
+      "slug": "study-for-a-sunday-on-la-grande-jatte-1884-459117",
+      "titre": "Study for \"A Sunday on La Grande Jatte — 1884",
+      "artiste": "Georges Seurat",
+      "epoque": "1884",
+      "technique": "Oil on wood",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "noir",
+      "ratio": 1.5468,
+      "image": "/media/art/study-for-a-sunday-on-la-grande-jatte-1884-459117.webp",
+      "thumb": "/media/art/study-for-a-sunday-on-la-grande-jatte-1884-459117-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/459117",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "hotel-restaurant",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 25,
+      "note": 4.5,
+      "avis": 11
+    },
+    {
+      "slug": "wheat-field-with-cypresses-436535",
+      "titre": "Wheat Field with Cypresses",
+      "artiste": "Vincent van Gogh",
+      "epoque": "1889",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "marron",
+      "ratio": 1.2563,
+      "image": "/media/art/wheat-field-with-cypresses-436535.webp",
+      "thumb": "/media/art/wheat-field-with-cypresses-436535-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436535",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.6000000000000005,
+      "avis": 24
+    },
+    {
+      "slug": "the-siesta-436449",
+      "titre": "The Siesta",
+      "artiste": "Paul Gauguin",
+      "epoque": "ca. 1892–94",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "gris",
+      "ratio": 1.3047,
+      "image": "/media/art/the-siesta-436449.webp",
+      "thumb": "/media/art/the-siesta-436449-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436449",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salon-moderne",
+        "entree"
+      ],
+      "nouveaute": true,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.7,
+      "avis": 37
+    },
+    {
+      "slug": "madame-georges-charpentier-marguerite-louise-lemonnier-438815",
+      "titre": "Madame Georges Charpentier (Marguerite-Louise Lemonnier,",
+      "artiste": "Auguste Renoir",
+      "epoque": "1878",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "noir",
+      "ratio": 1.2293,
+      "image": "/media/art/madame-georges-charpentier-marguerite-louise-lemonnier-438815.webp",
+      "thumb": "/media/art/madame-georges-charpentier-marguerite-louise-lemonnier-438815-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/438815",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salon-marocain",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.800000000000001,
+      "avis": 10
+    },
+    {
+      "slug": "two-young-peasant-women-437304",
+      "titre": "Two Young Peasant Women",
+      "artiste": "Camille Pissarro",
+      "epoque": "1891–92",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "paysage",
+      "couleur": "marron",
+      "ratio": 1.2932,
+      "image": "/media/art/two-young-peasant-women-437304.webp",
+      "thumb": "/media/art/two-young-peasant-women-437304-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437304",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "entree",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.9,
+      "avis": 23
+    },
+    {
+      "slug": "l-arlesienne-madame-joseph-michel-ginoux-marie-julien-436529",
+      "titre": "L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien,",
+      "artiste": "Vincent van Gogh",
+      "epoque": "1888–89",
+      "technique": "Oil on canvas",
+      "theme": "art-contemporain",
+      "format": "portrait",
+      "couleur": "marron",
+      "ratio": 0.7945,
+      "image": "/media/art/l-arlesienne-madame-joseph-michel-ginoux-marie-julien-436529.webp",
+      "thumb": "/media/art/l-arlesienne-madame-joseph-michel-ginoux-marie-julien-436529-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436529",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
         "salle-a-manger",
         "entree"
       ],
@@ -1735,18 +1735,18 @@
       "avis": 36
     },
     {
-      "slug": "the-birth-of-the-virgin-435848",
-      "titre": "The Birth of the Virgin",
-      "artiste": "Fra Carnevale (Bartolomeo di Giovanni Corradini)",
-      "epoque": "1467",
-      "technique": "Tempera and oil on wood",
-      "theme": "nature-botanique",
+      "slug": "arab-warrior-441378",
+      "titre": "Arab Warrior",
+      "artiste": "Horace Vernet",
+      "epoque": "ca. 1817–22",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
       "format": "portrait",
-      "couleur": "gris",
-      "ratio": 0.6709,
-      "image": "/media/art/the-birth-of-the-virgin-435848.webp",
-      "thumb": "/media/art/the-birth-of-the-virgin-435848-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435848",
+      "couleur": "noir",
+      "ratio": 0.7555,
+      "image": "/media/art/arab-warrior-441378.webp",
+      "thumb": "/media/art/arab-warrior-441378-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/441378",
       "tailles": [
         {
           "l": 30,
@@ -1791,18 +1791,18 @@
       "avis": 9
     },
     {
-      "slug": "young-man-holding-a-book-437030",
-      "titre": "Young Man Holding a Book",
-      "artiste": "Master of the View of Saint Gudula",
-      "epoque": "ca. 1480",
-      "technique": "Oil on wood",
-      "theme": "villes-voyages",
+      "slug": "prayer-in-the-mosque-436482",
+      "titre": "Prayer in the Mosque",
+      "artiste": "Jean-Léon Gérôme",
+      "epoque": "by 1874",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
       "format": "portrait",
-      "couleur": "noir",
-      "ratio": 0.6198,
-      "image": "/media/art/young-man-holding-a-book-437030.webp",
-      "thumb": "/media/art/young-man-holding-a-book-437030-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437030",
+      "couleur": "marron",
+      "ratio": 0.8462,
+      "image": "/media/art/prayer-in-the-mosque-436482.webp",
+      "thumb": "/media/art/prayer-in-the-mosque-436482-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436482",
       "tailles": [
         {
           "l": 30,
@@ -1847,18 +1847,74 @@
       "avis": 22
     },
     {
-      "slug": "sebastian-martinez-y-perez-1747-1800-436541",
-      "titre": "Sebastián Martínez y Pérez (1747–1800)",
-      "artiste": "Goya (Francisco de Goya y Lucientes)",
-      "epoque": "1792",
+      "slug": "arabs-crossing-a-ford-436420",
+      "titre": "Arabs Crossing a Ford",
+      "artiste": "Eugène Fromentin",
+      "epoque": "1873",
+      "technique": "Oil on wood",
+      "theme": "heritage-marocain",
+      "format": "paysage",
+      "couleur": "noir",
+      "ratio": 1.2158,
+      "image": "/media/art/arabs-crossing-a-ford-436420.webp",
+      "thumb": "/media/art/arabs-crossing-a-ford-436420-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436420",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "bureau",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.7,
+      "avis": 35
+    },
+    {
+      "slug": "the-arab-sage-441363",
+      "titre": "The Arab Sage",
+      "artiste": "German Painter",
+      "epoque": "",
       "technique": "Oil on canvas",
-      "theme": "villes-voyages",
+      "theme": "heritage-marocain",
       "format": "portrait",
       "couleur": "noir",
-      "ratio": 0.7478,
-      "image": "/media/art/sebastian-martinez-y-perez-1747-1800-436541.webp",
-      "thumb": "/media/art/sebastian-martinez-y-perez-1747-1800-436541-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436541",
+      "ratio": 0.7855,
+      "image": "/media/art/the-arab-sage-441363.webp",
+      "thumb": "/media/art/the-arab-sage-441363-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/441363",
       "tailles": [
         {
           "l": 30,
@@ -1893,62 +1949,6 @@
       ],
       "prixMin": 290,
       "pieces": [
-        "bureau",
-        "entree"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.7,
-      "avis": 35
-    },
-    {
-      "slug": "a-ship-in-a-stormy-sea-435570",
-      "titre": "A Ship in a Stormy Sea",
-      "artiste": "Ivan Konstantinovich Aivazovsky (Hovhannes Aivazian)",
-      "epoque": "1892",
-      "technique": "Card",
-      "theme": "villes-voyages",
-      "format": "paysage",
-      "couleur": "gris",
-      "ratio": 1.998,
-      "image": "/media/art/a-ship-in-a-stormy-sea-435570.webp",
-      "thumb": "/media/art/a-ship-in-a-stormy-sea-435570-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435570",
-      "tailles": [
-        {
-          "l": 40,
-          "h": 30,
-          "prix": 290,
-          "ref": "40x30"
-        },
-        {
-          "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
-          "prix": 850,
-          "ref": "90x60"
-        },
-        {
-          "l": 120,
-          "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
         "hotel-restaurant",
         "chambre-enfant"
       ],
@@ -1959,51 +1959,51 @@
       "avis": 8
     },
     {
-      "slug": "view-of-toledo-436575",
-      "titre": "View of Toledo",
-      "artiste": "El Greco (Domenikos Theotokopoulos)",
-      "epoque": "ca. 1599–1600",
+      "slug": "scene-in-the-jewish-quarter-of-constantine-437974",
+      "titre": "Scene in the Jewish Quarter of Constantine",
+      "artiste": "Théodore Chassériau",
+      "epoque": "1851",
       "technique": "Oil on canvas",
-      "theme": "villes-voyages",
-      "format": "carre",
+      "theme": "heritage-marocain",
+      "format": "portrait",
       "couleur": "marron",
-      "ratio": 0.8887,
-      "image": "/media/art/view-of-toledo-436575.webp",
-      "thumb": "/media/art/view-of-toledo-436575-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436575",
+      "ratio": 0.8275,
+      "image": "/media/art/scene-in-the-jewish-quarter-of-constantine-437974.webp",
+      "thumb": "/media/art/scene-in-the-jewish-quarter-of-constantine-437974-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437974",
       "tailles": [
         {
           "l": 30,
-          "h": 30,
-          "prix": 260,
-          "ref": "30x30"
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
         },
         {
           "l": 40,
-          "h": 40,
-          "prix": 390,
-          "ref": "40x40"
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 60,
-          "prix": 640,
-          "ref": "60x60"
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
         },
         {
           "l": 80,
-          "h": 80,
-          "prix": 990,
-          "ref": "80x80"
-        },
-        {
-          "l": 100,
-          "h": 100,
-          "prix": 1450,
-          "ref": "100x100"
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
         }
       ],
-      "prixMin": 260,
+      "prixMin": 290,
       "pieces": [
         "cabinet"
       ],
@@ -2014,48 +2014,48 @@
       "avis": 21
     },
     {
-      "slug": "the-penitence-of-saint-jerome-437261",
-      "titre": "The Penitence of Saint Jerome",
-      "artiste": "Joachim Patinir",
-      "epoque": "ca. 1515",
-      "technique": "Oil on wood",
-      "theme": "villes-voyages",
-      "format": "paysage",
+      "slug": "the-arab-falconer-436419",
+      "titre": "The Arab Falconer",
+      "artiste": "Eugène Fromentin",
+      "epoque": "1864",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
+      "format": "portrait",
       "couleur": "noir",
-      "ratio": 1.3524,
-      "image": "/media/art/the-penitence-of-saint-jerome-437261.webp",
-      "thumb": "/media/art/the-penitence-of-saint-jerome-437261-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437261",
+      "ratio": 0.6885,
+      "image": "/media/art/the-arab-falconer-436419.webp",
+      "thumb": "/media/art/the-arab-falconer-436419-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436419",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -2070,18 +2070,18 @@
       "avis": 34
     },
     {
-      "slug": "ship-by-moonlight-437979",
-      "titre": "Ship by Moonlight",
-      "artiste": "Ivan Konstantinovich Aivazovsky (Hovhannes Aivazian)",
-      "epoque": "",
+      "slug": "cafe-house-cairo-casting-bullets-436481",
+      "titre": "Cafe House, Cairo (Casting Bullets)",
+      "artiste": "Jean-Léon Gérôme",
+      "epoque": "1884 or earlier",
       "technique": "Oil on canvas",
-      "theme": "villes-voyages",
+      "theme": "heritage-marocain",
       "format": "paysage",
       "couleur": "noir",
-      "ratio": 1.4809,
-      "image": "/media/art/ship-by-moonlight-437979.webp",
-      "thumb": "/media/art/ship-by-moonlight-437979-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437979",
+      "ratio": 1.1901,
+      "image": "/media/art/cafe-house-cairo-casting-bullets-436481.webp",
+      "thumb": "/media/art/cafe-house-cairo-casting-bullets-436481-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436481",
       "tailles": [
         {
           "l": 40,
@@ -2126,48 +2126,48 @@
       "avis": 7
     },
     {
-      "slug": "view-of-marly-le-roi-from-coeur-volant-437682",
-      "titre": "View of Marly-le-Roi from Coeur-Volant",
-      "artiste": "Alfred Sisley",
-      "epoque": "1876",
+      "slug": "seated-arab-man-with-horse-441359",
+      "titre": "Seated Arab Man with Horse",
+      "artiste": "Alfred Dedreux",
+      "epoque": "possibly ca. 1850–58",
       "technique": "Oil on canvas",
-      "theme": "villes-voyages",
-      "format": "paysage",
-      "couleur": "gris",
-      "ratio": 1.4085,
-      "image": "/media/art/view-of-marly-le-roi-from-coeur-volant-437682.webp",
-      "thumb": "/media/art/view-of-marly-le-roi-from-coeur-volant-437682-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437682",
+      "theme": "heritage-marocain",
+      "format": "portrait",
+      "couleur": "noir",
+      "ratio": 0.8367,
+      "image": "/media/art/seated-arab-man-with-horse-441359.webp",
+      "thumb": "/media/art/seated-arab-man-with-horse-441359-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/441359",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -2182,48 +2182,48 @@
       "avis": 20
     },
     {
-      "slug": "dancers-in-the-rehearsal-room-with-a-double-bass-436138",
-      "titre": "Dancers in the Rehearsal Room with a Double Bass",
-      "artiste": "Edgar Degas",
-      "epoque": "ca. 1882–85",
-      "technique": "Oil on canvas",
-      "theme": "villes-voyages",
-      "format": "paysage",
-      "couleur": "noir",
-      "ratio": 2.2882,
-      "image": "/media/art/dancers-in-the-rehearsal-room-with-a-double-bass-436138.webp",
-      "thumb": "/media/art/dancers-in-the-rehearsal-room-with-a-double-bass-436138-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436138",
+      "slug": "a-cairo-bazaar-441356",
+      "titre": "A Cairo Bazaar",
+      "artiste": "Adrien Dauzats",
+      "epoque": "1839",
+      "technique": "Oil on wood",
+      "theme": "heritage-marocain",
+      "format": "portrait",
+      "couleur": "marron",
+      "ratio": 0.7495,
+      "image": "/media/art/a-cairo-bazaar-441356.webp",
+      "thumb": "/media/art/a-cairo-bazaar-441356-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/441356",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -2238,18 +2238,18 @@
       "avis": 33
     },
     {
-      "slug": "portrait-of-a-woman-with-a-man-at-a-casement-436896",
-      "titre": "Portrait of a Woman with a Man at a Casement",
-      "artiste": "Fra Filippo Lippi",
-      "epoque": "ca. 1440",
-      "technique": "Tempera on wood",
-      "theme": "portraits",
+      "slug": "scene-in-the-jewish-quarter-of-constantine-1851-437974",
+      "titre": "Scene in the Jewish Quarter of Constantine — 1851",
+      "artiste": "Théodore Chassériau",
+      "epoque": "1851",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
       "format": "portrait",
       "couleur": "marron",
-      "ratio": 0.6627,
-      "image": "/media/art/portrait-of-a-woman-with-a-man-at-a-casement-436896.webp",
-      "thumb": "/media/art/portrait-of-a-woman-with-a-man-at-a-casement-436896-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436896",
+      "ratio": 0.8275,
+      "image": "/media/art/scene-in-the-jewish-quarter-of-constantine-1851-437974.webp",
+      "thumb": "/media/art/scene-in-the-jewish-quarter-of-constantine-1851-437974-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437974",
       "tailles": [
         {
           "l": 30,
@@ -2294,48 +2294,48 @@
       "avis": 6
     },
     {
-      "slug": "charles-henry-augustus-carter-11347",
-      "titre": "Charles Henry Augustus Carter",
-      "artiste": "Nicholas Biddle Kittell",
-      "epoque": "ca. 1845",
+      "slug": "sketch-for-reception-of-emperor-napoleon-iii-and-empress-441374",
+      "titre": "Sketch for \"Reception of Emperor Napoleon III and Empress",
+      "artiste": "Isidore Pils",
+      "epoque": "ca. 1862–67",
       "technique": "Oil on canvas",
-      "theme": "portraits",
-      "format": "portrait",
-      "couleur": "marron",
-      "ratio": 0.8571,
-      "image": "/media/art/charles-henry-augustus-carter-11347.webp",
-      "thumb": "/media/art/charles-henry-augustus-carter-11347-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/11347",
+      "theme": "heritage-marocain",
+      "format": "paysage",
+      "couleur": "noir",
+      "ratio": 1.4787,
+      "image": "/media/art/sketch-for-reception-of-emperor-napoleon-iii-and-empress-441374.webp",
+      "thumb": "/media/art/sketch-for-reception-of-emperor-napoleon-iii-and-empress-441374-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/441374",
       "tailles": [
         {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
           "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
         },
         {
           "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
         },
         {
-          "l": 80,
-          "h": 120,
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
           "prix": 1290,
-          "ref": "80x120"
+          "ref": "120x80"
         }
       ],
       "prixMin": 290,
@@ -2350,18 +2350,18 @@
       "avis": 19
     },
     {
-      "slug": "self-portrait-with-a-straw-hat-obverse-the-potato-peeler-436532",
-      "titre": "Self-Portrait with a Straw Hat (obverse: The Potato Peeler)",
-      "artiste": "Vincent van Gogh",
-      "epoque": "1887",
+      "slug": "an-egyptian-peasant-woman-and-her-child-435711",
+      "titre": "An Egyptian Peasant Woman and Her Child",
+      "artiste": "Léon Bonnat",
+      "epoque": "1869–70",
       "technique": "Oil on canvas",
-      "theme": "portraits",
+      "theme": "heritage-marocain",
       "format": "portrait",
-      "couleur": "or",
-      "ratio": 0.8037,
-      "image": "/media/art/self-portrait-with-a-straw-hat-obverse-the-potato-peeler-436532.webp",
-      "thumb": "/media/art/self-portrait-with-a-straw-hat-obverse-the-potato-peeler-436532-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436532",
+      "couleur": "marron",
+      "ratio": 0.5438,
+      "image": "/media/art/an-egyptian-peasant-woman-and-her-child-435711.webp",
+      "thumb": "/media/art/an-egyptian-peasant-woman-and-her-child-435711-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/435711",
       "tailles": [
         {
           "l": 30,
@@ -2406,18 +2406,18 @@
       "avis": 32
     },
     {
-      "slug": "portrait-of-a-woman-436986",
-      "titre": "Portrait of a Woman",
-      "artiste": "Quinten Massys",
-      "epoque": "ca. 1520",
-      "technique": "Oil on wood",
-      "theme": "portraits",
+      "slug": "the-arab-falconer-1864-436419",
+      "titre": "The Arab Falconer — 1864",
+      "artiste": "Eugène Fromentin",
+      "epoque": "1864",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
       "format": "portrait",
       "couleur": "noir",
-      "ratio": 0.8587,
-      "image": "/media/art/portrait-of-a-woman-436986.webp",
-      "thumb": "/media/art/portrait-of-a-woman-436986-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436986",
+      "ratio": 0.6885,
+      "image": "/media/art/the-arab-falconer-1864-436419.webp",
+      "thumb": "/media/art/the-arab-falconer-1864-436419-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436419",
       "tailles": [
         {
           "l": 30,
@@ -2462,48 +2462,48 @@
       "avis": 45
     },
     {
-      "slug": "portrait-of-a-carthusian-435896",
-      "titre": "Portrait of a Carthusian",
-      "artiste": "Petrus Christus",
-      "epoque": "1446",
-      "technique": "Oil on oak",
-      "theme": "portraits",
-      "format": "portrait",
+      "slug": "sketch-for-reception-of-emperor-napoleon-iii-and-empress-ca-1862",
+      "titre": "Sketch for \"Reception of Emperor Napoleon III and Empress — ca. 1862–67",
+      "artiste": "Isidore Pils",
+      "epoque": "ca. 1862–67",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
+      "format": "paysage",
       "couleur": "noir",
-      "ratio": 0.729,
-      "image": "/media/art/portrait-of-a-carthusian-435896.webp",
-      "thumb": "/media/art/portrait-of-a-carthusian-435896-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435896",
+      "ratio": 1.4787,
+      "image": "/media/art/sketch-for-reception-of-emperor-napoleon-iii-and-empress-ca-1862.webp",
+      "thumb": "/media/art/sketch-for-reception-of-emperor-napoleon-iii-and-empress-ca-1862-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/441374",
       "tailles": [
         {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
           "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
         },
         {
           "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
         },
         {
-          "l": 80,
-          "h": 120,
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
           "prix": 1290,
-          "ref": "80x120"
+          "ref": "120x80"
         }
       ],
       "prixMin": 290,
@@ -2517,18 +2517,18 @@
       "avis": 18
     },
     {
-      "slug": "man-in-prayer-435837",
-      "titre": "Man in Prayer",
-      "artiste": "Rogier van der Weyden",
-      "epoque": "ca. 1440",
-      "technique": "Oil on wood",
-      "theme": "portraits",
+      "slug": "bashi-bazouk-651837",
+      "titre": "Bashi-Bazouk",
+      "artiste": "Jean-Léon Gérôme",
+      "epoque": "ca. 1868–69",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
       "format": "portrait",
       "couleur": "noir",
-      "ratio": 0.7324,
-      "image": "/media/art/man-in-prayer-435837.webp",
-      "thumb": "/media/art/man-in-prayer-435837-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435837",
+      "ratio": 0.8168,
+      "image": "/media/art/bashi-bazouk-651837.webp",
+      "thumb": "/media/art/bashi-bazouk-651837-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/651837",
       "tailles": [
         {
           "l": 30,
@@ -2573,18 +2573,18 @@
       "avis": 31
     },
     {
-      "slug": "holy-family-with-an-angel-437368",
-      "titre": "Holy Family with an Angel",
-      "artiste": "Raffaellino del Garbo (also known as Raffaelle de' Capponi and Raffaelle de' Carli)",
-      "epoque": "ca. 1490",
-      "technique": "Tempera on canvas, transferred from wood",
-      "theme": "portraits",
+      "slug": "prayer-in-the-mosque-by-1874-436482",
+      "titre": "Prayer in the Mosque — by 1874",
+      "artiste": "Jean-Léon Gérôme",
+      "epoque": "by 1874",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
       "format": "portrait",
-      "couleur": "noir",
-      "ratio": 0.697,
-      "image": "/media/art/holy-family-with-an-angel-437368.webp",
-      "thumb": "/media/art/holy-family-with-an-angel-437368-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437368",
+      "couleur": "marron",
+      "ratio": 0.8462,
+      "image": "/media/art/prayer-in-the-mosque-by-1874-436482.webp",
+      "thumb": "/media/art/prayer-in-the-mosque-by-1874-436482-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436482",
       "tailles": [
         {
           "l": 30,
@@ -2629,48 +2629,48 @@
       "avis": 44
     },
     {
-      "slug": "the-crucifixion-the-last-judgment-436282",
-      "titre": "The Crucifixion; The Last Judgment",
-      "artiste": "Jan van Eyck",
-      "epoque": "ca. 1436–38",
-      "technique": "Oil on canvas, transferred from wood",
-      "theme": "chefs-doeuvre",
-      "format": "portrait",
+      "slug": "arabs-crossing-a-ford-1873-436420",
+      "titre": "Arabs Crossing a Ford — 1873",
+      "artiste": "Eugène Fromentin",
+      "epoque": "1873",
+      "technique": "Oil on wood",
+      "theme": "heritage-marocain",
+      "format": "paysage",
       "couleur": "noir",
-      "ratio": 0.8355,
-      "image": "/media/art/the-crucifixion-the-last-judgment-436282.webp",
-      "thumb": "/media/art/the-crucifixion-the-last-judgment-436282-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436282",
+      "ratio": 1.2158,
+      "image": "/media/art/arabs-crossing-a-ford-1873-436420.webp",
+      "thumb": "/media/art/arabs-crossing-a-ford-1873-436420-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436420",
       "tailles": [
         {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
           "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
         },
         {
           "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
         },
         {
-          "l": 80,
-          "h": 120,
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
           "prix": 1290,
-          "ref": "80x120"
+          "ref": "120x80"
         }
       ],
       "prixMin": 290,
@@ -2685,18 +2685,18 @@
       "avis": 17
     },
     {
-      "slug": "circus-sideshow-parade-de-cirque-437654",
-      "titre": "Circus Sideshow (Parade de cirque)",
-      "artiste": "Georges Seurat",
-      "epoque": "1887–88",
+      "slug": "battle-scene-arabs-making-a-detour-437642",
+      "titre": "Battle Scene: Arabs Making a Detour",
+      "artiste": "Adolf Schreyer",
+      "epoque": "",
       "technique": "Oil on canvas",
-      "theme": "chefs-doeuvre",
+      "theme": "heritage-marocain",
       "format": "paysage",
       "couleur": "marron",
-      "ratio": 1.4956,
-      "image": "/media/art/circus-sideshow-parade-de-cirque-437654.webp",
-      "thumb": "/media/art/circus-sideshow-parade-de-cirque-437654-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437654",
+      "ratio": 1.6574,
+      "image": "/media/art/battle-scene-arabs-making-a-detour-437642.webp",
+      "thumb": "/media/art/battle-scene-arabs-making-a-detour-437642-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437642",
       "tailles": [
         {
           "l": 40,
@@ -2741,51 +2741,51 @@
       "avis": 30
     },
     {
-      "slug": "the-triumph-of-fame-reverse-impresa-of-the-medici-family-436516",
-      "titre": "The Triumph of Fame; (reverse) Impresa of the Medici Family",
-      "artiste": "Giovanni di ser Giovanni Guidi (called Scheggia)",
-      "epoque": "ca. 1449",
-      "technique": "Tempera, silver, and gold on wood",
-      "theme": "chefs-doeuvre",
-      "format": "carre",
-      "couleur": "noir",
-      "ratio": 1.0216,
-      "image": "/media/art/the-triumph-of-fame-reverse-impresa-of-the-medici-family-436516.webp",
-      "thumb": "/media/art/the-triumph-of-fame-reverse-impresa-of-the-medici-family-436516-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436516",
+      "slug": "jerusalem-from-the-mount-of-olives-436418",
+      "titre": "Jerusalem from the Mount of Olives",
+      "artiste": "Charles-Théodore Frère",
+      "epoque": "by 1880",
+      "technique": "Oil on canvas",
+      "theme": "heritage-marocain",
+      "format": "paysage",
+      "couleur": "gris",
+      "ratio": 1.4675,
+      "image": "/media/art/jerusalem-from-the-mount-of-olives-436418.webp",
+      "thumb": "/media/art/jerusalem-from-the-mount-of-olives-436418-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436418",
       "tailles": [
         {
-          "l": 30,
-          "h": 30,
-          "prix": 260,
-          "ref": "30x30"
-        },
-        {
           "l": 40,
-          "h": 40,
-          "prix": 390,
-          "ref": "40x40"
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
         },
         {
           "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
           "h": 60,
-          "prix": 640,
-          "ref": "60x60"
+          "prix": 850,
+          "ref": "90x60"
         },
         {
-          "l": 80,
+          "l": 120,
           "h": 80,
-          "prix": 990,
-          "ref": "80x80"
-        },
-        {
-          "l": 100,
-          "h": 100,
-          "prix": 1450,
-          "ref": "100x100"
+          "prix": 1290,
+          "ref": "120x80"
         }
       ],
-      "prixMin": 260,
+      "prixMin": 290,
       "pieces": [
         "chambre",
         "chambre-enfant"
@@ -2797,18 +2797,18 @@
       "avis": 43
     },
     {
-      "slug": "the-jabach-family-626692",
-      "titre": "The Jabach Family",
-      "artiste": "Charles Le Brun",
-      "epoque": "ca. 1660",
+      "slug": "arabs-on-the-march-437641",
+      "titre": "Arabs on the March",
+      "artiste": "Adolf Schreyer",
+      "epoque": "",
       "technique": "Oil on canvas",
-      "theme": "chefs-doeuvre",
+      "theme": "heritage-marocain",
       "format": "paysage",
       "couleur": "noir",
-      "ratio": 1.1774,
-      "image": "/media/art/the-jabach-family-626692.webp",
-      "thumb": "/media/art/the-jabach-family-626692-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/626692",
+      "ratio": 1.6129,
+      "image": "/media/art/arabs-on-the-march-437641.webp",
+      "thumb": "/media/art/arabs-on-the-march-437641-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437641",
       "tailles": [
         {
           "l": 40,
@@ -2853,18 +2853,18 @@
       "avis": 16
     },
     {
-      "slug": "the-horse-fair-435702",
-      "titre": "The Horse Fair",
-      "artiste": "Rosa Bonheur",
-      "epoque": "1852–55",
-      "technique": "Oil on canvas",
-      "theme": "chefs-doeuvre",
+      "slug": "landscape-65625",
+      "titre": "Landscape",
+      "artiste": "Ye Xin",
+      "epoque": "datable to 1645–55",
+      "technique": "Double album leaf from a collective album of twelve paintings and facing pages of calligraphy; ink and color on paper",
+      "theme": "nature-paysage",
       "format": "paysage",
-      "couleur": "marron",
-      "ratio": 1.9579,
-      "image": "/media/art/the-horse-fair-435702.webp",
-      "thumb": "/media/art/the-horse-fair-435702-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/435702",
+      "couleur": "rose",
+      "ratio": 1.3306,
+      "image": "/media/art/landscape-65625.webp",
+      "thumb": "/media/art/landscape-65625-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/65625",
       "tailles": [
         {
           "l": 40,
@@ -2909,48 +2909,48 @@
       "avis": 29
     },
     {
-      "slug": "the-death-of-socrates-436105",
-      "titre": "The Death of Socrates",
-      "artiste": "Jacques Louis David",
-      "epoque": "1787",
-      "technique": "Oil on canvas",
-      "theme": "chefs-doeuvre",
-      "format": "paysage",
+      "slug": "a-bouquet-of-flowers-827660",
+      "titre": "A Bouquet of Flowers",
+      "artiste": "Clara Peeters",
+      "epoque": "ca. 1612",
+      "technique": "Oil on wood",
+      "theme": "nature-paysage",
+      "format": "portrait",
       "couleur": "noir",
-      "ratio": 1.5021,
-      "image": "/media/art/the-death-of-socrates-436105.webp",
-      "thumb": "/media/art/the-death-of-socrates-436105-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/436105",
+      "ratio": 0.7308,
+      "image": "/media/art/a-bouquet-of-flowers-827660.webp",
+      "thumb": "/media/art/a-bouquet-of-flowers-827660-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/827660",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -2965,18 +2965,18 @@
       "avis": 42
     },
     {
-      "slug": "memorial-portrait-of-ichiryusai-hiroshige-1797-1858-53719",
-      "titre": "Memorial Portrait of Ichiryusai Hiroshige (1797–1858)",
-      "artiste": "Utagawa Kunisada",
-      "epoque": "1786–1864",
-      "technique": "Woodblock print; ink and color on paper",
-      "theme": "japandi",
+      "slug": "six-jewel-rivers-from-various-provinces-53449",
+      "titre": "Six Jewel Rivers from Various Provinces",
+      "artiste": "Utagawa Hiroshige",
+      "epoque": "1857",
+      "technique": "Six woodblock prints; ink and color on paper",
+      "theme": "nature-paysage",
       "format": "portrait",
       "couleur": "beige",
-      "ratio": 0.685,
-      "image": "/media/art/memorial-portrait-of-ichiryusai-hiroshige-1797-1858-53719.webp",
-      "thumb": "/media/art/memorial-portrait-of-ichiryusai-hiroshige-1797-1858-53719-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/53719",
+      "ratio": 0.7505,
+      "image": "/media/art/six-jewel-rivers-from-various-provinces-53449.webp",
+      "thumb": "/media/art/six-jewel-rivers-from-various-provinces-53449-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/53449",
       "tailles": [
         {
           "l": 30,
@@ -3020,18 +3020,18 @@
       "avis": 15
     },
     {
-      "slug": "fisherman-s-lodge-at-mount-xisai-40057",
-      "titre": "Fisherman's Lodge At Mount Xisai",
-      "artiste": "Li Jie",
-      "epoque": "ca. 1170",
-      "technique": "Handscroll; ink and color on silk",
-      "theme": "japandi",
+      "slug": "a-brazilian-landscape-437323",
+      "titre": "A Brazilian Landscape",
+      "artiste": "Frans Post",
+      "epoque": "1650",
+      "technique": "Oil on wood",
+      "theme": "nature-paysage",
       "format": "paysage",
-      "couleur": "vert",
-      "ratio": 1.6194,
-      "image": "/media/art/fisherman-s-lodge-at-mount-xisai-40057.webp",
-      "thumb": "/media/art/fisherman-s-lodge-at-mount-xisai-40057-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/40057",
+      "couleur": "marron",
+      "ratio": 1.5165,
+      "image": "/media/art/a-brazilian-landscape-437323.webp",
+      "thumb": "/media/art/a-brazilian-landscape-437323-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437323",
       "tailles": [
         {
           "l": 40,
@@ -3076,18 +3076,18 @@
       "avis": 28
     },
     {
-      "slug": "print-55176",
-      "titre": "Print",
-      "artiste": "Tsuneshige",
-      "epoque": "ca. 1900",
+      "slug": "memorial-portrait-of-ichiryusai-hiroshige-1797-1858-53719",
+      "titre": "Memorial Portrait of Ichiryusai Hiroshige (1797–1858)",
+      "artiste": "Utagawa Kunisada",
+      "epoque": "1786–1864",
       "technique": "Woodblock print; ink and color on paper",
-      "theme": "japandi",
+      "theme": "nature-paysage",
       "format": "portrait",
-      "couleur": "rose",
-      "ratio": 0.698,
-      "image": "/media/art/print-55176.webp",
-      "thumb": "/media/art/print-55176-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/55176",
+      "couleur": "beige",
+      "ratio": 0.685,
+      "image": "/media/art/memorial-portrait-of-ichiryusai-hiroshige-1797-1858-53719.webp",
+      "thumb": "/media/art/memorial-portrait-of-ichiryusai-hiroshige-1797-1858-53719-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/53719",
       "tailles": [
         {
           "l": 30,
@@ -3132,48 +3132,48 @@
       "avis": 41
     },
     {
-      "slug": "women-on-a-bridge-tossing-fans-into-a-river-53439",
-      "titre": "Women on a Bridge Tossing Fans into a River",
-      "artiste": "Artiste anonyme",
-      "epoque": "early 17th century",
-      "technique": "Six-panel folding screen; ink, color, gold, and gold leaf on paper",
-      "theme": "japandi",
-      "format": "paysage",
-      "couleur": "vert",
-      "ratio": 2.1448,
-      "image": "/media/art/women-on-a-bridge-tossing-fans-into-a-river-53439.webp",
-      "thumb": "/media/art/women-on-a-bridge-tossing-fans-into-a-river-53439-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/53439",
+      "slug": "wave-56186",
+      "titre": "Wave",
+      "artiste": "Katsushika Hokusai",
+      "epoque": "",
+      "technique": "Monochrome woodblock print; ink on paper",
+      "theme": "nature-paysage",
+      "format": "portrait",
+      "couleur": "beige",
+      "ratio": 0.7262,
+      "image": "/media/art/wave-56186.webp",
+      "thumb": "/media/art/wave-56186-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/56186",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -3188,130 +3188,18 @@
       "avis": 14
     },
     {
-      "slug": "poster-for-a-performance-by-henri-huerta-916228",
-      "titre": "Poster for a performance by Henri Huerta",
-      "artiste": "Anonymous",
-      "epoque": "1871",
-      "technique": "Lithograph",
-      "theme": "affiches",
-      "format": "portrait",
-      "couleur": "rose",
-      "ratio": 0.832,
-      "image": "/media/art/poster-for-a-performance-by-henri-huerta-916228.webp",
-      "thumb": "/media/art/poster-for-a-performance-by-henri-huerta-916228-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/916228",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "salle-a-manger",
-        "entree"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.7,
-      "avis": 27
-    },
-    {
-      "slug": "the-englishman-william-tom-warrener-1861-1934-at-the-437835",
-      "titre": "The Englishman (William Tom Warrener, 1861–1934) at the",
-      "artiste": "Henri de Toulouse-Lautrec",
-      "epoque": "1892",
-      "technique": "Oil on cardboard",
-      "theme": "affiches",
-      "format": "portrait",
-      "couleur": "terracotta",
-      "ratio": 0.7518,
-      "image": "/media/art/the-englishman-william-tom-warrener-1861-1934-at-the-437835.webp",
-      "thumb": "/media/art/the-englishman-william-tom-warrener-1861-1934-at-the-437835-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437835",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "chambre",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.800000000000001,
-      "avis": 40
-    },
-    {
-      "slug": "the-sofa-437837",
-      "titre": "The Sofa",
-      "artiste": "Henri de Toulouse-Lautrec",
-      "epoque": "ca. 1894–96",
-      "technique": "Oil on cardboard",
-      "theme": "affiches",
+      "slug": "landscape-american-1800-1830-11774",
+      "titre": "Landscape — American, 1800–1830",
+      "artiste": "Jean Pillement",
+      "epoque": "1800–1830",
+      "technique": "Oil on canvas",
+      "theme": "nature-paysage",
       "format": "paysage",
       "couleur": "gris",
-      "ratio": 1.2994,
-      "image": "/media/art/the-sofa-437837.webp",
-      "thumb": "/media/art/the-sofa-437837-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437837",
+      "ratio": 1.4902,
+      "image": "/media/art/landscape-american-1800-1830-11774.webp",
+      "thumb": "/media/art/landscape-american-1800-1830-11774-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/11774",
       "tailles": [
         {
           "l": 40,
@@ -3346,6 +3234,118 @@
       ],
       "prixMin": 290,
       "pieces": [
+        "salle-a-manger",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.7,
+      "avis": 27
+    },
+    {
+      "slug": "snowy-landscape-55603",
+      "titre": "Snowy Landscape",
+      "artiste": "Utagawa Hiroshige",
+      "epoque": "1850",
+      "technique": "Woodblock print; ink and color on paper",
+      "theme": "nature-paysage",
+      "format": "paysage",
+      "couleur": "rose",
+      "ratio": 1.3194,
+      "image": "/media/art/snowy-landscape-55603.webp",
+      "thumb": "/media/art/snowy-landscape-55603-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/55603",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "chambre",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.800000000000001,
+      "avis": 40
+    },
+    {
+      "slug": "evening-landscape-with-an-aqueduct-436455",
+      "titre": "Evening: Landscape with an Aqueduct",
+      "artiste": "Théodore Géricault",
+      "epoque": "1818",
+      "technique": "Oil on canvas",
+      "theme": "nature-paysage",
+      "format": "carre",
+      "couleur": "marron",
+      "ratio": 0.8767,
+      "image": "/media/art/evening-landscape-with-an-aqueduct-436455.webp",
+      "thumb": "/media/art/evening-landscape-with-an-aqueduct-436455-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/436455",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 30,
+          "prix": 260,
+          "ref": "30x30"
+        },
+        {
+          "l": 40,
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
+        },
+        {
+          "l": 60,
+          "h": 60,
+          "prix": 640,
+          "ref": "60x60"
+        },
+        {
+          "l": 80,
+          "h": 80,
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
+        }
+      ],
+      "prixMin": 260,
+      "pieces": [
         "chambre-enfant",
         "cabinet"
       ],
@@ -3356,18 +3356,18 @@
       "avis": 13
     },
     {
-      "slug": "design-for-art-nouveau-loveseat-with-caning-392369",
-      "titre": "Design for Art Nouveau Loveseat with Caning",
-      "artiste": "Anonymous, French, 19th century",
-      "epoque": "19th century",
-      "technique": "Watercolor over graphite with touches of gouache, framing lines in graphite",
-      "theme": "affiches",
+      "slug": "cremorne-gardens-13223",
+      "titre": "Cremorne Gardens",
+      "artiste": "James McNeill Whistler",
+      "epoque": "ca. 1870–80",
+      "technique": "Oil on canvas",
+      "theme": "nature-paysage",
       "format": "paysage",
-      "couleur": "beige",
-      "ratio": 1.3151,
-      "image": "/media/art/design-for-art-nouveau-loveseat-with-caning-392369.webp",
-      "thumb": "/media/art/design-for-art-nouveau-loveseat-with-caning-392369-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/392369",
+      "couleur": "marron",
+      "ratio": 1.9544,
+      "image": "/media/art/cremorne-gardens-13223.webp",
+      "thumb": "/media/art/cremorne-gardens-13223-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/13223",
       "tailles": [
         {
           "l": 40,
@@ -3412,18 +3412,18 @@
       "avis": 26
     },
     {
-      "slug": "advertisement-for-philadelphia-sunday-press-easter-696946",
-      "titre": "Advertisement for Philadelphia Sunday Press, Easter",
-      "artiste": "George Reiter Brill",
-      "epoque": "1896",
-      "technique": "Lithograph",
-      "theme": "affiches",
+      "slug": "upright-landscape-73561",
+      "titre": "Upright Landscape",
+      "artiste": "Utagawa Hiroshige",
+      "epoque": "19th century",
+      "technique": "Woodblock print; ink and color on paper",
+      "theme": "nature-paysage",
       "format": "portrait",
-      "couleur": "beige",
-      "ratio": 0.728,
-      "image": "/media/art/advertisement-for-philadelphia-sunday-press-easter-696946.webp",
-      "thumb": "/media/art/advertisement-for-philadelphia-sunday-press-easter-696946-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/696946",
+      "couleur": "gris",
+      "ratio": 0.6993,
+      "image": "/media/art/upright-landscape-73561.webp",
+      "thumb": "/media/art/upright-landscape-73561-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/73561",
       "tailles": [
         {
           "l": 30,
@@ -3468,18 +3468,18 @@
       "avis": 39
     },
     {
-      "slug": "at-the-circus-the-spanish-walk-au-cirque-le-pas-espagnol-459241",
-      "titre": "At the Circus: The Spanish Walk (Au Cirque: Le Pas espagnol)",
-      "artiste": "Henri de Toulouse-Lautrec",
-      "epoque": "1899",
-      "technique": "Graphite, black and colored pastel, and charcoal on off-white heavy wove paper",
-      "theme": "affiches",
+      "slug": "wall-painting-perseus-and-andromeda-in-landscape-250945",
+      "titre": "Wall painting: Perseus and Andromeda in landscape",
+      "artiste": "Artiste anonyme",
+      "epoque": "last decade of the 1st century BCE",
+      "technique": "Fresco",
+      "theme": "nature-paysage",
       "format": "portrait",
-      "couleur": "blanc",
-      "ratio": 0.7161,
-      "image": "/media/art/at-the-circus-the-spanish-walk-au-cirque-le-pas-espagnol-459241.webp",
-      "thumb": "/media/art/at-the-circus-the-spanish-walk-au-cirque-le-pas-espagnol-459241-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/459241",
+      "couleur": "marron",
+      "ratio": 0.6541,
+      "image": "/media/art/wall-painting-perseus-and-andromeda-in-landscape-250945.webp",
+      "thumb": "/media/art/wall-painting-perseus-and-andromeda-in-landscape-250945-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/250945",
       "tailles": [
         {
           "l": 30,
@@ -3523,18 +3523,18 @@
       "avis": 12
     },
     {
-      "slug": "advertisement-for-philadelphia-sunday-press-may-10-1896-732445",
-      "titre": "Advertisement for Philadelphia Sunday Press, May 10, 1896",
-      "artiste": "George Reiter Brill",
-      "epoque": "1896",
-      "technique": "Lithograph",
-      "theme": "affiches",
+      "slug": "bouquet-of-flowers-in-a-roemer-922227",
+      "titre": "Bouquet of Flowers in a Roemer",
+      "artiste": "Ambrosius Bosschaert the Elder",
+      "epoque": "ca. 1620",
+      "technique": "Oil on wood",
+      "theme": "nature-paysage",
       "format": "portrait",
-      "couleur": "beige",
-      "ratio": 0.7168,
-      "image": "/media/art/advertisement-for-philadelphia-sunday-press-may-10-1896-732445.webp",
-      "thumb": "/media/art/advertisement-for-philadelphia-sunday-press-may-10-1896-732445-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/732445",
+      "couleur": "marron",
+      "ratio": 0.6883,
+      "image": "/media/art/bouquet-of-flowers-in-a-roemer-922227.webp",
+      "thumb": "/media/art/bouquet-of-flowers-in-a-roemer-922227-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/922227",
       "tailles": [
         {
           "l": 30,
@@ -3579,186 +3579,18 @@
       "avis": 25
     },
     {
-      "slug": "black-canon-from-camp-8-looking-above-264711",
-      "titre": "Black Cañon, From Camp 8, Looking Above",
-      "artiste": "Timothy H. O'Sullivan",
-      "epoque": "1871",
-      "technique": "Albumen silver print from glass negative",
-      "theme": "noir-et-blanc",
-      "format": "carre",
-      "couleur": "beige",
-      "ratio": 1.144,
-      "image": "/media/art/black-canon-from-camp-8-looking-above-264711.webp",
-      "thumb": "/media/art/black-canon-from-camp-8-looking-above-264711-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/264711",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 30,
-          "prix": 260,
-          "ref": "30x30"
-        },
-        {
-          "l": 40,
-          "h": 40,
-          "prix": 390,
-          "ref": "40x40"
-        },
-        {
-          "l": 60,
-          "h": 60,
-          "prix": 640,
-          "ref": "60x60"
-        },
-        {
-          "l": 80,
-          "h": 80,
-          "prix": 990,
-          "ref": "80x80"
-        },
-        {
-          "l": 100,
-          "h": 100,
-          "prix": 1450,
-          "ref": "100x100"
-        }
-      ],
-      "prixMin": 260,
-      "pieces": [
-        "salon-marocain",
-        "chambre-enfant"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 0,
-      "note": 4.800000000000001,
-      "avis": 38
-    },
-    {
-      "slug": "phillis-wheatley-396463",
-      "titre": "Phillis Wheatley",
-      "artiste": "Scipio Moorhead",
-      "epoque": "1773",
-      "technique": "Engraving",
-      "theme": "noir-et-blanc",
-      "format": "portrait",
-      "couleur": "rose",
-      "ratio": 0.7568,
-      "image": "/media/art/phillis-wheatley-396463.webp",
-      "thumb": "/media/art/phillis-wheatley-396463-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/396463",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "entree",
-        "cabinet"
-      ],
-      "nouveaute": false,
-      "bestseller": false,
-      "promo": 25,
-      "note": 4.9,
-      "avis": 11
-    },
-    {
-      "slug": "bourges-283109",
-      "titre": "Bourges",
-      "artiste": "Pierre Emile Joseph Pécarrère",
-      "epoque": "1850–52",
-      "technique": "Salted paper print from paper negative",
-      "theme": "noir-et-blanc",
-      "format": "portrait",
-      "couleur": "beige",
-      "ratio": 0.7961,
-      "image": "/media/art/bourges-283109.webp",
-      "thumb": "/media/art/bourges-283109-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/283109",
-      "tailles": [
-        {
-          "l": 30,
-          "h": 40,
-          "prix": 290,
-          "ref": "30x40"
-        },
-        {
-          "l": 40,
-          "h": 60,
-          "prix": 420,
-          "ref": "40x60"
-        },
-        {
-          "l": 50,
-          "h": 70,
-          "prix": 590,
-          "ref": "50x70"
-        },
-        {
-          "l": 60,
-          "h": 90,
-          "prix": 850,
-          "ref": "60x90"
-        },
-        {
-          "l": 80,
-          "h": 120,
-          "prix": 1290,
-          "ref": "80x120"
-        }
-      ],
-      "prixMin": 290,
-      "pieces": [
-        "salle-a-manger",
-        "entree"
-      ],
-      "nouveaute": false,
-      "bestseller": true,
-      "promo": 0,
-      "note": 4.4,
-      "avis": 24
-    },
-    {
-      "slug": "departing-storm-680496",
-      "titre": "Departing Storm",
-      "artiste": "David Lucas",
-      "epoque": "1829",
-      "technique": "Mezzotint on chine collé; progress proof",
-      "theme": "noir-et-blanc",
+      "slug": "winter-landscape-56495",
+      "titre": "Winter Landscape",
+      "artiste": "Utagawa Hiroshige",
+      "epoque": "1846",
+      "technique": "Woodblock print; ink and color on paper",
+      "theme": "nature-paysage",
       "format": "paysage",
       "couleur": "beige",
-      "ratio": 1.3576,
-      "image": "/media/art/departing-storm-680496.webp",
-      "thumb": "/media/art/departing-storm-680496-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/680496",
+      "ratio": 1.471,
+      "image": "/media/art/winter-landscape-56495.webp",
+      "thumb": "/media/art/winter-landscape-56495-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/56495",
       "tailles": [
         {
           "l": 40,
@@ -3793,6 +3625,174 @@
       ],
       "prixMin": 290,
       "pieces": [
+        "salon-marocain",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.800000000000001,
+      "avis": 38
+    },
+    {
+      "slug": "wall-painting-on-black-ground-landscape-250939",
+      "titre": "Wall painting on black ground: landscape",
+      "artiste": "Artiste anonyme",
+      "epoque": "last decade of the 1st century BCE",
+      "technique": "Fresco",
+      "theme": "nature-paysage",
+      "format": "carre",
+      "couleur": "noir",
+      "ratio": 1,
+      "image": "/media/art/wall-painting-on-black-ground-landscape-250939.webp",
+      "thumb": "/media/art/wall-painting-on-black-ground-landscape-250939-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/250939",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 30,
+          "prix": 260,
+          "ref": "30x30"
+        },
+        {
+          "l": 40,
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
+        },
+        {
+          "l": 60,
+          "h": 60,
+          "prix": 640,
+          "ref": "60x60"
+        },
+        {
+          "l": 80,
+          "h": 80,
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
+        }
+      ],
+      "prixMin": 260,
+      "pieces": [
+        "entree",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 25,
+      "note": 4.9,
+      "avis": 11
+    },
+    {
+      "slug": "kajikazawa-in-kai-province-koshu-kajikazawa-56727",
+      "titre": "Kajikazawa in Kai Province (Kōshū Kajikazawa)",
+      "artiste": "Katsushika Hokusai",
+      "epoque": "ca. 1830–32",
+      "technique": "Woodblock print; ink and color on paper",
+      "theme": "nature-paysage",
+      "format": "paysage",
+      "couleur": "beige",
+      "ratio": 1.5079,
+      "image": "/media/art/kajikazawa-in-kai-province-koshu-kajikazawa-56727.webp",
+      "thumb": "/media/art/kajikazawa-in-kai-province-koshu-kajikazawa-56727-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/56727",
+      "tailles": [
+        {
+          "l": 40,
+          "h": 30,
+          "prix": 290,
+          "ref": "40x30"
+        },
+        {
+          "l": 60,
+          "h": 40,
+          "prix": 420,
+          "ref": "60x40"
+        },
+        {
+          "l": 70,
+          "h": 50,
+          "prix": 590,
+          "ref": "70x50"
+        },
+        {
+          "l": 90,
+          "h": 60,
+          "prix": 850,
+          "ref": "90x60"
+        },
+        {
+          "l": 120,
+          "h": 80,
+          "prix": 1290,
+          "ref": "120x80"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salle-a-manger",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": true,
+      "promo": 0,
+      "note": 4.4,
+      "avis": 24
+    },
+    {
+      "slug": "wall-painting-polyphemus-and-galatea-in-a-landscape-250946",
+      "titre": "Wall painting: Polyphemus and Galatea in a landscape",
+      "artiste": "Artiste anonyme",
+      "epoque": "last decade of the 1st century BCE",
+      "technique": "Fresco",
+      "theme": "nature-paysage",
+      "format": "portrait",
+      "couleur": "marron",
+      "ratio": 0.6718,
+      "image": "/media/art/wall-painting-polyphemus-and-galatea-in-a-landscape-250946.webp",
+      "thumb": "/media/art/wall-painting-polyphemus-and-galatea-in-a-landscape-250946-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/250946",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
         "chambre",
         "chambre-enfant"
       ],
@@ -3803,18 +3803,18 @@
       "avis": 37
     },
     {
-      "slug": "the-wilderness-battlefield-306613",
-      "titre": "[The Wilderness Battlefield]",
-      "artiste": "G. O. Brown",
-      "epoque": "1866",
-      "technique": "Albumen silver print from glass negative",
-      "theme": "noir-et-blanc",
+      "slug": "garden-view-brooklyn-853646",
+      "titre": "Garden View, Brooklyn",
+      "artiste": "Fidelia Bridges",
+      "epoque": "ca. 1867",
+      "technique": "Watercolor and gouache, with traces of graphite underdrawing, on tan hot-pressed wove paper",
+      "theme": "nature-paysage",
       "format": "portrait",
-      "couleur": "marron",
-      "ratio": 0.6865,
-      "image": "/media/art/the-wilderness-battlefield-306613.webp",
-      "thumb": "/media/art/the-wilderness-battlefield-306613-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/306613",
+      "couleur": "rose",
+      "ratio": 0.657,
+      "image": "/media/art/garden-view-brooklyn-853646.webp",
+      "thumb": "/media/art/garden-view-brooklyn-853646-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/853646",
       "tailles": [
         {
           "l": 30,
@@ -3859,18 +3859,18 @@
       "avis": 10
     },
     {
-      "slug": "john-james-audubon-389900",
-      "titre": "John James Audubon",
-      "artiste": "Francis d' Avignon",
-      "epoque": "1850",
-      "technique": "Lithograph after a daguerreotype",
-      "theme": "animaux",
+      "slug": "bouquet-of-chrysanthemums-438012",
+      "titre": "Bouquet of Chrysanthemums",
+      "artiste": "Auguste Renoir",
+      "epoque": "1881",
+      "technique": "Oil on canvas",
+      "theme": "nature-paysage",
       "format": "portrait",
-      "couleur": "blanc",
-      "ratio": 0.7907,
-      "image": "/media/art/john-james-audubon-389900.webp",
-      "thumb": "/media/art/john-james-audubon-389900-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/389900",
+      "couleur": "marron",
+      "ratio": 0.8457,
+      "image": "/media/art/bouquet-of-chrysanthemums-438012.webp",
+      "thumb": "/media/art/bouquet-of-chrysanthemums-438012-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/438012",
       "tailles": [
         {
           "l": 30,
@@ -3915,48 +3915,48 @@
       "avis": 23
     },
     {
-      "slug": "finches-and-bamboo-39936",
-      "titre": "Finches and bamboo",
-      "artiste": "Emperor Huizong",
-      "epoque": "early 12th century",
-      "technique": "Handscroll; ink and color on silk",
-      "theme": "animaux",
-      "format": "paysage",
-      "couleur": "terracotta",
-      "ratio": 1.8527,
-      "image": "/media/art/finches-and-bamboo-39936.webp",
-      "thumb": "/media/art/finches-and-bamboo-39936-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/39936",
+      "slug": "pine-tree-at-karasaki-56411",
+      "titre": "Pine Tree at Karasaki",
+      "artiste": "Utagawa Hiroshige",
+      "epoque": "1857",
+      "technique": "Woodblock print; ink and color on paper",
+      "theme": "nature-paysage",
+      "format": "portrait",
+      "couleur": "rose",
+      "ratio": 0.6787,
+      "image": "/media/art/pine-tree-at-karasaki-56411.webp",
+      "thumb": "/media/art/pine-tree-at-karasaki-56411-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/56411",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -3971,51 +3971,51 @@
       "avis": 36
     },
     {
-      "slug": "hudson-s-bay-lemming-10081",
-      "titre": "Hudson's Bay Lemming",
-      "artiste": "John Woodhouse Audubon",
-      "epoque": "1846",
-      "technique": "Oil on canvas",
-      "theme": "animaux",
-      "format": "paysage",
-      "couleur": "marron",
-      "ratio": 1.8647,
-      "image": "/media/art/hudson-s-bay-lemming-10081.webp",
-      "thumb": "/media/art/hudson-s-bay-lemming-10081-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/10081",
+      "slug": "wall-painting-on-black-ground-aedicula-with-small-landscape-2509",
+      "titre": "Wall painting on black ground: Aedicula with small landscape",
+      "artiste": "Artiste anonyme",
+      "epoque": "last decade of the 1st century BCE",
+      "technique": "Fresco",
+      "theme": "nature-paysage",
+      "format": "carre",
+      "couleur": "noir",
+      "ratio": 0.9997,
+      "image": "/media/art/wall-painting-on-black-ground-aedicula-with-small-landscape-2509.webp",
+      "thumb": "/media/art/wall-painting-on-black-ground-aedicula-with-small-landscape-2509-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/250930",
       "tailles": [
         {
-          "l": 40,
+          "l": 30,
           "h": 30,
-          "prix": 290,
-          "ref": "40x30"
+          "prix": 260,
+          "ref": "30x30"
+        },
+        {
+          "l": 40,
+          "h": 40,
+          "prix": 390,
+          "ref": "40x40"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
           "h": 60,
-          "prix": 850,
-          "ref": "90x60"
+          "prix": 640,
+          "ref": "60x60"
         },
         {
-          "l": 120,
+          "l": 80,
           "h": 80,
-          "prix": 1290,
-          "ref": "120x80"
+          "prix": 990,
+          "ref": "80x80"
+        },
+        {
+          "l": 100,
+          "h": 100,
+          "prix": 1450,
+          "ref": "100x100"
         }
       ],
-      "prixMin": 290,
+      "prixMin": 260,
       "pieces": [
         "cabinet"
       ],
@@ -4026,48 +4026,48 @@
       "avis": 9
     },
     {
-      "slug": "wolf-and-fox-hunt-437536",
-      "titre": "Wolf and Fox Hunt",
-      "artiste": "Peter Paul Rubens",
-      "epoque": "ca. 1616",
+      "slug": "vase-of-flowers-pink-background-437382",
+      "titre": "Vase of Flowers (Pink Background)",
+      "artiste": "Odilon Redon",
+      "epoque": "ca. 1906",
       "technique": "Oil on canvas",
-      "theme": "animaux",
-      "format": "paysage",
-      "couleur": "noir",
-      "ratio": 1.497,
-      "image": "/media/art/wolf-and-fox-hunt-437536.webp",
-      "thumb": "/media/art/wolf-and-fox-hunt-437536-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/437536",
+      "theme": "nature-paysage",
+      "format": "portrait",
+      "couleur": "rose",
+      "ratio": 0.7453,
+      "image": "/media/art/vase-of-flowers-pink-background-437382.webp",
+      "thumb": "/media/art/vase-of-flowers-pink-background-437382-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/437382",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -4082,48 +4082,48 @@
       "avis": 22
     },
     {
-      "slug": "landscapes-with-poems-36131",
-      "titre": "Landscapes with poems",
-      "artiste": "Gong Xian",
-      "epoque": "1688",
-      "technique": "Fifteen leaves from an album (1980.516.2a–c and 1981.4.1a–o) of eighteen leaves",
-      "theme": "animaux",
-      "format": "paysage",
+      "slug": "the-feast-of-sada-452111",
+      "titre": "The Feast of Sada",
+      "artiste": "Abu'l Qasim Firdausi",
+      "epoque": "ca. 1525",
+      "technique": "Opaque watercolor, ink, silver, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
       "couleur": "beige",
-      "ratio": 1.4451,
-      "image": "/media/art/landscapes-with-poems-36131.webp",
-      "thumb": "/media/art/landscapes-with-poems-36131-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/36131",
+      "ratio": 0.7005,
+      "image": "/media/art/the-feast-of-sada-452111.webp",
+      "thumb": "/media/art/the-feast-of-sada-452111-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/452111",
       "tailles": [
         {
-          "l": 40,
-          "h": 30,
+          "l": 30,
+          "h": 40,
           "prix": 290,
-          "ref": "40x30"
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 40,
-          "prix": 420,
-          "ref": "60x40"
-        },
-        {
-          "l": 70,
-          "h": 50,
-          "prix": 590,
-          "ref": "70x50"
-        },
-        {
-          "l": 90,
-          "h": 60,
+          "h": 90,
           "prix": 850,
-          "ref": "90x60"
+          "ref": "60x90"
         },
         {
-          "l": 120,
-          "h": 80,
+          "l": 80,
+          "h": 120,
           "prix": 1290,
-          "ref": "120x80"
+          "ref": "80x120"
         }
       ],
       "prixMin": 290,
@@ -4138,18 +4138,18 @@
       "avis": 35
     },
     {
-      "slug": "prince-s-aerial-ship-star-of-the-east-366528",
-      "titre": "Prince's Aerial Ship. Star of the East!",
-      "artiste": "Norris's Lithography",
-      "epoque": "19th century",
-      "technique": "Hand-colored lithograph",
-      "theme": "animaux",
+      "slug": "great-indian-fruit-bat-456949",
+      "titre": "Great Indian Fruit Bat",
+      "artiste": "Bhawani Das",
+      "epoque": "ca. 1777–82",
+      "technique": "Pencil, ink, and opaque watercolor on paper",
+      "theme": "art-islamique",
       "format": "paysage",
       "couleur": "beige",
-      "ratio": 1.4078,
-      "image": "/media/art/prince-s-aerial-ship-star-of-the-east-366528.webp",
-      "thumb": "/media/art/prince-s-aerial-ship-star-of-the-east-366528-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/366528",
+      "ratio": 1.3611,
+      "image": "/media/art/great-indian-fruit-bat-456949.webp",
+      "thumb": "/media/art/great-indian-fruit-bat-456949-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/456949",
       "tailles": [
         {
           "l": 40,
@@ -4194,18 +4194,18 @@
       "avis": 8
     },
     {
-      "slug": "the-emperor-s-carpet-450509",
-      "titre": "The Emperor's Carpet",
-      "artiste": "Artiste anonyme",
-      "epoque": "second half 16th century",
-      "technique": "Silk (warp and weft), wool (pile); asymmetrically knotted pile",
-      "theme": "boheme-berbere",
+      "slug": "akbar-with-lion-and-calf-451268",
+      "titre": "Akbar With Lion and Calf",
+      "artiste": "Govardhan",
+      "epoque": "verso: ca. 1630; recto: ca. 1530–50",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
       "format": "portrait",
-      "couleur": "rose",
-      "ratio": 0.4773,
-      "image": "/media/art/the-emperor-s-carpet-450509.webp",
-      "thumb": "/media/art/the-emperor-s-carpet-450509-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/450509",
+      "couleur": "gris",
+      "ratio": 0.6628,
+      "image": "/media/art/akbar-with-lion-and-calf-451268.webp",
+      "thumb": "/media/art/akbar-with-lion-and-calf-451268-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/451268",
       "tailles": [
         {
           "l": 30,
@@ -4250,18 +4250,18 @@
       "avis": 21
     },
     {
-      "slug": "bed-cover-or-wall-hanging-451186",
-      "titre": "Bed Cover or Wall Hanging",
-      "artiste": "Artiste anonyme",
-      "epoque": "17th century",
-      "technique": "Cotton, silk; plain weave, embroidered, originally quilted",
-      "theme": "boheme-berbere",
+      "slug": "farhad-carves-a-milk-channel-for-shirin-446595",
+      "titre": "Farhad Carves a Milk Channel for Shirin",
+      "artiste": "Nizami",
+      "epoque": "dated 931 AH/1524–25 CE",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
       "format": "portrait",
-      "couleur": "gris",
-      "ratio": 0.6231,
-      "image": "/media/art/bed-cover-or-wall-hanging-451186.webp",
-      "thumb": "/media/art/bed-cover-or-wall-hanging-451186-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/451186",
+      "couleur": "rose",
+      "ratio": 0.7063,
+      "image": "/media/art/farhad-carves-a-milk-channel-for-shirin-446595.webp",
+      "thumb": "/media/art/farhad-carves-a-milk-channel-for-shirin-446595-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/446595",
       "tailles": [
         {
           "l": 30,
@@ -4306,51 +4306,51 @@
       "avis": 34
     },
     {
-      "slug": "textile-with-musicians-448222",
-      "titre": "Textile with Musicians",
-      "artiste": "Artiste anonyme",
-      "epoque": "13th century",
-      "technique": "Silk, gilt animal substrate around a silk core; lampas",
-      "theme": "boheme-berbere",
-      "format": "carre",
-      "couleur": "gris",
-      "ratio": 1.0245,
-      "image": "/media/art/textile-with-musicians-448222.webp",
-      "thumb": "/media/art/textile-with-musicians-448222-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/448222",
+      "slug": "the-funeral-of-isfandiyar-folio-from-a-shahnama-book-of-448938",
+      "titre": "The Funeral of Isfandiyar,\" Folio from a Shahnama (Book of",
+      "artiste": "Abu'l Qasim Firdausi",
+      "epoque": "1330s",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "rose",
+      "ratio": 0.7278,
+      "image": "/media/art/the-funeral-of-isfandiyar-folio-from-a-shahnama-book-of-448938.webp",
+      "thumb": "/media/art/the-funeral-of-isfandiyar-folio-from-a-shahnama-book-of-448938-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/448938",
       "tailles": [
         {
           "l": 30,
-          "h": 30,
-          "prix": 260,
-          "ref": "30x30"
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
         },
         {
           "l": 40,
-          "h": 40,
-          "prix": 390,
-          "ref": "40x40"
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
         },
         {
           "l": 60,
-          "h": 60,
-          "prix": 640,
-          "ref": "60x60"
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
         },
         {
           "l": 80,
-          "h": 80,
-          "prix": 990,
-          "ref": "80x80"
-        },
-        {
-          "l": 100,
-          "h": 100,
-          "prix": 1450,
-          "ref": "100x100"
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
         }
       ],
-      "prixMin": 260,
+      "prixMin": 290,
       "pieces": [
         "chambre-enfant",
         "cabinet"
@@ -4362,18 +4362,18 @@
       "avis": 7
     },
     {
-      "slug": "textile-fragment-with-ogival-pattern-450735",
-      "titre": "Textile Fragment with Ogival Pattern",
-      "artiste": "Artiste anonyme",
-      "epoque": "14th century",
-      "technique": "Silk; lampas",
-      "theme": "boheme-berbere",
+      "slug": "the-angel-gabriel-meets-amr-ibn-zaid-the-shepherd-453351",
+      "titre": "The Angel Gabriel meets 'Amr ibn Zaid (the Shepherd)",
+      "artiste": "Mustafa ibn Vali",
+      "epoque": "ca. 1595",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
       "format": "portrait",
-      "couleur": "gris",
-      "ratio": 0.6614,
-      "image": "/media/art/textile-fragment-with-ogival-pattern-450735.webp",
-      "thumb": "/media/art/textile-fragment-with-ogival-pattern-450735-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/450735",
+      "couleur": "rose",
+      "ratio": 0.7069,
+      "image": "/media/art/the-angel-gabriel-meets-amr-ibn-zaid-the-shepherd-453351.webp",
+      "thumb": "/media/art/the-angel-gabriel-meets-amr-ibn-zaid-the-shepherd-453351-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/453351",
       "tailles": [
         {
           "l": 30,
@@ -4418,18 +4418,18 @@
       "avis": 20
     },
     {
-      "slug": "cope-446655",
-      "titre": "Cope",
-      "artiste": "Artiste anonyme",
-      "epoque": "first half 17th century (velvet)",
-      "technique": "Silk, cotton, metal wrapped thread; cut and voided velvet, brocaded, embroidered, with engraved metal fittings",
-      "theme": "boheme-berbere",
+      "slug": "a-stallion-453336",
+      "titre": "A Stallion",
+      "artiste": "Habiballah of Sava",
+      "epoque": "ca. 1601–6",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
       "format": "paysage",
-      "couleur": "gris",
-      "ratio": 1.8225,
-      "image": "/media/art/cope-446655.webp",
-      "thumb": "/media/art/cope-446655-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/446655",
+      "couleur": "or",
+      "ratio": 1.4826,
+      "image": "/media/art/a-stallion-453336.webp",
+      "thumb": "/media/art/a-stallion-453336-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/453336",
       "tailles": [
         {
           "l": 40,
@@ -4474,18 +4474,18 @@
       "avis": 33
     },
     {
-      "slug": "woven-wall-hanging-453417",
-      "titre": "Woven Wall Hanging",
-      "artiste": "Artiste anonyme",
-      "epoque": "ca. 1820–30",
-      "technique": "Wool, metal wrapped thread; double interlocking twill; tapestry weave, embroidered",
-      "theme": "boheme-berbere",
+      "slug": "laila-and-majnun-in-school-446603",
+      "titre": "Laila and Majnun in School",
+      "artiste": "Nizami",
+      "epoque": "dated 931 AH/1524–25 CE",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
       "format": "portrait",
-      "couleur": "marron",
-      "ratio": 0.7371,
-      "image": "/media/art/woven-wall-hanging-453417.webp",
-      "thumb": "/media/art/woven-wall-hanging-453417-thumb.webp",
-      "source": "https://www.metmuseum.org/art/collection/search/453417",
+      "couleur": "rose",
+      "ratio": 0.6174,
+      "image": "/media/art/laila-and-majnun-in-school-446603.webp",
+      "thumb": "/media/art/laila-and-majnun-in-school-446603-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/446603",
       "tailles": [
         {
           "l": 30,
@@ -4527,6 +4527,398 @@
       "promo": 40,
       "note": 4.6000000000000005,
       "avis": 6
+    },
+    {
+      "slug": "the-wedding-of-siyavush-and-farangis-452137",
+      "titre": "The Wedding of Siyavush and Farangis",
+      "artiste": "Abu'l Qasim Firdausi",
+      "epoque": "ca. 1525–30",
+      "technique": "Opaque watercolor, ink, silver, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "beige",
+      "ratio": 0.6885,
+      "image": "/media/art/the-wedding-of-siyavush-and-farangis-452137.webp",
+      "thumb": "/media/art/the-wedding-of-siyavush-and-farangis-452137-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/452137",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salon-moderne",
+        "entree"
+      ],
+      "nouveaute": true,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.7,
+      "avis": 19
+    },
+    {
+      "slug": "the-house-of-bijapur-453183",
+      "titre": "The House of Bijapur",
+      "artiste": "Kamal Muhammad",
+      "epoque": "ca. 1680",
+      "technique": "Ink, opaque watercolor, gold, and silver on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "gris",
+      "ratio": 0.756,
+      "image": "/media/art/the-house-of-bijapur-453183.webp",
+      "thumb": "/media/art/the-house-of-bijapur-453183-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/453183",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salon-marocain",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.800000000000001,
+      "avis": 32
+    },
+    {
+      "slug": "dervish-with-a-lion-451259",
+      "titre": "Dervish With a Lion",
+      "artiste": "Padarath",
+      "epoque": "verso: ca. 1630; recto: ca. 1500",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "or",
+      "ratio": 0.6767,
+      "image": "/media/art/dervish-with-a-lion-451259.webp",
+      "thumb": "/media/art/dervish-with-a-lion-451259-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/451259",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "entree",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.9,
+      "avis": 45
+    },
+    {
+      "slug": "marriage-of-khusrau-and-shirin-446602",
+      "titre": "Marriage of Khusrau and Shirin",
+      "artiste": "Nizami",
+      "epoque": "dated 931 AH/1524–25 CE",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "or",
+      "ratio": 0.7112,
+      "image": "/media/art/marriage-of-khusrau-and-shirin-446602.webp",
+      "thumb": "/media/art/marriage-of-khusrau-and-shirin-446602-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/446602",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "salle-a-manger",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.4,
+      "avis": 18
+    },
+    {
+      "slug": "isfandiyar-s-third-course-he-slays-a-dragon-452160",
+      "titre": "Isfandiyar's Third Course: He Slays a Dragon",
+      "artiste": "Abu'l Qasim Firdausi",
+      "epoque": "ca. 1530",
+      "technique": "Opaque watercolor, ink, silver, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "beige",
+      "ratio": 0.6787,
+      "image": "/media/art/isfandiyar-s-third-course-he-slays-a-dragon-452160.webp",
+      "thumb": "/media/art/isfandiyar-s-third-course-he-slays-a-dragon-452160-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/452160",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "chambre",
+        "chambre-enfant"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 25,
+      "note": 4.5,
+      "avis": 31
+    },
+    {
+      "slug": "akbar-with-lion-and-calf-verso-ca-1630-recto-ca-1530-50-451268",
+      "titre": "Akbar With Lion and Calf — verso: ca. 1630; recto: ca. 1530–50",
+      "artiste": "Govardhan",
+      "epoque": "verso: ca. 1630; recto: ca. 1530–50",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "gris",
+      "ratio": 0.6628,
+      "image": "/media/art/akbar-with-lion-and-calf-verso-ca-1630-recto-ca-1530-50-451268.webp",
+      "thumb": "/media/art/akbar-with-lion-and-calf-verso-ca-1630-recto-ca-1530-50-451268-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/451268",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "chambre-enfant",
+        "cabinet"
+      ],
+      "nouveaute": false,
+      "bestseller": false,
+      "promo": 0,
+      "note": 4.6000000000000005,
+      "avis": 44
+    },
+    {
+      "slug": "red-headed-vulture-and-long-billed-vulture-451260",
+      "titre": "Red-Headed Vulture and Long-Billed Vulture",
+      "artiste": "Mansur",
+      "epoque": "verso: ca. 1615–20; recto: ca. 1535–45",
+      "technique": "Ink, opaque watercolor, and gold on paper",
+      "theme": "art-islamique",
+      "format": "portrait",
+      "couleur": "gris",
+      "ratio": 0.6548,
+      "image": "/media/art/red-headed-vulture-and-long-billed-vulture-451260.webp",
+      "thumb": "/media/art/red-headed-vulture-and-long-billed-vulture-451260-thumb.webp",
+      "source": "https://www.metmuseum.org/art/collection/search/451260",
+      "tailles": [
+        {
+          "l": 30,
+          "h": 40,
+          "prix": 290,
+          "ref": "30x40"
+        },
+        {
+          "l": 40,
+          "h": 60,
+          "prix": 420,
+          "ref": "40x60"
+        },
+        {
+          "l": 50,
+          "h": 70,
+          "prix": 590,
+          "ref": "50x70"
+        },
+        {
+          "l": 60,
+          "h": 90,
+          "prix": 850,
+          "ref": "60x90"
+        },
+        {
+          "l": 80,
+          "h": 120,
+          "prix": 1290,
+          "ref": "80x120"
+        }
+      ],
+      "prixMin": 290,
+      "pieces": [
+        "bureau",
+        "entree"
+      ],
+      "nouveaute": false,
+      "bestseller": true,
+      "promo": 0,
+      "note": 4.7,
+      "avis": 17
     }
   ]
 }
