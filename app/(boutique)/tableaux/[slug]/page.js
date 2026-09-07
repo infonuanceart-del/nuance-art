@@ -41,7 +41,7 @@ export default async function PageProduit({ params }) {
   if (!produit) notFound();
 
   const similaires = tous
-    .filter((p) => p.slug !== produit.slug && (p.theme === produit.theme || p.couleur === produit.couleur))
+    .filter((p) => p.slug !== produit.slug && p.theme === produit.theme)
     .slice(0, 4);
 
   const pourStudio = [produit, ...tous.filter((p) => p.slug !== produit.slug)].slice(0, 40);

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useBoutique } from './Boutique';
-import { THEMES, FORMATS, COULEURS, PIECES } from '@/lib/taxonomie';
+import { THEMES, FORMATS, PIECES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import {
   IcoChevron, IcoCroix, IcoLoupe, IcoMenu, IcoPanier, IcoCoeur,
@@ -21,10 +21,9 @@ const MENUS = [
   },
   {
     cle: 'formats',
-    titre: 'Formats & couleurs',
+    titre: 'Formats',
     colonnes: [
       { titre: 'Format', liens: FORMATS.map((f) => ({ href: `/tableaux?format=${f.slug}`, nom: f.nom, note: f.desc })) },
-      { titre: 'Couleur dominante', liens: COULEURS.map((c) => ({ href: `/tableaux?couleur=${c.slug}`, nom: c.nom, hex: c.hex })), deux: true },
     ],
   },
   {

@@ -8,7 +8,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import CarteProduit from './CarteProduit';
-import { COULEURS, FORMATS, PIECES, THEMES } from '@/lib/taxonomie';
+import { FORMATS, PIECES, THEMES } from '@/lib/taxonomie';
 import { prixAffiche } from '@/lib/prix';
 import { IcoCroix, IcoLoupe } from './Icones';
 
@@ -20,7 +20,7 @@ const TRIS = [
   { cle: 'promo', nom: 'Meilleures remises' },
 ];
 
-const MULTI = ['theme', 'format', 'couleur', 'piece'];
+const MULTI = ['theme', 'format', 'piece'];
 
 export default function Catalogue({ produits, themeVerrouille = null, titreVide = 'Aucune œuvre ne correspond' }) {
   const router = useRouter();
@@ -36,7 +36,6 @@ export default function Catalogue({ produits, themeVerrouille = null, titreVide 
   const sel = {
     theme: themeVerrouille ? [themeVerrouille] : lire('theme'),
     format: lire('format'),
-    couleur: lire('couleur'),
     piece: lire('piece'),
   };
 
@@ -70,11 +69,10 @@ export default function Catalogue({ produits, themeVerrouille = null, titreVide 
 
   /* --- comptages, calculés sur le catalogue complet pour rester stables --- */
   const compte = useMemo(() => {
-    const c = { theme: {}, format: {}, couleur: {}, piece: {} };
+    const c = { theme: {}, format: {}, piece: {} };
     for (const p of produits) {
       c.theme[p.theme] = (c.theme[p.theme] || 0) + 1;
       c.format[p.format] = (c.format[p.format] || 0) + 1;
-      c.couleur[p.couleur] = (c.couleur[p.couleur] || 0) + 1;
       for (const pi of p.pieces || []) c.piece[pi] = (c.piece[pi] || 0) + 1;
     }
     return c;
@@ -85,7 +83,6 @@ export default function Catalogue({ produits, themeVerrouille = null, titreVide 
     let liste = produits.filter((p) => {
       if (sel.theme.length && !sel.theme.includes(p.theme)) return false;
       if (sel.format.length && !sel.format.includes(p.format)) return false;
-      if (sel.couleur.length && !sel.couleur.includes(p.couleur)) return false;
       if (sel.piece.length && !(p.pieces || []).some((x) => sel.piece.includes(x))) return false;
       if (promoSeule && !(p.promo > 0)) return false;
       if (texte) {
@@ -110,7 +107,6 @@ export default function Catalogue({ produits, themeVerrouille = null, titreVide 
   const actifs = [
     ...(themeVerrouille ? [] : sel.theme.map((v) => ['theme', v, THEMES.find((t) => t.slug === v)?.nom])),
     ...sel.format.map((v) => ['format', v, FORMATS.find((t) => t.slug === v)?.nom]),
-    ...sel.couleur.map((v) => ['couleur', v, COULEURS.find((t) => t.slug === v)?.nom]),
     ...sel.piece.map((v) => ['piece', v, PIECES.find((t) => t.slug === v)?.nom]),
   ];
 
@@ -170,11 +166,6 @@ export default function Catalogue({ produits, themeVerrouille = null, titreVide 
 
         {!themeVerrouille && groupe('theme', 'Collection', THEMES)}
         {groupe('format', 'Format', FORMATS)}
-        {groupe('couleur', 'Couleur dominante', COULEURS, (o) => (
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span className="dot-color" style={{ background: o.hex }} /> {o.nom}
-          </span>
-        ))}
         {groupe('piece', 'Pièce conseillée', PIECES)}
 
         <div className="fgroup">
@@ -233,7 +224,7 @@ export default function Catalogue({ produits, themeVerrouille = null, titreVide 
         {resultats.length === 0 ? (
           <div className="empty-state">
             <h3 className="d4">{titreVide}</h3>
-            <p className="muted small mt-1">Essayez d’élargir la couleur ou le format.</p>
+            <p className="muted small mt-1">Essayez d’élargir le format ou la collection.</p>
             <button className="btn btn-primary btn-sm mt-2" onClick={toutEffacer}>Réinitialiser les filtres</button>
           </div>
         ) : (

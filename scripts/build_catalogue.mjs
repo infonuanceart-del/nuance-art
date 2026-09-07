@@ -110,22 +110,6 @@ const THEMES = [
   },
 ];
 
-// Palette des filtres « couleur » de la boutique.
-const PALETTE = [
-  { slug: 'noir', rgb: [26, 26, 26] },
-  { slug: 'blanc', rgb: [244, 244, 240] },
-  { slug: 'gris', rgb: [140, 140, 140] },
-  { slug: 'beige', rgb: [214, 195, 165] },
-  { slug: 'or', rgb: [198, 158, 74] },
-  { slug: 'terracotta', rgb: [178, 92, 62] },
-  { slug: 'rouge', rgb: [163, 45, 42] },
-  { slug: 'rose', rgb: [214, 150, 150] },
-  { slug: 'vert', rgb: [86, 112, 84] },
-  { slug: 'bleu', rgb: [58, 88, 130] },
-  { slug: 'violet', rgb: [104, 80, 130] },
-  { slug: 'marron', rgb: [96, 70, 50] },
-];
-
 const PIECES = [
   'salon-moderne', 'salon-marocain', 'entree', 'salle-a-manger',
   'chambre', 'chambre-enfant', 'bureau', 'hotel-restaurant', 'cabinet',
@@ -186,15 +170,6 @@ function nettoyerTitre(t) {
     s = mots.join(' ');
   }
   return s;
-}
-
-function pickColor(r, g, b) {
-  let best = PALETTE[0], bestD = Infinity;
-  for (const c of PALETTE) {
-    const d = 2 * (r - c.rgb[0]) ** 2 + 4 * (g - c.rgb[1]) ** 2 + 3 * (b - c.rgb[2]) ** 2;
-    if (d < bestD) { bestD = d; best = c; }
-  }
-  return best.slug;
 }
 
 async function jget(url, essais = 3) {
@@ -346,18 +321,8 @@ async function main() {
         await img.clone().resize({ width: 520, withoutEnlargement: true })
           .webp({ quality: 74 }).toFile(path.join(OUT_IMG, slug + '-thumb.webp'));
 
-        // La couleur dominante renvoie trop souvent le noir des fonds anciens :
-        // on melange dominante et moyenne generale pour coller a l'ambiance percue.
-        const st = await img.clone().stats();
-        const moy = st.channels.slice(0, 3).map((c) => c.mean);
-        const mix = (a, b) => Math.round(a * 0.45 + b * 0.55);
-        const teinte = {
-          r: mix(st.dominant.r, moy[0]),
-          g: mix(st.dominant.g, moy[1]),
-          b: mix(st.dominant.b, moy[2]),
-        };
 
-        return { o, titre, slug, ratio, teinte };
+        return { o, titre, slug, ratio };
       } catch (e) {
         console.warn('  x ' + slug + ' : ' + e.message);
         return null;
@@ -367,7 +332,7 @@ async function main() {
     let gardes = 0;
     for (const t of traites) {
       if (!t) continue;
-      const { o, titre, slug, ratio, teinte } = t;
+        const { o, titre, slug, ratio } = t;
       gardes++;
       produits.push({
         slug,
@@ -377,7 +342,6 @@ async function main() {
         technique: (o.medium || '').trim(),
         theme: theme.slug,
         format: ratio > 1.15 ? 'paysage' : ratio < 0.87 ? 'portrait' : 'carre',
-        couleur: pickColor(teinte.r, teinte.g, teinte.b),
         ratio: Number(ratio.toFixed(4)),
         image: '/media/art/' + slug + '.webp',
         thumb: '/media/art/' + slug + '-thumb.webp',

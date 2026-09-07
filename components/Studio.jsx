@@ -60,6 +60,20 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
   const [aide, setAide] = useState(true);
   const [occupe, setOccupe] = useState(false);
 
+  /**
+   * `capture` n'ouvre l'appareil photo que sur un mobile ; ailleurs le
+   * navigateur l'ignore et retombe sur le selecteur de fichiers, si bien que
+   * « Prendre la photo » faisait exactement la meme chose que « Ma photo ».
+   * On ne propose donc l'appareil que la ou il s'ouvre vraiment. La detection
+   * a lieu apres le montage : le serveur ne connait pas le pointeur du client,
+   * et l'evaluer au rendu ferait diverger l'hydratation.
+   */
+  const [appareilPhoto, setAppareilPhoto] = useState(false);
+  useEffect(() => {
+    const grossier = window.matchMedia?.('(pointer: coarse)').matches;
+    setAppareilPhoto(Boolean(grossier && navigator.mediaDevices));
+  }, []);
+
   const pxParCm = dims.w ? dims.w / murCm : 0;
 
   /* --- taille de la scène, suivie en continu (responsive + rotation mobile) --- */
@@ -312,9 +326,11 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
             <button className="btn btn-sm" onClick={() => fichier.current?.click()}>
               <IcoImage size={15} /> Ma photo
             </button>
-            <button className="btn btn-sm" onClick={() => photo.current?.click()}>
-              <IcoCamera size={15} /> Photo live
-            </button>
+            {appareilPhoto && (
+              <button className="btn btn-sm" onClick={() => photo.current?.click()}>
+                <IcoCamera size={15} /> Photo live
+              </button>
+            )}
             <button className="btn btn-sm" onClick={telecharger} disabled={occupe || items.length === 0}>
               <IcoTelecharger size={15} /> {occupe ? 'Export…' : 'Télécharger'}
             </button>
@@ -413,9 +429,11 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
                 <button className="btn btn-primary btn-sm" onClick={() => fichier.current?.click()}>
                   <IcoImage size={15} /> Charger la photo de mon mur
                 </button>
-                <button className="btn btn-ghost btn-sm" onClick={() => photo.current?.click()}>
-                  <IcoCamera size={15} /> Prendre la photo
-                </button>
+                {appareilPhoto && (
+                  <button className="btn btn-ghost btn-sm" onClick={() => photo.current?.click()}>
+                    <IcoCamera size={15} /> Prendre la photo
+                  </button>
+                )}
               </div>
               <span>ou continuez sur cette pièce d’exemple</span>
             </div>

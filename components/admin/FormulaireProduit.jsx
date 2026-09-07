@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { appeler, envoyerFichier } from '@/lib/api';
-import { THEMES, FORMATS, COULEURS, PIECES } from '@/lib/taxonomie';
+import { THEMES, FORMATS, PIECES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import { IcoPlus, IcoPoubelle, IcoImage } from '@/components/Icones';
 
@@ -16,7 +16,7 @@ const TAILLES_DEFAUT = [
 
 const VIDE = {
   titre: '', artiste: '', epoque: '', technique: '', description: '',
-  theme: 'art-islamique', format: 'paysage', couleur: 'beige',
+  theme: 'art-islamique', format: 'paysage',
   image: '', thumb: '', source: '', ratio: 0,
   tailles: TAILLES_DEFAUT, pieces: [],
   nouveaute: true, bestseller: false, promo: 0,
@@ -245,12 +245,6 @@ export default function FormulaireProduit({ produit }) {
                 <label className="lab" htmlFor="format">Format</label>
                 <select id="format" className="inp" value={f.format} onChange={(e) => set('format', e.target.value)}>
                   {FORMATS.map((t) => <option key={t.slug} value={t.slug}>{t.nom}</option>)}
-                </select>
-              </div>
-              <div>
-                <label className="lab" htmlFor="couleur">Couleur dominante</label>
-                <select id="couleur" className="inp" value={f.couleur} onChange={(e) => set('couleur', e.target.value)}>
-                  {COULEURS.map((t) => <option key={t.slug} value={t.slug}>{t.nom}</option>)}
                 </select>
               </div>
             </div>

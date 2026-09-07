@@ -2268,6 +2268,55 @@ tbody tr:hover { background: var(--wash); }
 }
 .fade-up.in { opacity: 1; transform: none; }
 
+/* ====================================================== PETITS ECRANS */
+
+/* Le site est deja concu du mobile vers le grand ecran. Ce bloc ne reprend
+   que les endroits ou une largeur fixe resistait encore sous 480 px — la ou
+   un telephone d'entree de gamme (320 a 360 px) forcait un debordement
+   horizontal, jusqu'ici masque par l'`overflow-x: hidden` du body plutot que
+   corrige. */
+
+/* Un enfant de grille refuse de descendre sous la largeur de son contenu :
+   sans cela, un titre d'oeuvre sans espace elargit toute la colonne. */
+.grille-2 > *,
+.kpis > *,
+.carte > * { min-width: 0; }
+
+@media (max-width: 560px) {
+  /* Trois chiffres cote a cote deviennent illisibles : on passe a deux, le
+     troisieme prenant toute la largeur sous les deux premiers. */
+  .hero-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem 0; }
+
+  /* Le selecteur de periode occupe sa propre ligne, chaque choix a part egale,
+     plutot que de comprimer « Ajouter une oeuvre » a cote de lui. */
+  .admin-head .row { width: 100%; }
+  .seg { width: 100%; }
+  .seg button { flex: 1; padding-inline: 0.5rem; }
+  .admin-head .row > .btn { width: 100%; justify-content: center; }
+
+  /* Le libelle d'une barre cede la place a sa jauge au lieu de la chasser. */
+  .barres li { grid-template-columns: minmax(0, 5.5rem) 1fr auto; gap: 0.5rem; }
+  .barres b { font-size: 0.78rem; }
+
+  /* Le rappel de commandes se replie au lieu d'ecraser son intitule. */
+  .admin-rappel { flex-wrap: wrap; }
+  .admin-rappel > em { margin-left: 0; width: 100%; }
+
+  /* Le total a cote du compteur passe dessous quand la ligne est trop courte. */
+  .qte-choix { flex-wrap: wrap; row-gap: 0.5rem; }
+  .qte-choix em { margin-left: 0; width: 100%; }
+
+  /* Une vignette de 230 px n'entre pas dans une carte de 320 px moins ses marges. */
+  .admin-vignettes { grid-template-columns: 1fr; }
+
+  /* Les pastilles de cadre du studio tiennent sur trois colonnes, pas quatre. */
+  .picker { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Le tableau des commandes reste large par nature : il defile dans son cadre,
+   et c'est au cadre de ne jamais pousser la page. */
+.table-wrap { max-width: 100%; }
+
 /* ================================================================== TOAST */
 .toast {
   position: fixed;

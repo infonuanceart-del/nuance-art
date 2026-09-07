@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { appeler } from '@/lib/api';
 import { dh } from '@/lib/prix';
 import { NOM_STATUT } from '@/lib/produit';
-import { nomTheme } from '@/lib/taxonomie';
+import { nomTheme, nomFormat } from '@/lib/taxonomie';
 import { useDonnees, EtatChargement } from '@/components/admin/useDonnees';
 import { Courbe, BornesCourbe, Barres } from '@/components/admin/Graphique';
 import {
   PERIODES, decouper, totaux, evolution, serie, parStatut,
-  ventesParOeuvre, ventesParTheme, parVille, jamaisVendues, etatCatalogue,
+  ventesParOeuvre, ventesParTheme, parVille, jamaisVendues, etatCatalogue, repartition,
 } from '@/lib/tableauBord';
 
 const TON = { nouvelle: 'warn', confirmee: '', expediee: '', livree: 'ok', annulee: 'no' };
@@ -85,6 +85,8 @@ export default function PageTableauDeBord() {
       villes: parVille(courante).slice(0, 6),
       recentes: courante.slice(0, 8),
       catalogue: etatCatalogue(produits),
+      parCategorie: repartition(produits, 'theme'),
+      parFormat: repartition(produits, 'format'),
       dormantes: jamaisVendues(produits, commandes),
       comparable: precedente.length > 0,
     };
@@ -249,6 +251,46 @@ export default function PageTableauDeBord() {
               </div>
             </Carte>
           </div>
+
+          <Carte titre="Ce que vend la boutique" lien="/admin/produits" lienNom="Gérer les œuvres">
+            <p className="carte-intro">
+              État du catalogue, indépendant de la période choisie —
+              {' '}{vue.catalogue.enLigne} œuvre{vue.catalogue.enLigne > 1 ? 's' : ''} en ligne
+              {vue.catalogue.horsLigne > 0 && `, ${vue.catalogue.horsLigne} hors ligne`}
+              {vue.catalogue.prixMin > 0 && `, de ${dh(vue.catalogue.prixMin)} à ${dh(vue.catalogue.prixMax)}`}.
+            </p>
+
+            <div className="grille-2">
+              <div>
+                <h3 className="lab">Par catégorie</h3>
+                <Barres
+                  lignes={vue.parCategorie.map((r) => ({
+                    cle: r.cle, nom: nomTheme(r.cle), valeur: r.nb,
+                  }))}
+                  vide="Aucune œuvre au catalogue."
+                />
+              </div>
+
+              <div>
+                <h3 className="lab">Par format</h3>
+                <Barres
+                  lignes={vue.parFormat.map((r) => ({
+                    cle: r.cle, nom: nomFormat(r.cle), valeur: r.nb,
+                  }))}
+                  vide="—"
+                />
+              </div>
+            </div>
+
+            <div className="carte-pied">
+              <span><b>{vue.catalogue.enPromo}</b> en promotion</span>
+              <span><b>{vue.catalogue.bestsellers}</b> mises en avant</span>
+              <span><b>{vue.catalogue.nouveautes}</b> nouveautés</span>
+              {vue.dormantes.length > 0 && (
+                <span><b>{vue.dormantes.length}</b> jamais vendues</span>
+              )}
+            </div>
+          </Carte>
 
           <Carte titre="Dernières commandes" lien="/admin/commandes" lienNom="Toutes les commandes">
             <div className="table-wrap plat">
