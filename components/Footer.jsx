@@ -11,7 +11,7 @@ export default function Footer({ reglages }) {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <span className="logo"><img src="/logo.png" alt="" className="logo-mark" width="384" height="384" /><b>Nuance<span>Art</span></b></span>
+            <span className="logo"><img src="/logo.png" alt="Nuance Art" className="logo-mark" width="384" height="384" /></span>
             <p>
               Atelier d’édition d’art à Casablanca. Nous imprimons, encadrons et livrons
               partout au Maroc des œuvres choisies pour vivre chez vous — pas seulement

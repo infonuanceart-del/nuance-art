@@ -301,22 +301,53 @@ h1, h2, h3, h4 {
   letter-spacing: 0.04em;
 }
 
-.topbar .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  height: 38px;
-  text-align: center;
-}
-
 .topbar b { color: var(--gold); font-weight: 600; }
 .topbar a { text-decoration: underline; text-underline-offset: 3px; }
-.topbar-side { display: none; }
 
-@media (min-width: 900px) {
-  .topbar .wrap { justify-content: space-between; }
-  .topbar-side { display: flex; gap: 1.4rem; }
+/* Ticker d'annonces : deux pistes identiques se suivent et glissent ensemble
+   d'exactement une largeur de piste. A la fin du cycle la seconde occupe la
+   place de la premiere, l'image est donc identique a l'instant zero et la
+   boucle ne se voit pas. */
+.marquee {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2.6rem;
+  padding-right: 2.6rem;
+  white-space: nowrap;
+  animation: ruban 42s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track { animation-play-state: paused; }
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.marquee-eclair { color: var(--gold); }
+
+@keyframes ruban {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Sans animation, une seule piste immobile suffit : le message d'ouverture
+   reste lisible et rien ne bouge. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee-track + .marquee-track { display: none; }
 }
 
 .header {
@@ -369,18 +400,6 @@ h1, h2, h3, h4 {
   color: var(--clay);
   font-weight: 400;
 }
-.logo em {
-  font-style: normal;
-  font-size: 0.6rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
-  display: none;
-}
-
-@media (min-width: 1120px) { .logo em { display: inline; } }
-
 /* Le pied et l'admin posent le medaillon sur fond sombre : un peu plus grand,
    il porte seul la marque au-dessus du texte courant. */
 .footer .logo-mark { height: 54px; }

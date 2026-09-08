@@ -10,6 +10,23 @@ import {
   IcoChevron, IcoCroix, IcoLoupe, IcoMenu, IcoPanier, IcoCoeur,
 } from './Icones';
 
+/* Le bandeau d'annonces defile en boucle facon ticker : on repete la liste
+   assez souvent pour qu'une piste depasse la largeur de l'ecran, sinon le
+   raccord entre les deux pistes laisserait un trou. */
+const ANNONCES = [
+  {
+    eclair: true,
+    fort: 'Ventes flash',
+    texte: '— jusqu’à -40 % sur une sélection',
+    lien: { href: '/promotions', libelle: 'J’en profite' },
+  },
+  { texte: 'Livraison 48 h au Maroc' },
+  { fort: 'Livraison offerte', texte: 'dès 600 DH d’achat' },
+  { texte: 'Paiement à la livraison' },
+];
+
+const RUBAN = [...ANNONCES, ...ANNONCES, ...ANNONCES];
+
 const MENUS = [
   {
     cle: 'themes',
@@ -101,13 +118,23 @@ export default function Header({ indexRecherche = [] }) {
   return (
     <>
       <div className="topbar">
-        <div className="wrap">
-          <span className="topbar-side">Livraison 48 h au Maroc</span>
-          <span>
-            <b>Ventes flash</b> — jusqu’à -40 % sur une sélection.{' '}
-            <Link href="/promotions">J’en profite</Link>
-          </span>
-          <span className="topbar-side">Paiement à la livraison</span>
+        <div className="marquee">
+          {[0, 1].map((copie) => (
+            <div className="marquee-track" key={copie} aria-hidden={copie === 1 || undefined}>
+              {RUBAN.map((a, i) => (
+                <span className="marquee-item" key={`${copie}-${i}`}>
+                  {a.eclair && <span className="marquee-eclair" aria-hidden="true">⚡</span>}
+                  {a.fort && <b>{a.fort}</b>}
+                  {a.texte}
+                  {a.lien && (
+                    <Link href={a.lien.href} tabIndex={copie === 1 ? -1 : undefined}>
+                      {a.lien.libelle}
+                    </Link>
+                  )}
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -115,8 +142,6 @@ export default function Header({ indexRecherche = [] }) {
         <div className="wrap header-in">
           <Link href="/" className="logo" aria-label="Nuance Art, accueil">
             <img src="/logo.png" alt="" className="logo-mark" width="384" height="384" />
-            <b>Nuance<span>Art</span></b>
-            <em>Casablanca</em>
           </Link>
 
           <nav className="nav" aria-label="Navigation principale">
