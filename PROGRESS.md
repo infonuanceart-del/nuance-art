@@ -197,6 +197,44 @@ Donnees de test supprimees.
 9. `npm audit` signale sharp < 0.35 et postcss (via Next) en « high ». Antérieur à
    Cloudinary ; à traiter dans une passe de mise à jour, le correctif est cassant.
 
+### Vitrine sur Vercel, deux cibles de construction (2026-09-08)
+
+La vitrine est en ligne sur `https://nuance-art-chi.vercel.app`, l'API reste sur
+Render. Le probleme constate le jour meme : une œuvre ajoutee dans l'admin
+n'apparaissait pas sur le site publie.
+
+Ce n'etait pas une panne mais l'architecture — l'export statique lit
+`data/snapshot.json`, fige a la construction. Meme situation deja rencontree et
+resolue sur RGI SERVICE ; on reprend son motif.
+
+- **`BUILD_TARGET=static` commande l'export.** Sans ce drapeau,
+  `next.config.mjs` produit la construction serveur, seul mode ou l'ISR existe.
+  `npm run build:statique` garde donc la cible fichiers pour un autre
+  hebergeur ; `npm run build` vise Vercel.
+- **`lib/catalogue.js` a deux sources** : l'instantane en statique, l'API avec
+  `revalidate` en serveur. Aucun cache maison dans le module cote serveur — il
+  survivrait a la revalidation et regelerait le catalogue.
+- **`export const revalidate = 120`** sur les dix pages qui lisent le catalogue.
+  Valeur litterale, exigee par Next : importer `FRAICHEUR` ne compilerait pas.
+- **Une œuvre creee apres la construction se rend a la premiere visite** :
+  `generateStaticParams` ne la connait pas, mais `dynamicParams` est actif par
+  defaut. En export statique le meme trou est un 404 definitif.
+- `scripts/snapshot.mjs` ne s'execute plus qu'en cible statique (ou avec
+  `--force`) : en serveur, une API endormie aurait fait echouer un deploiement
+  qui ne depend plus d'elle.
+- `trailingSlash: true` reste commun aux deux cibles : le changer ferait bouger
+  toutes les URL deja publiees.
+- **`vercel.json` force `framework: nextjs`.** Au moment du `vercel link`,
+  Vercel a lu `render.yaml` comme un blueprint multi-services et bascule le
+  projet sur le prereglage « Services », qui reclamait ensuite un dossier
+  `serveur/`. `render.yaml` est aussi ecarte par `.vercelignore`.
+- `nuance-art.vercel.app` etait pris : l'alias reel est `nuance-art-chi`. Il est
+  dans `NEXT_PUBLIC_SITE_URL`, sinon les canoniques et les images OG designent
+  le site d'un tiers.
+- **Pas d'auto-deploiement** : le compte Vercel (`omar`) n'a pas acces au depot
+  GitHub (`infonuanceart-del`), la connexion Git a echoue au lien. Chaque mise
+  en ligne passe par `vercel deploy --prod`.
+
 ## Pièges déjà rencontrés
 
 - `next/font` : ne pas passer `weight` **et** `axes` ensemble sur une police variable.

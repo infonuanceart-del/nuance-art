@@ -2,6 +2,13 @@ import Link from 'next/link';
 import Commande from '@/components/Commande';
 import { lireReglages } from '@/lib/catalogue';
 
+/* En construction serveur, la page se refait au plus toutes les deux minutes :
+   une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
+   Valeur litterale exigee par Next, elle double FRAICHEUR de lib/catalogue.js.
+   Sans effet sur l'export statique, qui ignore la revalidation. */
+export const revalidate = 120;
+
+
 export const metadata = {
   title: 'Commande',
   description: 'Finalisez votre commande Nuance Art : livraison 48 h, paiement à la livraison.',

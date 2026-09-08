@@ -8,6 +8,13 @@ import { IcoWhatsapp } from '@/components/Icones';
 import '../globals.css';
 import '../studio.css';
 
+/* En construction serveur, la page se refait au plus toutes les deux minutes :
+   une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
+   Valeur litterale exigee par Next, elle double FRAICHEUR de lib/catalogue.js.
+   Sans effet sur l'export statique, qui ignore la revalidation. */
+export const revalidate = 120;
+
+
 // Didone a fort contraste pour les titres : le caractere des cartels de musee.
 // L'axe optique est variable, Next sert donc la bonne graisse a chaque taille.
 const display = Bodoni_Moda({

@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev -p 3210",
     "build": "next build",
-    "start": "npx --yes serve out -l 3210",
+    "start": "next start -p 3210",
+    "build:statique": "node scripts/build-statique.mjs",
+    "start:statique": "npx --yes serve out -l 3210",
     "seed": "node scripts/seed.mjs",
     "catalogue": "node scripts/build_catalogue.mjs",
     "prebuild": "node scripts/snapshot.mjs",
-    "snapshot": "node scripts/snapshot.mjs"
+    "snapshot": "node scripts/snapshot.mjs --force"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

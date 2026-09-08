@@ -17,6 +17,17 @@ import path from 'node:path';
 
 const RACINE = process.cwd();
 
+/*
+ * L'instantane ne sert qu'a la cible statique. En construction serveur les
+ * pages interrogent l'API elles-memes : prendre l'instantane serait au mieux
+ * inutile, au pire fatal — une API endormie ferait echouer un deploiement qui
+ * n'en depend plus. `npm run snapshot` passe --force pour l'exiger malgre tout.
+ */
+if (process.env.BUILD_TARGET !== 'static' && !process.argv.includes('--force')) {
+  console.log('Construction serveur : pas d instantane, les pages lisent l API directement.');
+  process.exit(0);
+}
+
 for (const f of ['.env.local', '.env']) {
   try {
     const txt = await fs.readFile(path.join(RACINE, f), 'utf8');

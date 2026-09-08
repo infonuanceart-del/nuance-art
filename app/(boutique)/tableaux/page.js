@@ -3,6 +3,13 @@ import Link from 'next/link';
 import Catalogue from '@/components/Catalogue';
 import { lireProduits } from '@/lib/catalogue';
 
+/* En construction serveur, la page se refait au plus toutes les deux minutes :
+   une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
+   Valeur litterale exigee par Next, elle double FRAICHEUR de lib/catalogue.js.
+   Sans effet sur l'export statique, qui ignore la revalidation. */
+export const revalidate = 120;
+
+
 export const metadata = {
   title: 'Tous les tableaux — catalogue Nuance Art',
   description:

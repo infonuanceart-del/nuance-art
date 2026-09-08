@@ -6,6 +6,13 @@ import { lireProduit, lireProduits, lireReglages } from '@/lib/catalogue';
 import { nomTheme } from '@/lib/taxonomie';
 import donneesPieces from '@/data/pieces.json';
 
+/* En construction serveur, la page se refait au plus toutes les deux minutes :
+   une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
+   Valeur litterale exigee par Next, elle double FRAICHEUR de lib/catalogue.js.
+   Sans effet sur l'export statique, qui ignore la revalidation. */
+export const revalidate = 120;
+
+
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3210';
 
 export async function generateStaticParams() {

@@ -11,6 +11,13 @@ import {
 } from '@/components/Icones';
 import donneesPieces from '@/data/pieces.json';
 
+/* En construction serveur, la page se refait au plus toutes les deux minutes :
+   une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
+   Valeur litterale exigee par Next, elle double FRAICHEUR de lib/catalogue.js.
+   Sans effet sur l'export statique, qui ignore la revalidation. */
+export const revalidate = 120;
+
+
 export const metadata = {
   title: 'Nuance Art — Calligraphie, zellige et art traditionnel encadrés',
   description:

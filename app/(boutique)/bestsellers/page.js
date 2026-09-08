@@ -5,6 +5,13 @@ import { lireProduits } from '@/lib/catalogue';
 import { dh } from '@/lib/prix';
 import { IcoFleche } from '@/components/Icones';
 
+/* En construction serveur, la page se refait au plus toutes les deux minutes :
+   une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
+   Valeur litterale exigee par Next, elle double FRAICHEUR de lib/catalogue.js.
+   Sans effet sur l'export statique, qui ignore la revalidation. */
+export const revalidate = 120;
+
+
 export const metadata = {
   title: 'Best-sellers — les tableaux les plus vendus',
   description:

@@ -5,6 +5,13 @@ import Catalogue from '@/components/Catalogue';
 import { lireProduits } from '@/lib/catalogue';
 import { THEMES, THEME_PAR_SLUG } from '@/lib/taxonomie';
 
+/* En construction serveur, la page se refait au plus toutes les deux minutes :
+   une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
+   Valeur litterale exigee par Next, elle double FRAICHEUR de lib/catalogue.js.
+   Sans effet sur l'export statique, qui ignore la revalidation. */
+export const revalidate = 120;
+
+
 export function generateStaticParams() {
   return THEMES.map((t) => ({ theme: t.slug }));
 }
