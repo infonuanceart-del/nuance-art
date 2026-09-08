@@ -8,3 +8,6 @@ public/uploads
 *.log
 data/snapshot.json
 out
+
+.vercel
+.env*

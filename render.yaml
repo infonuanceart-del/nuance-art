@@ -35,10 +35,11 @@ services:
       - key: AUTH_SECRET
         generateValue: true
 
-      # Domaines autorises a appeler l'API, separes par des virgules.
-      # A completer avec l'adresse reelle de la vitrine une fois en ligne.
+      # Domaines autorises a appeler l'API, separes par des virgules. La
+      # comparaison est exacte : une URL de previsualisation Vercel, dont le
+      # prefixe change a chaque deploiement, ne passera pas.
       - key: ORIGINES_AUTORISEES
-        value: http://localhost:3210
+        value: https://nuance-art-chi.vercel.app,https://nuance-art-omar-54e2.vercel.app,http://localhost:3210
 
       # Stockage des images televersees depuis l'administration.
       - key: CLOUDINARY_CLOUD_NAME

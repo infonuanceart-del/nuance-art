@@ -1,0 +1,17 @@
+# Vercel ne construit que la vitrine Next : tout ce qui suit alourdirait le
+# televersement sans servir a la construction.
+node_modules
+.next
+out
+.data
+public/uploads
+*.log
+
+# L'API vit sur Render, pas ici. render.yaml part aussi : Vercel le lit comme
+# un blueprint multi-services et reclame alors le dossier serveur/ absent.
+serveur
+render.yaml
+
+# Les secrets restent dans le tableau de bord Vercel, jamais dans l'archive.
+.env
+.env.local
