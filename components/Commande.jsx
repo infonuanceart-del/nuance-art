@@ -63,6 +63,9 @@ export default function Commande({ whatsapp }) {
           articles: articles.map((a) => ({
             slug: a.slug, titre: a.titre, taille: a.taille, cadre: a.cadre,
             passe: a.passe, prixUnit: a.prixUnit, qte: a.qte,
+            // seule une ligne personnalisee porte une image : c'est la photo
+            // du client, sans elle l'atelier ne saurait quoi imprimer
+            ...(a.perso ? { perso: true, image: a.image } : {}),
           })),
           paiement: form.paiement,
         },

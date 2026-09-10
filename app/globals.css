@@ -1116,6 +1116,24 @@ h1, h2, h3, h4 {
 
 .card-quick .btn { flex: 1; padding-inline: 0.6rem; font-size: 0.75rem; }
 
+/* Essai mural : libelle complet au-dessus de 560px, oeil seul en dessous.
+   Le bouton devient alors une pastille ronde, posee a droite de la vignette. */
+.card-essai .essai-ico-small { display: none; }
+
+@media (max-width: 560px) {
+  .card-quick { left: auto; }
+  .card-quick .btn.card-essai {
+    flex: 0 0 auto;
+    margin-left: auto;
+    width: 2.35rem;
+    height: 2.35rem;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .card-essai .essai-ico-large, .card-essai .essai-texte { display: none; }
+  .card-essai .essai-ico-small { display: block; }
+}
+
 .card-body { padding-top: 0.85rem; display: flex; flex-direction: column; gap: 0.15rem; }
 
 .card-title {
@@ -1816,15 +1834,71 @@ textarea.inp { min-height: 118px; resize: vertical; }
 .avis p { font-size: 0.92rem; color: var(--ink-soft); }
 .avis footer { display: flex; align-items: center; gap: 0.65rem; font-size: 0.82rem; }
 .avis footer b { font-weight: 650; }
-.avis .who {
-  width: 34px;
-  height: 34px;
+.avis-avatar {
+  flex: 0 0 auto;
   border-radius: 50%;
-  background: var(--sand-2);
+  box-shadow: inset 0 0 0 1px rgba(22, 18, 14, 0.08);
+}
+
+/* ======================================================== PERSONNALISER */
+
+.perso-layout {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+}
+@media (min-width: 900px) { .perso-layout { grid-template-columns: 1.05fr 0.95fr; } }
+
+/* La scene garde une hauteur stable : changer de format ne fait pas sauter
+   la colonne de droite sous les yeux du visiteur. */
+.perso-scene {
   display: grid;
   place-items: center;
-  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
-  font-size: 0.9rem;
+  min-height: clamp(300px, 46vw, 460px);
+  padding: clamp(1rem, 3vw, 2rem);
+  background: var(--paper-2);
+  border-radius: var(--r-m);
+}
+.perso-scene > * { max-width: min(100%, 420px); }
+
+.perso-depot {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: clamp(1.75rem, 5vw, 3rem) 1.25rem;
+  border: 1.5px dashed var(--sand-2);
+  border-radius: var(--r-m);
+  background: var(--paper);
+  color: var(--muted);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.perso-depot b { color: var(--ink); font-size: 0.98rem; }
+.perso-depot:hover, .perso-depot:focus-visible, .perso-depot.survol {
+  border-color: var(--clay);
+  background: var(--sand);
+}
+
+.perso-choix .lab { margin-bottom: 0.5rem; }
+
+.perso-verdict {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--r-s);
+  background: var(--wash);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.perso-verdict.alerte {
+  background: rgba(176, 81, 44, 0.08);
+  color: var(--clay-dark);
 }
 
 /* ================================================================= FOOTER */

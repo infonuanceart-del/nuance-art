@@ -19,7 +19,7 @@ export const store = creerStoreMongo(uri);
 
 export const REGLAGES_DEFAUT = {
   promoActive: true,
-  promoTitre: 'Ventes flash',
+  promoTitre: 'Ventes flash — jusqu’à -60 %',
   promoTexte: '',
   promoFin: '',
   promoCode: '',

@@ -37,10 +37,13 @@ export default function Panier() {
           <div className="cart-row" key={a.id}>
             <img className="thumb" src={a.thumb || a.image} alt="" />
             <div>
-              <Link href={`/tableaux/${a.slug}`}><b>{a.titre}</b></Link>
+              {a.perso
+                ? <b>{a.titre}</b>
+                : <Link href={`/tableaux/${a.slug}`}><b>{a.titre}</b></Link>}
               <p className="tiny muted">
                 {a.taille.l} × {a.taille.h} cm · {nomCadre(a.cadre)}
                 {a.passe ? ' · passe-partout' : ''}
+                {a.perso ? ' · votre photo' : ''}
               </p>
               <div className="row mt-1">
                 <div className="qty">

@@ -5,7 +5,7 @@ import Cadre from './Cadre';
 import { useBoutique } from './Boutique';
 import { dh, prixAffiche } from '@/lib/prix';
 import { nomTheme } from '@/lib/taxonomie';
-import { IcoCoeur, IcoEtoile, IcoPinceau } from './Icones';
+import { IcoCoeur, IcoEtoile, IcoOeil, IcoPinceau } from './Icones';
 
 export default function CarteProduit({ produit, priority = false, cadre = 'noir' }) {
   const { favoris, basculerFavori } = useBoutique();
@@ -41,8 +41,16 @@ export default function CarteProduit({ produit, priority = false, cadre = 'noir'
         />
 
         <div className="card-quick">
-          <Link href={`/studio?oeuvre=${produit.slug}`} className="btn btn-light btn-sm">
-            <IcoPinceau size={14} /> Voir sur mon mur
+          {/* sur petit ecran le libelle disparait : il ne reste que l'oeil, et
+              aria-label garde l'intitule pour les lecteurs d'ecran */}
+          <Link
+            href={`/studio?oeuvre=${produit.slug}`}
+            className="btn btn-light btn-sm card-essai"
+            aria-label="Voir sur mon mur"
+          >
+            <IcoPinceau size={14} className="essai-ico-large" />
+            <IcoOeil size={16} className="essai-ico-small" />
+            <span className="essai-texte">Voir sur mon mur</span>
           </Link>
         </div>
       </div>

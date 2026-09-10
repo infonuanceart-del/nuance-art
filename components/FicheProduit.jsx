@@ -22,7 +22,7 @@ const GARANTIES = [
 
 const FABRICATION = [
   { Ico: IcoImage, texte: 'Impression pigmentaire douze couleurs' },
-  { Ico: IcoRegle, texte: 'Toile d’art 380 g ou papier mat 250 g' },
+  { Ico: IcoRegle, texte: 'Toile premium ou papier mat 250 g' },
   { Ico: IcoPinceau, texte: 'Moulure bois 20 mm, montage à la main' },
   { Ico: IcoCheck, texte: 'Attaches et niveau à bulle fournis' },
 ];
@@ -204,7 +204,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
             <details className="acc-faq">
               <summary>Impression & encadrement</summary>
               <p>
-                Impression pigmentaire douze couleurs, toile d’art 380 g ou papier mat 250 g
+                Impression pigmentaire douze couleurs, toile premium ou papier mat 250 g
                 selon le format. Moulure en bois de 20 mm, montage à la main, attaches et
                 niveau à bulle fournis. Chaque pièce est contrôlée avant emballage.
               </p>

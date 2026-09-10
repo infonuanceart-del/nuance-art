@@ -64,6 +64,9 @@ export const IcoBouclier = (p) => (
 export const IcoRetour = (p) => (
   <Svg {...p}><path d="M4 9h11a4.5 4.5 0 0 1 0 9H9" /><path d="m8 5-4 4 4 4" /></Svg>
 );
+export const IcoOeil = (p) => (
+  <Svg {...p}><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z" /><circle cx="12" cy="12" r="2.8" /></Svg>
+);
 export const IcoPinceau = (p) => (
   <Svg {...p}><path d="M14 4.5 19.5 10 11 18.5H5.5V13L14 4.5Z" /><path d="M12.5 6 18 11.5" /></Svg>
 );

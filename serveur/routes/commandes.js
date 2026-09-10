@@ -4,6 +4,7 @@ import { exigerAdmin } from '../auth.js';
 import { fraisLivraison } from '../partage/prix.js';
 import { CADRE_PAR_SLUG } from '../partage/taxonomie.js';
 import { STATUTS_COMMANDE } from '../partage/produit.js';
+import { SLUG_PERSO, TAILLE_PERSO_PAR_REF, prixPerso } from '../partage/personnalisation.js';
 
 export const routesCommandes = Router();
 
@@ -12,6 +13,26 @@ function nouvelleRef() {
   const base = Date.now().toString(36).toUpperCase().slice(-4);
   const alea = Math.random().toString(36).toUpperCase().slice(2, 4);
   return `NA-${base}${alea}`;
+}
+
+/**
+ * L URL doit venir de notre propre compte Cloudinary, dans le sous-dossier des
+ * envois clients. Accepter une URL quelconque reviendrait a laisser un
+ * inconnu faire pointer une commande vers l image de son choix.
+ */
+const CLOUD = process.env.CLOUDINARY_CLOUD_NAME || '';
+
+function imageAcceptee(url) {
+  if (!CLOUD || typeof url !== 'string') return false;
+  try {
+    const u = new URL(url);
+    return u.protocol === 'https:'
+      && u.hostname === 'res.cloudinary.com'
+      && u.pathname.startsWith(`/${CLOUD}/`)
+      && u.pathname.includes('/personnalisation/');
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -39,6 +60,34 @@ routesCommandes.post('/commandes', async (req, res) => {
     const lignes = [];
 
     for (const a of articles) {
+      // Ligne personnalisee : aucune oeuvre au catalogue, le prix vient de la
+      // grille sur mesure et l image doit etre celle que notre propre
+      // televersement a renvoyee — sinon n importe quelle URL passerait.
+      if (a.slug === SLUG_PERSO) {
+        const taille = TAILLE_PERSO_PAR_REF[a.taille?.ref];
+        if (!taille) {
+          res.status(400).json({ erreur: 'Format personnalise indisponible' });
+          return;
+        }
+        if (!imageAcceptee(a.image)) {
+          res.status(400).json({ erreur: 'Photo personnalisee manquante ou invalide' });
+          return;
+        }
+        const qte = Math.max(1, Math.min(20, Number(a.qte) || 1));
+        lignes.push({
+          slug: SLUG_PERSO,
+          titre: 'Tableau personnalise',
+          image: String(a.image),
+          taille,
+          cadre: a.cadre || 'aucun',
+          passe: !!a.passe,
+          prixUnit: prixPerso(taille, a.cadre).final,
+          qte,
+          perso: true,
+        });
+        continue;
+      }
+
       const p = catalogue.find((x) => x.slug === a.slug);
       if (!p || p.actif === false) {
         res.status(400).json({ erreur: `Oeuvre indisponible : ${a.slug}` });

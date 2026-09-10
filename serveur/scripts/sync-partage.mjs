@@ -21,6 +21,7 @@ const FICHIERS = [
   'taxonomie.js',
   'prix.js',
   'produit.js',
+  'personnalisation.js',
   'cloudinary.js',
   path.join('store', 'mongo.js'),
 ];

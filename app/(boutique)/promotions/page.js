@@ -14,9 +14,9 @@ export const revalidate = 120;
 
 
 export const metadata = {
-  title: 'Promotions & ventes flash — jusqu’à -40 %',
+  title: 'Promotions & ventes flash — jusqu’à -60 %',
   description:
-    'Ventes flash Nuance Art : jusqu’à -40 % sur une sélection de calligraphies, zelliges '
+    'Ventes flash Nuance Art : jusqu’à -60 % sur une sélection de calligraphies, zelliges '
     + 'et tapis anciens. Cadre offert dès 900 DH d’achat, livraison 48 h au Maroc.',
   alternates: { canonical: '/promotions' },
 };

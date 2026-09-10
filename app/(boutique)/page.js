@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { lireProduits, lireReglages } from '@/lib/catalogue';
-import { THEMES, PIECES } from '@/lib/taxonomie';
+import { THEMES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import CarteProduit from '@/components/CarteProduit';
 import HeroScene from '@/components/HeroScene';
 import Reveal from '@/components/Reveal';
 import Compteur from '@/components/Compteur';
+import Avatar from '@/components/Avatar';
 import {
   IcoBouclier, IcoCamion, IcoEtoile, IcoFleche, IcoRegle, IcoRetour,
 } from '@/components/Icones';
@@ -33,7 +34,7 @@ const AVIS = [
     qui: 'Salma B.', ou: 'Casablanca — Anfa',
   },
   {
-    texte: 'Le cadre chêne est superbe et la toile est épaisse, pas la qualité fine qu’on trouve ailleurs. Livré à Rabat en deux jours, emballé comme il faut.',
+    texte: 'Le cadre est superbe et la toile est épaisse, pas la qualité fine qu’on trouve ailleurs. Livré à Rabat en deux jours, emballé comme il faut.',
     qui: 'Youssef A.', ou: 'Rabat — Agdal',
   },
   {
@@ -115,35 +116,20 @@ export default async function Accueil() {
           <div className="hero-copy">
             <span className="eyebrow">Atelier d’édition d’art — Casablanca</span>
             <h1 className="d1">
-              L’art qui trouve<br /><i>sa place.</i>
+              Plus qu’un tableau,<br /><i>une émotion chez vous.</i>
             </h1>
             <p className="lede">
               Calligraphies, zelliges, tapis anciens et enluminures des grandes collections,
-              réédités en haute définition, imprimés au pigment et encadrés à la main dans
+              réédités en haute définition, imprimés et pigment et encadrés à la main dans
               notre atelier. Livrés prêts à accrocher, en 48 h partout au Maroc.
             </p>
             <div className="hero-cta">
               <Link href="/tableaux" className="btn btn-primary btn-lg">
-                Découvrir les {produits.length} œuvres <IcoFleche size={17} />
+                Découvrir les œuvres <IcoFleche size={17} />
               </Link>
               <a href="#collections" className="btn btn-ghost btn-lg">
                 Parcourir les collections
               </a>
-            </div>
-
-            <div className="hero-proof">
-              <div>
-                <strong>4,8/5</strong>
-                <span>sur 340 avis</span>
-              </div>
-              <div>
-                <strong>48 h</strong>
-                <span>grandes villes</span>
-              </div>
-              <div>
-                <strong>14 j</strong>
-                <span>pour changer d’avis</span>
-              </div>
             </div>
           </div>
 
@@ -157,7 +143,7 @@ export default async function Accueil() {
           {[0, 1].map((n) => (
             <div className="marquee-track" key={n} style={{ animation: 'none' }}>
               <span>Impression pigmentaire 12 couleurs</span>
-              <span>Toile d’art 380 g</span>
+              <span>Toile premium</span>
               <span>Cadres montés à la main</span>
               <span>Essai sur votre mur, à l’échelle</span>
               <span>Paiement à la livraison</span>
@@ -181,7 +167,7 @@ export default async function Accueil() {
         <Reveal className="sec-head">
           <div>
             <span className="eyebrow">Les plus accrochés</span>
-            <h2 className="d2">Ce que les Marocains choisissent</h2>
+            <h2 className="d2">Nos best-sellers</h2>
             <p className="lede">
               Les {compteBest} œuvres qui reviennent commande après commande, de Casablanca
               à Tanger. Calligraphies, zelliges et tapis en tête.
@@ -204,10 +190,10 @@ export default async function Accueil() {
         <Reveal className="sec-head">
           <div>
             <span className="eyebrow">Collections</span>
-            <h2 className="d2">Douze univers, une même exigence</h2>
+            <h2 className="d2">Des œuvres qui changent tout.</h2>
             <p className="lede">
-              De la calligraphie coranique au zellige, du tapis ancien à l’enluminure :
-              chaque collection est choisie pour vivre dans un intérieur marocain.
+              Une sélection de tableaux conçue pour transformer un simple mur en
+              véritable signature intérieure.
             </p>
           </div>
           <Link href="/tableaux" className="link-arrow">Tout le catalogue <IcoFleche size={16} /></Link>
@@ -255,12 +241,6 @@ export default async function Accueil() {
           </p>
         </Reveal>
 
-        <div className="piece-tabs">
-          {PIECES.map((p) => (
-            <Link key={p.slug} href={`/tableaux?piece=${p.slug}`} className="chip">{p.nom}</Link>
-          ))}
-        </div>
-
         <div className="grid-produits" style={{ marginTop: '2rem' }}>
           {nouveautes.map((p) => <CarteProduit key={p.slug} produit={p} />)}
         </div>
@@ -279,14 +259,14 @@ export default async function Accueil() {
             </h2>
             <p className="lede">
               Nous ne sommes pas un intermédiaire. Les fichiers sont préparés œuvre par
-              œuvre, imprimés sur toile d’art 380 g ou papier mat 250 g, puis montés sur
+              œuvre, imprimés sur toile premium ou papier mat 250 g, puis montés sur
               des châssis en bois massif. Chaque pièce est contrôlée à la lumière du jour
               avant emballage.
             </p>
             <div className="chiffres mt-3">
-              <div><b>{new Date().getFullYear() - 2019}</b><span>ans d’atelier</span></div>
+              <div><b>10</b><span>ans de savoir-faire</span></div>
               <div><b>12</b><span>collections</span></div>
-              <div><b>380 g</b><span>toile d’art</span></div>
+              <div><b>Toile</b><span>premium</span></div>
               <div><b>48 h</b><span>de délai</span></div>
             </div>
             <Link href="/a-propos" className="link-arrow mt-3">Visiter l’atelier <IcoFleche size={16} /></Link>
@@ -309,16 +289,11 @@ export default async function Accueil() {
               </span>
               <p>« {a.texte} »</p>
               <footer>
-                <span className="who">{a.qui[0]}</span>
+                <Avatar nom={a.qui} />
                 <span><b>{a.qui}</b><br /><span className="tiny muted">{a.ou}</span></span>
               </footer>
             </Reveal>
           ))}
-        </div>
-
-        <div className="presse">
-          <span>TelQuel</span><span>Architectural Digest MA</span><span>Le Matin</span>
-          <span>Maison & Déco</span><span>Hespress Art</span>
         </div>
       </section>
 

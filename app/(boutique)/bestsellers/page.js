@@ -56,7 +56,7 @@ export default async function PageBestsellers() {
 
       <header className="page-head">
         <span className="eyebrow">Les plus accrochés</span>
-        <h1 className="d2">Ce que les Marocains choisissent</h1>
+        <h1 className="d2">Nos best-sellers</h1>
         <p className="lede">
           {best.length} œuvres qui reviennent commande après commande, de Casablanca à Tanger.
           Toutes sont imprimées au pigment et encadrées dans notre atelier, puis livrées

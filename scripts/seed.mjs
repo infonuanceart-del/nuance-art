@@ -40,7 +40,7 @@ const AMBIANCES = {
 };
 
 const FINITION =
-  'Impression pigmentaire douze couleurs sur toile d’art 380 g ou papier mat 250 g, encres résistantes ' +
+  'Impression pigmentaire douze couleurs sur toile premium ou papier mat 250 g, encres résistantes ' +
   'à la lumière, châssis en bois massif monté à la main dans notre atelier de Casablanca. ' +
   'Système d’accroche posé et niveau à bulle fournis.';
 
@@ -63,7 +63,7 @@ function description(p) {
 
 const REGLAGES = {
   promoActive: true,
-  promoTitre: 'Ventes flash — jusqu’à -40 %',
+  promoTitre: 'Ventes flash — jusqu’à -60 %',
   promoTexte: 'Sur une sélection d’œuvres signées. Cadre offert dès 900 DH d’achat.',
   // la vente se termine dans 6 jours : la page promotions affiche le compte à rebours
   promoFin: new Date(Date.now() + 6 * 864e5).toISOString(),

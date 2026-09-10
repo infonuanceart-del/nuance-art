@@ -109,32 +109,6 @@
 .card-coeur:hover { color: var(--clay); }
 @media (hover: none) { .card-coeur { opacity: 1; transform: none; } }
 
-/* --- bandeau « ils en parlent » --- */
-.presse {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1.5rem, 5vw, 3.5rem);
-  flex-wrap: wrap;
-  padding-block: 1.75rem;
-  opacity: 0.62;
-}
-.presse span {
-  font-family: var(--font-display), Didot, "Bodoni MT", Georgia, serif;
-  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-
-/* --- sélecteur de pièce (page d'accueil) --- */
-.piece-tabs {
-  display: flex;
-  gap: 0.45rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
 /* --- bloc éditorial deux colonnes --- */
 .duo {
   display: grid;

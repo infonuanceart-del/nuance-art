@@ -13,6 +13,7 @@ import { routesAdmin } from './routes/admin.js';
 import { routesProduits } from './routes/produits.js';
 import { routesCommandes } from './routes/commandes.js';
 import { routesDivers } from './routes/divers.js';
+import { routesPersonnalisation } from './routes/personnalisation.js';
 
 const app = express();
 
@@ -54,6 +55,7 @@ app.use('/api/admin', routesAdmin);
 app.use('/api', routesProduits);
 app.use('/api', routesCommandes);
 app.use('/api', routesDivers);
+app.use('/api', routesPersonnalisation);
 
 app.use((req, res) => {
   res.status(404).json({ erreur: 'Route inconnue' });

@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { store, lireReglages } from '../db.js';
 import { exigerAdmin } from '../auth.js';
 import { normaliserProduit, slugifier } from '../partage/produit.js';
+import { prevenirVitrine } from '../revalidation.js';
 
 export const routesProduits = Router();
 
@@ -56,6 +57,7 @@ routesProduits.post('/produits', exigerAdmin, async (req, res) => {
       createdAt: new Date().toISOString(),
     });
     res.status(201).json({ ok: true, produit: cree });
+    prevenirVitrine(`creation ${slug}`);
   } catch (e) {
     console.error('[produits POST]', e);
     res.status(500).json({ erreur: 'Erreur serveur' });
@@ -76,6 +78,7 @@ routesProduits.patch('/produits', exigerAdmin, async (req, res) => {
       if (await store.produits.modifier(slug, { promo: remise })) n += 1;
     }
     res.json({ ok: true, modifiees: n, promo: remise });
+    prevenirVitrine(`remise sur ${n} oeuvre(s)`);
   } catch (e) {
     console.error('[produits PATCH lot]', e);
     res.status(500).json({ erreur: 'Erreur serveur' });
@@ -114,6 +117,7 @@ routesProduits.patch('/produits/:slug', exigerAdmin, async (req, res) => {
     if (clefs.length && clefs.every((k) => bascules.includes(k))) {
       const patch = Object.fromEntries(clefs.map((k) => [k, Boolean(corps[k])]));
       res.json({ ok: true, produit: await store.produits.modifier(slug, patch) });
+      prevenirVitrine(`bascule ${slug}`);
       return;
     }
 
@@ -128,6 +132,7 @@ routesProduits.patch('/produits/:slug', exigerAdmin, async (req, res) => {
       updatedAt: new Date().toISOString(),
     });
     res.json({ ok: true, produit: maj });
+    prevenirVitrine(`edition ${slug}`);
   } catch (e) {
     console.error('[produit PATCH]', e);
     res.status(500).json({ erreur: 'Erreur serveur' });
@@ -142,6 +147,7 @@ routesProduits.delete('/produits/:slug', exigerAdmin, async (req, res) => {
       return;
     }
     res.json({ ok: true });
+    prevenirVitrine(`suppression ${req.params.slug}`);
   } catch (e) {
     console.error('[produit DELETE]', e);
     res.status(500).json({ erreur: 'Erreur serveur' });

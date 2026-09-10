@@ -41,6 +41,16 @@ services:
       - key: ORIGINES_AUTORISEES
         value: https://nuance-art-chi.vercel.app,https://nuance-art-omar-54e2.vercel.app,http://localhost:3210
 
+      # Purge du cache de la vitrine apres chaque ecriture. Sans ces deux
+      # valeurs, l'API ne previent personne : une oeuvre ajoutee ou supprimee
+      # n'apparait qu'a l'expiration du delai de fraicheur de Next.
+      # Le secret doit etre identique des deux cotes, d'ou `sync: false`
+      # plutot que `generateValue` — Render en tirerait un que Vercel ignore.
+      - key: VITRINE_URL
+        value: https://nuance-art-chi.vercel.app
+      - key: REVALIDATION_SECRET
+        sync: false
+
       # Stockage des images televersees depuis l'administration.
       - key: CLOUDINARY_CLOUD_NAME
         sync: false

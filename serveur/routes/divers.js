@@ -4,6 +4,7 @@ import { store, lireReglages, REGLAGES_DEFAUT } from '../db.js';
 import { exigerAdmin } from '../auth.js';
 import { slugifier } from '../partage/produit.js';
 import { cloudinaryActif, envoyerImage } from '../partage/cloudinary.js';
+import { prevenirVitrine } from '../revalidation.js';
 
 export const routesDivers = Router();
 
@@ -37,6 +38,9 @@ routesDivers.put('/reglages', exigerAdmin, async (req, res) => {
     }
     const maj = await store.reglages.ecrire(patch);
     res.json({ ok: true, reglages: { ...REGLAGES_DEFAUT, ...maj } });
+    // Les reglages nourrissent le bandeau, les promos et le pied : toute la
+    // vitrine en depend, pas seulement une page.
+    prevenirVitrine('reglages');
   } catch (e) {
     console.error('[reglages PUT]', e);
     res.status(500).json({ erreur: 'Erreur serveur' });

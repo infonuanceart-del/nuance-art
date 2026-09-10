@@ -17,7 +17,7 @@ const ANNONCES = [
   {
     eclair: true,
     fort: 'Ventes flash',
-    texte: '— jusqu’à -40 % sur une sélection',
+    texte: '— jusqu’à -60 % sur une sélection',
     lien: { href: '/promotions', libelle: 'J’en profite' },
   },
   { texte: 'Livraison 48 h au Maroc' },
@@ -184,6 +184,7 @@ export default function Header({ indexRecherche = [] }) {
 
             <Link href="/bestsellers" className="nav-link">Best-sellers</Link>
             <Link href="/tableaux" className="nav-link">Toutes les œuvres</Link>
+            <Link href="/personnaliser" className="nav-link">Personnaliser</Link>
             <Link href="/promotions" className="nav-link accent">Promotions</Link>
           </nav>
 
@@ -271,6 +272,7 @@ export default function Header({ indexRecherche = [] }) {
             ))}
             <div className="acc-item"><Link className="acc-btn" href="/bestsellers">Best-sellers</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/tableaux">Toutes les œuvres</Link></div>
+            <div className="acc-item"><Link className="acc-btn" href="/personnaliser">Personnaliser mon tableau</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/promotions" style={{ color: 'var(--clay)' }}>Promotions</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/a-propos">L’atelier</Link></div>
             <div className="acc-item"><Link className="acc-btn" href="/contact">Contact</Link></div>

@@ -84,7 +84,7 @@ export default function HeroScene({ oeuvres = [] }) {
             {o.epoque ? <> · <i>{o.epoque}</i></> : null}
           </span>
           <span className="cartel-tech">
-            Tirage pigmentaire sur toile d’art
+            Tirage pigmentaire sur toile premium
             {grande ? ` · jusqu’à ${grande.l} × ${grande.h} cm` : ''}
           </span>
         </div>

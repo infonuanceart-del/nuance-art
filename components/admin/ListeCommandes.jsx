@@ -141,6 +141,18 @@ export default function ListeCommandes({ commandes, recharger }) {
                                 {a.taille?.ref} cm · {nomCadre(a.cadre)}
                                 {a.passe ? ' · passe-partout' : ''} · ×{a.qte}
                               </span>
+                              {/* Tirage sur mesure : l'atelier imprime la photo
+                                  du client, il lui faut le fichier lui-meme. */}
+                              {a.perso && a.image && (
+                                <a
+                                  className="tiny"
+                                  href={a.image}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  Photo du client — ouvrir
+                                </a>
+                              )}
                             </span>
                             <b>{dh(a.prixUnit * a.qte)}</b>
                           </li>
