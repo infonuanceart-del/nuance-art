@@ -68,10 +68,10 @@ const REGLAGES = {
   // la vente se termine dans 6 jours : la page promotions affiche le compte à rebours
   promoFin: new Date(Date.now() + 6 * 864e5).toISOString(),
   promoCode: 'NUANCE10',
-  telephone: '05 22 00 00 00',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '212600000000',
+  telephone: '06 45 44 88 24',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '212645448824',
   email: 'contact@nuanceart.ma',
-  adresse: '12, rue des Arts — Quartier Gauthier, Casablanca',
+  adresse: '20, rue Socrate — Casablanca',
 };
 
 async function main() {

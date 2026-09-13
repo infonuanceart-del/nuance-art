@@ -4,7 +4,7 @@ import { IcoFacebook, IcoInstagram, IcoLieu, IcoMail, IcoTelephone, IcoWhatsapp 
 
 export default function Footer({ reglages }) {
   const annee = new Date().getFullYear();
-  const wa = reglages?.whatsapp || '212600000000';
+  const wa = reglages?.whatsapp || '212645448824';
 
   return (
     <footer className="footer">
@@ -52,9 +52,6 @@ export default function Footer({ reglages }) {
             <a href={`mailto:${reglages?.email}`} style={{ display: 'flex', gap: '0.55rem', alignItems: 'center' }}>
               <IcoMail size={17} /> {reglages?.email}
             </a>
-            <p className="tiny" style={{ marginTop: '0.9rem', opacity: 0.7 }}>
-              Showroom ouvert du lundi au samedi, 10 h – 19 h.
-            </p>
             <div style={{ display: 'flex', gap: '0.8rem', marginTop: '0.9rem', flexWrap: 'wrap' }}>
               <Link href="/livraison-retours">Livraison & retours</Link>
               <Link href="/cgv">CGV</Link>

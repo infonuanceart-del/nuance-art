@@ -119,9 +119,13 @@ export default async function Accueil() {
               Plus qu’un tableau,<br /><i>une émotion chez vous.</i>
             </h1>
             <p className="lede">
-              Calligraphies, zelliges, tapis anciens et enluminures des grandes collections,
-              réédités en haute définition, imprimés et pigment et encadrés à la main dans
-              notre atelier. Livrés prêts à accrocher, en 48 h partout au Maroc.
+              Des œuvres inspirées de grandes collections, rééditées avec une précision
+              exceptionnelle, peintes à la main et encadrées avec soin pour offrir une
+              œuvre singulière, prête à trouver sa place chez vous.
+            </p>
+            <p className="lede" style={{ marginTop: '0.9rem' }}>
+              De l’atelier à votre intérieur, nous prenons soin de chaque détail :
+              livraison, installation et accrochage de votre œuvre à domicile.
             </p>
             <div className="hero-cta">
               <Link href="/tableaux" className="btn btn-primary btn-lg">
@@ -255,13 +259,12 @@ export default async function Accueil() {
           <Reveal delai={90}>
             <span className="eyebrow">L’atelier</span>
             <h2 className="d2" style={{ margin: '0.7rem 0 1rem' }}>
-              Imprimé, encadré et vérifié à Casablanca
+              Imprimé, peint, encadré à Casablanca
             </h2>
             <p className="lede">
               Nous ne sommes pas un intermédiaire. Les fichiers sont préparés œuvre par
-              œuvre, imprimés sur toile premium ou papier mat 250 g, puis montés sur
-              des châssis en bois massif. Chaque pièce est contrôlée à la lumière du jour
-              avant emballage.
+              œuvre, imprimés sur toile premium, puis montés sur châssis. Chaque pièce
+              est contrôlée à la lumière du jour avant emballage.
             </p>
             <div className="chiffres mt-3">
               <div><b>10</b><span>ans de savoir-faire</span></div>
@@ -278,7 +281,7 @@ export default async function Accueil() {
       <section className="section-tight wrap">
         <Reveal className="center-head">
           <span className="eyebrow center">Avis clients</span>
-          <h2 className="d2">340 murs, et pas un regret de format</h2>
+          <h2 className="d2">Des émotions qui se racontent</h2>
         </Reveal>
 
         <div className="avis-grid">
