@@ -64,9 +64,16 @@ app.use((req, res) => {
 // Dernier filet : une exception non rattrapee doit sortir en JSON, jamais en
 // page HTML d'Express, sinon le client tente de la lire comme une reponse.
 app.use((err, req, res, suite) => {
-  console.error('[erreur]', err);
   const refusCors = /Origine non autorisee/.test(err?.message || '');
-  res.status(refusCors ? 403 : 500).json({ erreur: refusCors ? err.message : 'Erreur serveur' });
+  if (refusCors) return res.status(403).json({ erreur: err.message });
+  // Erreurs de body-parser (corps trop lourd -> 413, JSON illisible -> 400) :
+  // elles portent leur propre statut, c'est au client de corriger sa requete.
+  const statut = Number(err?.status || err?.statusCode);
+  if (statut >= 400 && statut < 500) {
+    return res.status(statut).json({ erreur: statut === 413 ? 'Requete trop volumineuse' : 'Requete invalide' });
+  }
+  console.error('[erreur]', err);
+  res.status(500).json({ erreur: 'Erreur serveur' });
 });
 
 const PORT = process.env.PORT || 4310;

@@ -57,7 +57,9 @@ export default async function PageProduit({ params }) {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: produit.titre,
-    image: `${SITE}${produit.image}`,
+    // Cloudinary donne deja une URL complete ; seules les images du depot
+    // (chemin /...) sont a rattacher au domaine.
+    image: /^https?:\/\//.test(produit.image) ? produit.image : `${SITE}${produit.image}`,
     description: produit.description,
     brand: { '@type': 'Brand', name: 'Nuance Art' },
     category: nomTheme(produit.theme),

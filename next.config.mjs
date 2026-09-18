@@ -28,6 +28,11 @@ const nextConfig = {
   // pour les deux cibles : le changer ferait bouger toutes les URL publiees.
   trailingSlash: true,
 
+  // Sur le VPS, scripts/redeployer-vps.sh construit dans un dossier a part
+  // pendant que le site en ligne continue de servir .next, puis echange les
+  // deux : un build rate ne coupe jamais le site. Partout ailleurs : .next.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
+
   ...(statique ? { output: 'export' } : {}),
 };
 

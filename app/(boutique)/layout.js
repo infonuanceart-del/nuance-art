@@ -57,6 +57,9 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: '/' },
+  // Preuve de propriete pour Google Search Console : a garder tant que le
+  // domaine y est suivi, sa suppression retire l'acces a la propriete.
+  verification: { google: 'lufA6xUXg65aTgh4zE2pZ1-vX92v7JNYr-eTU9GRbqo' },
 };
 
 export const viewport = {
