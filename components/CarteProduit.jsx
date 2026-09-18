@@ -6,6 +6,7 @@ import { useBoutique } from './Boutique';
 import { dh, prixAffiche } from '@/lib/prix';
 import { nomTheme } from '@/lib/taxonomie';
 import { IcoCoeur, IcoEtoile, IcoOeil, IcoPinceau } from './Icones';
+import { AVIS_AFFICHES } from '@/lib/avis';
 
 export default function CarteProduit({ produit, priority = false, cadre = 'noir' }) {
   const { favoris, basculerFavori } = useBoutique();
@@ -71,10 +72,12 @@ export default function CarteProduit({ produit, priority = false, cadre = 'noir'
             </>
           )}
         </span>
-        <span className="stars" role="img" aria-label={`Note ${produit.note} sur 5`}>
-          {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={11} plein={i < Math.round(produit.note)} />)}
-          <span className="tiny muted" style={{ marginLeft: 4 }}>({produit.avis})</span>
-        </span>
+        {AVIS_AFFICHES && (
+          <span className="stars" role="img" aria-label={`Note ${produit.note} sur 5`}>
+            {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={11} plein={i < Math.round(produit.note)} />)}
+            <span className="tiny muted" style={{ marginLeft: 4 }}>({produit.avis})</span>
+          </span>
+        )}
       </div>
     </article>
   );

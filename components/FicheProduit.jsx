@@ -6,6 +6,7 @@ import Studio from './Studio';
 import { useBoutique } from './Boutique';
 import { CADRES } from '@/lib/taxonomie';
 import { dh, prixTaille, SEUIL_LIVRAISON } from '@/lib/prix';
+import { AVIS_AFFICHES } from '@/lib/avis';
 import {
   IcoBouclier, IcoCamion, IcoCheck, IcoCoeur, IcoCroix, IcoEtoile, IcoImage, IcoMoins,
   IcoPanier, IcoPinceau, IcoPlus, IcoRegle, IcoRetour, IcoWhatsapp,
@@ -98,10 +99,14 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
           <h1 className="d2">{produit.titre}</h1>
 
           <div className="row" style={{ gap: '0.6rem' }}>
-            <span className="stars" role="img" aria-label={`Note ${produit.note} sur 5`}>
-              {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={13} plein={i < Math.round(produit.note)} />)}
-            </span>
-            <span className="tiny muted">{produit.note.toFixed(1)} · {produit.avis} avis</span>
+            {AVIS_AFFICHES && (
+              <>
+                <span className="stars" role="img" aria-label={`Note ${produit.note} sur 5`}>
+                  {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={13} plein={i < Math.round(produit.note)} />)}
+                </span>
+                <span className="tiny muted">{produit.note.toFixed(1)} · {produit.avis} avis</span>
+              </>
+            )}
             {produit.promo > 0 && <span className="badge badge-promo">-{produit.promo} %</span>}
           </div>
 

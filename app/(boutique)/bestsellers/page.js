@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Catalogue from '@/components/Catalogue';
 import { lireProduits } from '@/lib/catalogue';
 import { dh } from '@/lib/prix';
+import { AVIS_AFFICHES } from '@/lib/avis';
 import { IcoFleche } from '@/components/Icones';
 
 /* En construction serveur, la page se refait au plus toutes les deux minutes :
@@ -71,14 +72,29 @@ export default async function PageBestsellers() {
           <b>{best.length}</b>
           <span className="small muted">Œuvres au palmarès</span>
         </div>
-        <div>
-          <b>{noteMoyenne}/5</b>
-          <span className="small muted">Note moyenne de la sélection</span>
-        </div>
-        <div>
-          <b>{avisTotal}</b>
-          <span className="small muted">Avis clients cumulés</span>
-        </div>
+        {AVIS_AFFICHES ? (
+          <>
+            <div>
+              <b>{noteMoyenne}/5</b>
+              <span className="small muted">Note moyenne de la sélection</span>
+            </div>
+            <div>
+              <b>{avisTotal}</b>
+              <span className="small muted">Avis clients cumulés</span>
+            </div>
+          </>
+        ) : (
+          <>
+            <div>
+              <b>48 h</b>
+              <span className="small muted">Livraison partout au Maroc</span>
+            </div>
+            <div>
+              <b>14 jours</b>
+              <span className="small muted">Pour changer d’avis</span>
+            </div>
+          </>
+        )}
         <div>
           <b>{dh(premierPrix)}</b>
           <span className="small muted">Premier prix de la sélection</span>

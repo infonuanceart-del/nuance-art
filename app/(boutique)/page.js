@@ -11,6 +11,7 @@ import {
   IcoBouclier, IcoCamion, IcoEtoile, IcoFleche, IcoRegle, IcoRetour,
 } from '@/components/Icones';
 import donneesPieces from '@/data/pieces.json';
+import { AVIS_AFFICHES } from '@/lib/avis';
 
 /* En construction serveur, la page se refait au plus toutes les deux minutes :
    une oeuvre ajoutee dans l'administration apparait donc sans redeploiement.
@@ -287,27 +288,29 @@ export default async function Accueil() {
       </section>
 
       {/* ---------------------------------------------------------- AVIS */}
-      <section className="section-tight wrap">
-        <Reveal className="center-head">
-          <span className="eyebrow center">Avis clients</span>
-          <h2 className="d2">Des émotions qui se racontent</h2>
-        </Reveal>
+      {AVIS_AFFICHES && (
+        <section className="section-tight wrap">
+          <Reveal className="center-head">
+            <span className="eyebrow center">Avis clients</span>
+            <h2 className="d2">Des émotions qui se racontent</h2>
+          </Reveal>
 
-        <div className="avis-grid">
-          {AVIS.map((a) => (
-            <Reveal key={a.qui} className="avis" delai={60}>
-              <span className="stars">
-                {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={13} />)}
-              </span>
-              <p>« {a.texte} »</p>
-              <footer>
-                <Avatar nom={a.qui} />
-                <span><b>{a.qui}</b><br /><span className="tiny muted">{a.ou}</span></span>
-              </footer>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+          <div className="avis-grid">
+            {AVIS.map((a) => (
+              <Reveal key={a.qui} className="avis" delai={60}>
+                <span className="stars">
+                  {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={13} />)}
+                </span>
+                <p>« {a.texte} »</p>
+                <footer>
+                  <Avatar nom={a.qui} />
+                  <span><b>{a.qui}</b><br /><span className="tiny muted">{a.ou}</span></span>
+                </footer>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ----------------------------------------------------------- FAQ */}
       <section className="section-tight wrap faq">
