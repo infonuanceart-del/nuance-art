@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Personnaliser from '@/components/Personnaliser';
 
 export const metadata = {
-  title: 'Personnaliser mon tableau — votre photo imprimée et encadrée',
+  title: 'Personnaliser mon tableau — votre photo encadrée',
   description:
-    'Envoyez votre photo, choisissez le format et le cadre, et recevez votre tableau '
-    + 'imprimé au pigment et encadré à la main à Casablanca. Livraison 48 h partout au Maroc.',
+    'Envoyez votre photo, choisissez format et cadre : votre tableau est imprimé au pigment '
+    + 'et encadré à la main à Casablanca. Livraison 48 h au Maroc.',
   alternates: { canonical: '/personnaliser' },
 };
 

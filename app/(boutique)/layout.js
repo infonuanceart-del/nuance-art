@@ -80,9 +80,11 @@ export default async function RootLayout({ children }) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Store',
+    '@id': `${SITE}/#boutique`,
     name: 'Nuance Art',
     url: SITE,
-    image: `${SITE}/og.jpg`,
+    logo: `${SITE}/logo.png`,
+    image: `${SITE}/logo.png`,
     description: 'Galerie d’art traditionnel en ligne : calligraphie, zellige, tapis et enluminures encadrés à Casablanca.',
     telephone: reglages.telephone,
     email: reglages.email,

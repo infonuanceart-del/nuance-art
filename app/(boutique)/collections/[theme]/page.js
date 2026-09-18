@@ -11,6 +11,8 @@ import { THEMES, THEME_PAR_SLUG } from '@/lib/taxonomie';
    Sans effet sur l'export statique, qui ignore la revalidation. */
 export const revalidate = 120;
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3210';
+
 
 export function generateStaticParams() {
   return THEMES.map((t) => ({ theme: t.slug }));
@@ -20,11 +22,14 @@ export async function generateMetadata({ params }) {
   const { theme } = await params;
   const t = THEME_PAR_SLUG[theme];
   if (!t) return {};
+  const premiere = (await lireProduits()).find((p) => p.theme === theme);
   return {
     title: `${t.nom} — tableaux et affiches`,
-    description: `${t.seo} Imprimé et encadré à Casablanca, livré en 48 h au Maroc. Essayez l’œuvre sur la photo de votre mur avant de commander.`,
+    description: `${t.seo} Imprimé et encadré à Casablanca, livré en 48 h au Maroc.`,
     alternates: { canonical: `/collections/${t.slug}` },
-    openGraph: { title: `${t.nom} — Nuance Art`, description: t.accroche },
+    // Un openGraph declare ici remplace celui du parent, image comprise :
+    // sans cette ligne, la page se partage sans visuel.
+    openGraph: { title: `${t.nom} — Nuance Art`, description: t.accroche, images: premiere ? [{ url: premiere.image }] : undefined },
   };
 }
 
@@ -41,12 +46,19 @@ export default async function PageCollection({ params }) {
     '@type': 'CollectionPage',
     name: t.nom,
     description: t.seo,
-    hasPart: produits.slice(0, 12).map((p) => ({
-      '@type': 'Product',
-      name: p.titre,
-      image: p.image,
-      offers: { '@type': 'Offer', price: p.prixMin, priceCurrency: 'MAD' },
-    })),
+    url: `${SITE}/collections/${t.slug}/`,
+    // Une liste de liens vers les fiches, qui portent chacune leur Product
+    // complet : Google ne lit pas de Product sans page propre ni URL.
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: produits.length,
+      itemListElement: produits.slice(0, 20).map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE}/tableaux/${p.slug}/`,
+        name: p.titre,
+      })),
+    },
   };
 
   return (

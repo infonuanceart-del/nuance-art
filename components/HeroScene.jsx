@@ -64,7 +64,9 @@ export default function HeroScene({ oeuvres = [] }) {
             >
               <div className="mat">
                 <img
-                  src={oe.image}
+                  src={oe.thumb}
+                  srcSet={`${oe.thumb} 520w, ${oe.image} 1400w`}
+                  sizes="(max-width: 560px) 250px, 330px"
                   alt={k === i ? `${oe.titre}, ${oe.artiste}` : ''}
                   loading={k === 0 ? 'eager' : 'lazy'}
                   fetchPriority={k === 0 ? 'high' : 'auto'}

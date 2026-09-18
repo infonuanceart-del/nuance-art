@@ -11,11 +11,10 @@ export const revalidate = 120;
 
 
 export const metadata = {
-  title: 'Tous les tableaux — catalogue Nuance Art',
+  title: 'Tous les tableaux — catalogue d’art encadré',
   description:
-    'Parcourez le catalogue complet : calligraphie arabe, zellige, tapis anciens, '
-    + 'enluminures, scènes du Maroc et d’Andalousie. Filtrez par format '
-    + 'dominante et pièce de la maison.',
+    'Le catalogue complet : calligraphie arabe, zellige, tapis anciens, enluminures, '
+    + 'scènes du Maroc et d’Andalousie. Filtrez par collection, format et pièce.',
   alternates: { canonical: '/tableaux' },
 };
 

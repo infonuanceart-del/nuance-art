@@ -16,9 +16,8 @@ export const revalidate = 120;
 export const metadata = {
   title: 'Studio d’essayage — voyez l’œuvre sur votre mur',
   description:
-    'Chargez la photo de votre pièce, choisissez une œuvre et voyez-la à la taille réelle '
-    + 'sur votre mur : formats, cadres, mur de cadres. Gratuit, sans inscription, et vos '
-    + 'photos ne quittent pas votre appareil.',
+    'Voyez l’œuvre à taille réelle sur la photo de votre mur : formats, cadres, mur de '
+    + 'cadres. Gratuit, sans inscription, vos photos restent sur votre appareil.',
   alternates: { canonical: '/studio' },
 };
 

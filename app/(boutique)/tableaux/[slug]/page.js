@@ -20,16 +20,24 @@ export async function generateStaticParams() {
   return produits.map((p) => ({ slug: p.slug }));
 }
 
+/* Google coupe vers 155-160 caracteres : on coupe nous-memes, sur un mot,
+   plutot que de laisser tomber la fin au hasard d'un titre long. */
+function resume(texte, max = 158) {
+  if (texte.length <= max) return texte;
+  return `${texte.slice(0, max - 1).replace(/[\s,;:.—-]+\S*$/, '')}…`;
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const p = await lireProduit(slug);
   if (!p) return { title: 'Œuvre introuvable' };
   return {
     title: `${p.titre} — ${p.artiste}`,
-    description:
-      `${p.titre} de ${p.artiste}, tirage d’art imprimé et encadré à Casablanca. `
-      + `Cinq formats de ${p.tailles[0].l} × ${p.tailles[0].h} à ${p.tailles.at(-1).l} × ${p.tailles.at(-1).h} cm. `
-      + 'Essayez l’œuvre sur la photo de votre mur avant de commander.',
+    description: resume(
+      `${p.titre} (${p.artiste}), tirage d’art encadré à Casablanca en ${p.tailles.length} formats, `
+      + `du ${p.tailles[0].l} × ${p.tailles[0].h} au ${p.tailles.at(-1).l} × ${p.tailles.at(-1).h} cm. `
+      + 'Essayez-le sur la photo de votre mur.',
+    ),
     alternates: { canonical: `/tableaux/${p.slug}` },
     openGraph: {
       title: `${p.titre} — Nuance Art`,
@@ -63,19 +71,17 @@ export default async function PageProduit({ params }) {
     description: produit.description,
     brand: { '@type': 'Brand', name: 'Nuance Art' },
     category: nomTheme(produit.theme),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: produit.note.toFixed(1),
-      reviewCount: produit.avis,
-    },
+    // Pas d'aggregateRating : les notes du catalogue sont des valeurs de
+    // demonstration (scripts/build_catalogue.mjs), pas des avis clients. Les
+    // declarer a Google enfreint sa politique sur les avis (action manuelle).
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'MAD',
       lowPrice: Math.round(produit.tailles[0].prix * (1 - (produit.promo || 0) / 100)),
-      highPrice: produit.tailles.at(-1).prix,
+      highPrice: Math.round(produit.tailles.at(-1).prix * (1 - (produit.promo || 0) / 100)),
       offerCount: produit.tailles.length,
       availability: 'https://schema.org/InStock',
-      url: `${SITE}/tableaux/${produit.slug}`,
+      url: `${SITE}/tableaux/${produit.slug}/`,
     },
   };
 
@@ -83,9 +89,9 @@ export default async function PageProduit({ params }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE },
-      { '@type': 'ListItem', position: 2, name: 'Tableaux', item: `${SITE}/tableaux` },
-      { '@type': 'ListItem', position: 3, name: nomTheme(produit.theme), item: `${SITE}/collections/${produit.theme}` },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Tableaux', item: `${SITE}/tableaux/` },
+      { '@type': 'ListItem', position: 3, name: nomTheme(produit.theme), item: `${SITE}/collections/${produit.theme}/` },
       { '@type': 'ListItem', position: 4, name: produit.titre },
     ],
   };

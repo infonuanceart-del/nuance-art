@@ -22,9 +22,8 @@ export const revalidate = 120;
 export const metadata = {
   title: 'Nuance Art — Calligraphie, zellige et art traditionnel encadrés',
   description:
-    'Calligraphies arabes, zelliges, tapis anciens et enluminures, imprimés au pigment et '
-    + 'encadrés à Casablanca. Une galerie d’art traditionnel pensée pour les intérieurs '
-    + 'marocains. Livraison 48 h partout au Maroc.',
+    'Calligraphies arabes, zelliges, tapis anciens et enluminures imprimés au pigment et '
+    + 'encadrés à Casablanca, pour les intérieurs marocains. Livraison 48 h au Maroc.',
   alternates: { canonical: '/' },
 };
 
@@ -92,7 +91,7 @@ export default async function Accueil() {
 
   // une image de couverture et un décompte par collection
   const couvertures = Object.fromEntries(
-    THEMES.map((t) => [t.slug, produits.find((p) => p.theme === t.slug)?.image]),
+    THEMES.map((t) => [t.slug, produits.find((p) => p.theme === t.slug)]),
   );
   const compte = produits.reduce((acc, p) => ({ ...acc, [p.theme]: (acc[p.theme] || 0) + 1 }), {});
 
@@ -204,9 +203,19 @@ export default async function Accueil() {
         </Reveal>
 
         <div className="collections">
-          {THEMES.slice(0, 7).map((t) => (
+          {THEMES.slice(0, 7).map((t, i) => (
             <Link key={t.slug} href={`/collections/${t.slug}`} className="col-card">
-              {couvertures[t.slug] && <img src={couvertures[t.slug]} alt="" loading="lazy" />}
+              {couvertures[t.slug] && (
+                // la vignette de 520 px suffit aux petites cartes ; l'original ne
+                // part que pour la grande carte d'un ecran dense
+                <img
+                  src={couvertures[t.slug].thumb}
+                  srcSet={`${couvertures[t.slug].thumb} 520w, ${couvertures[t.slug].image} 1400w`}
+                  sizes={i === 0 ? '(max-width: 779px) 45vw, 560px' : '(max-width: 779px) 45vw, 280px'}
+                  alt=""
+                  loading="lazy"
+                />
+              )}
               <div>
                 <h3>{t.nom}</h3>
                 <span>{compte[t.slug] || 0} œuvres</span>

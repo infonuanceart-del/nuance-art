@@ -11,12 +11,14 @@ import { IcoFleche } from '@/components/Icones';
    Sans effet sur l'export statique, qui ignore la revalidation. */
 export const revalidate = 120;
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3210';
+
 
 export const metadata = {
   title: 'Best-sellers — les tableaux les plus vendus',
   description:
     'Les œuvres les plus commandées chez Nuance Art : calligraphies, zelliges, tapis anciens '
-    + 'et enluminures encadrés à Casablanca. Notes clients, formats, livraison 48 h au Maroc.',
+    + 'et enluminures encadrés à Casablanca, livrés en 48 h au Maroc.',
   alternates: { canonical: '/bestsellers' },
 };
 
@@ -41,7 +43,7 @@ export default async function PageBestsellers() {
     itemListElement: best.slice(0, 20).map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      url: `/tableaux/${p.slug}`,
+      url: `${SITE}/tableaux/${p.slug}/`,
       name: p.titre,
     })),
   };

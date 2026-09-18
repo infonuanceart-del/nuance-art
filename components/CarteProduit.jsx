@@ -71,7 +71,7 @@ export default function CarteProduit({ produit, priority = false, cadre = 'noir'
             </>
           )}
         </span>
-        <span className="stars" aria-label={`Note ${produit.note} sur 5`}>
+        <span className="stars" role="img" aria-label={`Note ${produit.note} sur 5`}>
           {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={11} plein={i < Math.round(produit.note)} />)}
           <span className="tiny muted" style={{ marginLeft: 4 }}>({produit.avis})</span>
         </span>

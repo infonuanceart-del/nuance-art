@@ -98,7 +98,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
           <h1 className="d2">{produit.titre}</h1>
 
           <div className="row" style={{ gap: '0.6rem' }}>
-            <span className="stars" aria-label={`Note ${produit.note} sur 5`}>
+            <span className="stars" role="img" aria-label={`Note ${produit.note} sur 5`}>
               {[0, 1, 2, 3, 4].map((i) => <IcoEtoile key={i} size={13} plein={i < Math.round(produit.note)} />)}
             </span>
             <span className="tiny muted">{produit.note.toFixed(1)} · {produit.avis} avis</span>
