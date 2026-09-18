@@ -278,7 +278,7 @@ export default async function Accueil() {
             </p>
             <div className="chiffres mt-3">
               <div><b>10</b><span>ans de savoir-faire</span></div>
-              <div><b>12</b><span>collections</span></div>
+              <div><b>{THEMES.length}</b><span>collections</span></div>
               <div><b>Toile</b><span>premium</span></div>
               <div><b>48 h</b><span>de délai</span></div>
             </div>

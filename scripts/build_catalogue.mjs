@@ -239,7 +239,9 @@ async function main() {
     // --- 1. les fiches, menees de front : c'est de l'attente reseau pure ---
     // On en interroge un multiple de la cible, sachant qu'une bonne part sera
     // ecartee par les filtres, et on s'arrete des qu'on en a largement assez.
-    const aTester = ids.filter((id) => !vusId.has(id)).slice(0, theme.n * 8);
+    // Un meme objet peut sortir de plusieurs requetes du theme : sans le Set,
+    // il etait retenu deux fois, la seconde sous un titre suffixe de sa date.
+    const aTester = [...new Set(ids)].filter((id) => !vusId.has(id)).slice(0, theme.n * 8);
     for (const id of aTester) vusId.add(id);
 
     const fiches = await enParallele(aTester, 8, (id) => jget(API + '/objects/' + id));
