@@ -16,6 +16,15 @@
  */
 const statique = process.env.BUILD_TARGET === 'static';
 
+const DOUBLONS_RETIRES = {
+  'prayer-in-the-mosque-by-1874-436482': 'prayer-in-the-mosque-436482',
+  'arabs-crossing-a-ford-1873-436420': 'arabs-crossing-a-ford-436420',
+  'scene-in-the-jewish-quarter-of-constantine-1851-437974': 'scene-in-the-jewish-quarter-of-constantine-437974',
+  'the-arab-falconer-1864-436419': 'the-arab-falconer-436419',
+  'sketch-for-reception-of-emperor-napoleon-iii-and-empress-ca-1862': 'sketch-for-reception-of-emperor-napoleon-iii-and-empress-441374',
+  'akbar-with-lion-and-calf-verso-ca-1630-recto-ca-1530-50-451268': 'akbar-with-lion-and-calf-451268',
+};
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -34,6 +43,19 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || '.next',
 
   ...(statique ? { output: 'export' } : {}),
+
+  // Six oeuvres importees deux fois du Met (meme objet, titre suffixe de sa
+  // date) ont ete retirees le 18 sept. 2026 : leurs anciennes adresses menent
+  // a la fiche conservee. Sans effet sur l'export statique (pas de serveur).
+  ...(statique ? {} : {
+    async redirects() {
+      return Object.entries(DOUBLONS_RETIRES).map(([ancien, garde]) => ({
+        source: `/tableaux/${ancien}/`,
+        destination: `/tableaux/${garde}/`,
+        permanent: true,
+      }));
+    },
+  }),
 };
 
 export default nextConfig;
