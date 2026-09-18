@@ -435,9 +435,11 @@ h1, h2, h3, h4 {
 .mega {
   position: absolute;
   top: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-8px);
-  width: min(720px, 88vw);
+  /* cale sur le bord gauche du bouton : centre sur lui, le panneau debordait
+     de l'ecran a gauche, les premiers menus etant colles au logo */
+  left: 0;
+  transform: translateY(-8px);
+  width: min(520px, calc(100vw - 2rem));
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--r-l);
@@ -458,7 +460,7 @@ h1, h2, h3, h4 {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 .mega::before {
