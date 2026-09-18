@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
 import { BoutiqueProvider } from '@/components/Boutique';
 import { lireProduits, lireReglages } from '@/lib/catalogue';
-import { IcoWhatsapp } from '@/components/Icones';
+import { IcoTelephone, IcoWhatsapp } from '@/components/Icones';
 import '../globals.css';
 import '../studio.css';
 
@@ -115,15 +115,27 @@ export default async function RootLayout({ children }) {
           <main id="contenu">{children}</main>
           <Footer reglages={reglages} />
           <Toast />
-          <a
-            className="wa-float"
-            href={`https://wa.me/${reglages.whatsapp}?text=${encodeURIComponent('Bonjour Nuance Art, j’ai une question sur une œuvre.')}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Nous écrire sur WhatsApp"
-          >
-            <IcoWhatsapp size={26} />
-          </a>
+          {/* Boutons flottants : appel au-dessus, WhatsApp (canal principal) en bas */}
+          <div className="contact-float">
+            {reglages.telephone && (
+              <a
+                className="tel-float"
+                href={`tel:${reglages.telephone.replace(/\s/g, '')}`}
+                aria-label={`Nous appeler au ${reglages.telephone}`}
+              >
+                <IcoTelephone size={21} />
+              </a>
+            )}
+            <a
+              className="wa-float"
+              href={`https://wa.me/${reglages.whatsapp}?text=${encodeURIComponent('Bonjour Nuance Art, j’ai une question sur une œuvre.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Nous écrire sur WhatsApp"
+            >
+              <IcoWhatsapp size={26} />
+            </a>
+          </div>
         </BoutiqueProvider>
       </body>
     </html>

@@ -2048,11 +2048,30 @@ textarea.inp { min-height: 118px; resize: vertical; }
 .fabrication svg { color: var(--muted); flex-shrink: 0; }
 
 /* =============================================================== WHATSAPP */
-.wa-float {
+.contact-float {
   position: fixed;
   right: 1.1rem;
   bottom: 1.1rem;
   z-index: 70;
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+}
+
+.tel-float {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(22, 18, 14, 0.28);
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+.tel-float:hover { transform: scale(1.08); background: var(--clay); }
+
+.wa-float {
   width: 54px;
   height: 54px;
   border-radius: 50%;
@@ -2063,7 +2082,7 @@ textarea.inp { min-height: 118px; resize: vertical; }
   box-shadow: 0 6px 22px rgba(37, 211, 102, 0.42);
   transition: transform 0.25s var(--ease);
 }
-.wa-float:hover { transform: scale(1.08); }
+.wa-float:hover, .tel-float:hover { transform: scale(1.08); }
 
 /* ================================================================== ADMIN */
 .admin-shell { display: grid; min-height: 100vh; grid-template-columns: 1fr; }

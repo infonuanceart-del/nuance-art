@@ -313,7 +313,7 @@ export default async function Accueil() {
       )}
 
       {/* ----------------------------------------------------------- FAQ */}
-      <section className="section-tight wrap faq">
+      <section id="faq" className="section-tight wrap faq">
         <Reveal className="center-head">
           <span className="eyebrow center">Questions fréquentes</span>
           <h2 className="d2">Ce qu’on nous demande le plus</h2>

@@ -22,6 +22,8 @@ export default async function sitemap() {
     { url: url('/promotions/'), changeFrequency: 'daily', priority: 0.7 },
     { url: url('/personnaliser/'), changeFrequency: 'monthly', priority: 0.6 },
     { url: url('/studio/'), changeFrequency: 'monthly', priority: 0.5 },
+    { url: url('/a-propos/'), changeFrequency: 'yearly', priority: 0.4 },
+    { url: url('/contact/'), changeFrequency: 'yearly', priority: 0.4 },
     ...THEMES.map((t) => ({
       url: url(`/collections/${t.slug}/`), changeFrequency: 'weekly', priority: 0.8,
     })),
