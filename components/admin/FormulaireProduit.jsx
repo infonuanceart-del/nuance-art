@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { appeler, envoyerFichier } from '@/lib/api';
-import { THEMES, FORMATS, PIECES } from '@/lib/taxonomie';
+import { THEMES, FORMATS, PIECES, CADRES, degradeCadre } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import { IcoPlus, IcoPoubelle, IcoImage } from '@/components/Icones';
 
@@ -18,7 +18,7 @@ const VIDE = {
   titre: '', artiste: '', epoque: '', technique: '', description: '',
   theme: 'art-islamique', format: 'paysage',
   image: '', thumb: '', source: '', ratio: 0,
-  tailles: TAILLES_DEFAUT, pieces: [],
+  tailles: TAILLES_DEFAUT, cadres: CADRES, pieces: [],
   nouveaute: true, bestseller: false, promo: 0,
   note: 4.6, avis: 0, actif: true, ordre: 0,
 };
@@ -26,7 +26,12 @@ const VIDE = {
 export default function FormulaireProduit({ produit }) {
   const router = useRouter();
   const creation = !produit;
-  const [f, setF] = useState(() => ({ ...VIDE, ...(produit || {}) }));
+  const [f, setF] = useState(() => {
+    const init = { ...VIDE, ...(produit || {}) };
+    // fiche d'avant les cadres par œuvre : on part de la liste par défaut
+    if (!init.cadres?.length) init.cadres = CADRES;
+    return init;
+  });
   const [erreur, setErreur] = useState('');
   const [envoi, setEnvoi] = useState(false);
   const [chargement, setChargement] = useState(false);
@@ -45,6 +50,30 @@ export default function FormulaireProduit({ produit }) {
 
   const retirerTaille = (i) =>
     setF((p) => ({ ...p, tailles: p.tailles.filter((_, j) => j !== i) }));
+
+  const sansCadre = f.cadres.some((c) => c.slug === 'aucun');
+  const moulures = f.cadres.filter((c) => c.slug !== 'aucun');
+
+  /** « Sans cadre » reste en tête de liste, les moulures suivent dans l'ordre saisi. */
+  const setMoulures = (liste) => setF((p) => ({
+    ...p,
+    cadres: [...p.cadres.filter((c) => c.slug === 'aucun'), ...liste],
+  }));
+
+  const setCadre = (i, champ, valeur) =>
+    setMoulures(moulures.map((c, j) => (j === i ? { ...c, [champ]: valeur } : c)));
+
+  const ajouterCadre = () =>
+    setMoulures([...moulures, { slug: '', nom: '', hex: '#8a6a4a', supp: 150, desc: '' }]);
+
+  const retirerCadre = (i) => setMoulures(moulures.filter((_, j) => j !== i));
+
+  const basculerSansCadre = (oui) => setF((p) => ({
+    ...p,
+    cadres: oui
+      ? [CADRES.find((c) => c.slug === 'aucun'), ...p.cadres.filter((c) => c.slug !== 'aucun')]
+      : p.cadres.filter((c) => c.slug !== 'aucun'),
+  }));
 
   function basculerPiece(slug) {
     setF((p) => ({
@@ -174,6 +203,52 @@ export default function FormulaireProduit({ produit }) {
                 {f.promo > 0 && <> — soit {dh(prixMin * (1 - f.promo / 100))} remise déduite.</>}
               </p>
             )}
+          </section>
+
+          <section className="admin-carte">
+            <h2 className="d4">Cadres proposés</h2>
+            <p className="admin-aide">
+              Le client choisit parmi ces cadres sur la fiche. La couleur sert aux vignettes
+              et à l’aperçu ; le supplément s’ajoute au prix de la taille.
+            </p>
+
+            <label className="admin-case mt-2">
+              <input type="checkbox" checked={sansCadre}
+                onChange={(e) => basculerSansCadre(e.target.checked)} />
+              <span>Vendre aussi sans cadre (toile seule, sans supplément)</span>
+            </label>
+
+            <div className="admin-cadres mt-2">
+              {moulures.map((c, i) => (
+                <div className="admin-cadre" key={i}>
+                  <span className="admin-cadre-apercu" style={{ background: degradeCadre(c.hex) }} aria-hidden="true" />
+                  <div className="field">
+                    <label htmlFor={`cc${i}`} className="tiny">Couleur</label>
+                    <input id={`cc${i}`} className="inp admin-couleur" type="color" value={c.hex}
+                      onChange={(e) => setCadre(i, 'hex', e.target.value)} />
+                  </div>
+                  <div className="field">
+                    <label htmlFor={`cn${i}`} className="tiny">Nom affiché</label>
+                    <input id={`cn${i}`} className="inp" value={c.nom} maxLength={40} required
+                      placeholder="Noyer foncé" onChange={(e) => setCadre(i, 'nom', e.target.value)} />
+                  </div>
+                  <div className="field">
+                    <label htmlFor={`cs${i}`} className="tiny">Supplément (DH)</label>
+                    <input id={`cs${i}`} className="inp" type="number" min="0" step="10" value={c.supp}
+                      onChange={(e) => setCadre(i, 'supp', e.target.value)} />
+                  </div>
+                  <button type="button" className="icone-danger"
+                    disabled={!sansCadre && moulures.length === 1}
+                    onClick={() => retirerCadre(i)} aria-label={`Retirer le cadre ${c.nom}`}>
+                    <IcoPoubelle size={16} />
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <button type="button" className="btn btn-ghost btn-sm mt-2" onClick={ajouterCadre}>
+              <IcoPlus size={15} /> Ajouter un cadre
+            </button>
           </section>
 
           <section className="admin-carte">

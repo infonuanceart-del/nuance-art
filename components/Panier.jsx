@@ -41,7 +41,7 @@ export default function Panier() {
                 ? <b>{a.titre}</b>
                 : <Link href={`/tableaux/${a.slug}`}><b>{a.titre}</b></Link>}
               <p className="tiny muted">
-                {a.taille.l} × {a.taille.h} cm · {nomCadre(a.cadre)}
+                {a.taille.l} × {a.taille.h} cm · {a.cadreNom || nomCadre(a.cadre)}
                 {a.passe ? ' · passe-partout' : ''}
                 {a.perso ? ' · votre photo' : ''}
               </p>

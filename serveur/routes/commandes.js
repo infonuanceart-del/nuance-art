@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { store } from '../db.js';
 import { exigerAdmin } from '../auth.js';
 import { fraisLivraison } from '../partage/prix.js';
-import { CADRE_PAR_SLUG } from '../partage/taxonomie.js';
+import { CADRE_PAR_SLUG, cadreProduit } from '../partage/taxonomie.js';
 import { STATUTS_COMMANDE } from '../partage/produit.js';
 import { SLUG_PERSO, TAILLE_PERSO_PAR_REF, prixPerso } from '../partage/personnalisation.js';
 
@@ -80,6 +80,7 @@ routesCommandes.post('/commandes', async (req, res) => {
           image: String(a.image),
           taille,
           cadre: a.cadre || 'aucun',
+          cadreNom: CADRE_PAR_SLUG[a.cadre]?.nom || 'Sans cadre',
           passe: !!a.passe,
           prixUnit: prixPerso(taille, a.cadre).final,
           qte,
@@ -99,7 +100,13 @@ routesCommandes.post('/commandes', async (req, res) => {
         return;
       }
 
-      const supp = CADRE_PAR_SLUG[a.cadre]?.supp ?? 0;
+      // Le cadre doit faire partie de ceux que l'admin propose pour cette oeuvre.
+      const cadre = cadreProduit(p, a.cadre || 'aucun');
+      if (!cadre) {
+        res.status(400).json({ erreur: 'Cadre indisponible pour cette oeuvre' });
+        return;
+      }
+      const supp = cadre.supp || 0;
       const unitaire = Math.round((taille.prix + supp) * (1 - (p.promo || 0) / 100));
       const qte = Math.max(1, Math.min(20, Number(a.qte) || 1));
 
@@ -108,7 +115,8 @@ routesCommandes.post('/commandes', async (req, res) => {
         titre: p.titre,
         image: p.thumb,
         taille,
-        cadre: a.cadre || 'aucun',
+        cadre: cadre.slug,
+        cadreNom: cadre.nom,
         passe: !!a.passe,
         prixUnit: unitaire,
         qte,

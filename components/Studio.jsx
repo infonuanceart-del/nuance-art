@@ -13,7 +13,7 @@
  * Tout se passe dans le navigateur : aucune image n'est envoyée sur un serveur.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { CADRES, CADRE_PAR_SLUG } from '@/lib/taxonomie';
+import { cadreProduit, cadresProduit, cadreInitial, degradeCadre } from '@/lib/taxonomie';
 import { dh, prixTaille } from '@/lib/prix';
 import { useBoutique } from './Boutique';
 import {
@@ -21,17 +21,8 @@ import {
   IcoRotation, IcoTelecharger, IcoPanier,
 } from './Icones';
 
-/* Dégradés du cadre pour l'affichage écran. */
-const DEGRADE = {
-  aucun: 'transparent',
-  noir: 'linear-gradient(140deg,#2f2b26,#14110f 58%,#241f1b)',
-  chene: 'linear-gradient(140deg,#dcb98c,#b98d5b 55%,#cda775)',
-  blanc: 'linear-gradient(140deg,#ffffff,#e9e4da 60%,#f7f4ee)',
-  dore: 'linear-gradient(140deg,#eacd82,#b9902f 52%,#dcbd68)',
-};
-
-/* Couleur pleine équivalente, pour l'export en image. */
-const PLEIN = { aucun: null, noir: '#1c1815', chene: '#c1935f', blanc: '#f1ede5', dore: '#c9a24d' };
+/* Teinte du cadre retenu pour une pièce, parmi ceux de son œuvre. */
+const teinteDe = (it) => (it.cadre === 'aucun' ? null : cadreProduit(it, it.cadre)?.hex || null);
 
 const BORD_CM = 2.4;   // largeur de la moulure, en centimètres réels
 const MARIE_CM = 4.5;  // largeur du passe-partout
@@ -112,7 +103,8 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
       prixMin: oeuvre.prixMin,
       tailles,
       taille,
-      cadre: 'noir',
+      cadres: cadresProduit(oeuvre),
+      cadre: cadreInitial(cadresProduit(oeuvre)),
       passe: false,
       x: pos.x ?? 0.5,
       y: pos.y ?? 0.38,
@@ -244,8 +236,8 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
           ctx.shadowBlur = 26 * (W / 1400);
           ctx.shadowOffsetY = 12 * (W / 1400);
         }
-        if (PLEIN[it.cadre]) {
-          ctx.fillStyle = PLEIN[it.cadre];
+        if (teinteDe(it)) {
+          ctx.fillStyle = teinteDe(it);
           ctx.fillRect(-totalW / 2, -totalH / 2, totalW, totalH);
         } else {
           // sans cadre : l'ombre a quand même besoin d'un support
@@ -311,7 +303,7 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
       ajouter({
         slug: it.slug, titre: it.titre, image: it.image, thumb: it.thumb,
         ratio: it.taille.l / it.taille.h,
-        taille: it.taille, cadre: it.cadre, passe: it.passe,
+        taille: it.taille, cadre: it.cadre, cadreNom: cadreProduit(it, it.cadre)?.nom, passe: it.passe,
         prixUnit: p.final, qte: 1,
       });
     });
@@ -371,7 +363,7 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
                     width: w + 2 * (bord + marie),
                     height: h + 2 * (bord + marie),
                     padding: bord,
-                    background: DEGRADE[it.cadre],
+                    background: teinteDe(it) ? degradeCadre(teinteDe(it)) : 'transparent',
                     transform: `translate(-50%, -50%) rotate(${it.rot}deg)`,
                   }}
                   onPointerDown={(e) => commencerDeplacement(e, it)}
@@ -544,13 +536,13 @@ export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, 
             <div>
               <h4>Cadre</h4>
               <div className="chips">
-                {CADRES.map((c) => (
+                {courant.cadres.map((c) => (
                   <button
                     key={c.slug}
                     className={`chip${courant.cadre === c.slug ? ' on' : ''}`}
                     onClick={() => majItem(courant.id, { cadre: c.slug })}
                   >
-                    <span className="swatch" style={{ background: c.hex === 'transparent' ? 'repeating-linear-gradient(45deg,#eee,#eee 3px,#fff 3px,#fff 6px)' : c.hex }} />
+                    <span className="swatch" style={{ background: c.slug === 'aucun' ? 'repeating-linear-gradient(45deg,#eee,#eee 3px,#fff 3px,#fff 6px)' : c.hex }} />
                     {c.nom}
                   </button>
                 ))}

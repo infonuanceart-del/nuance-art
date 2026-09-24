@@ -138,7 +138,7 @@ export default function ListeCommandes({ commandes, recharger }) {
                             <span>
                               <b>{a.titre}</b>
                               <span className="tiny">
-                                {a.taille?.ref} cm · {nomCadre(a.cadre)}
+                                {a.taille?.ref} cm · {a.cadreNom || nomCadre(a.cadre)}
                                 {a.passe ? ' · passe-partout' : ''} · ×{a.qte}
                               </span>
                               {/* Tirage sur mesure : l'atelier imprime la photo

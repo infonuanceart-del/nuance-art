@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Cadre from './Cadre';
+import ChoixCadre from './ChoixCadre';
 import { useBoutique } from './Boutique';
 import { envoyerFichierPublic } from '@/lib/api';
 import { dh, SEUIL_LIVRAISON } from '@/lib/prix';
@@ -90,6 +91,7 @@ export default function Personnaliser() {
         ratio: taille.l / taille.h,
         taille,
         cadre,
+        cadreNom: CADRES.find((c) => c.slug === cadre)?.nom,
         passe: false,
         prixUnit: prix.final,
         qte,
@@ -195,28 +197,7 @@ export default function Personnaliser() {
         </div>
 
         <div className="mt-3">
-          <h2 className="lab">Cadre</h2>
-          <div className="prod-views">
-            {CADRES.map((c) => (
-              <button
-                key={c.slug}
-                type="button"
-                className={cadre === c.slug ? 'on' : ''}
-                onClick={() => setCadre(c.slug)}
-                title={c.desc}
-              >
-                <span
-                  className="swatch"
-                  style={{
-                    background: c.hex === 'transparent'
-                      ? 'repeating-linear-gradient(45deg,#ddd,#ddd 3px,#fff 3px,#fff 6px)'
-                      : c.hex,
-                  }}
-                />
-                {c.nom}{c.supp > 0 ? ` +${c.supp} DH` : ''}
-              </button>
-            ))}
-          </div>
+          <ChoixCadre valeur={cadre} onChange={setCadre} Titre="h2" />
         </div>
 
         <div className="mt-3">

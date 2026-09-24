@@ -79,7 +79,7 @@ export default function Commande({ whatsapp }) {
   }
 
   const resume = articles
-    .map((a) => `• ${a.titre} — ${a.taille.l}x${a.taille.h} cm, ${nomCadre(a.cadre)} x${a.qte}`)
+    .map((a) => `• ${a.titre} — ${a.taille.l}x${a.taille.h} cm, ${a.cadreNom || nomCadre(a.cadre)} x${a.qte}`)
     .join('\n');
 
   return (
@@ -159,7 +159,7 @@ export default function Commande({ whatsapp }) {
         {articles.map((a) => (
           <div className="sum-row" key={a.id}>
             <span style={{ paddingRight: '0.75rem' }}>
-              {a.titre} <span className="tiny muted">({a.taille.l}×{a.taille.h}, {nomCadre(a.cadre)}) ×{a.qte}</span>
+              {a.titre} <span className="tiny muted">({a.taille.l}×{a.taille.h}, {a.cadreNom || nomCadre(a.cadre)}) ×{a.qte}</span>
             </span>
             <span style={{ whiteSpace: 'nowrap' }}>{dh(a.prixUnit * a.qte)}</span>
           </div>

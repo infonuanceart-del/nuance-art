@@ -976,6 +976,7 @@ h1, h2, h3, h4 {
 .frame-chene { padding: 3.8%; background: linear-gradient(140deg, #d8b483, #b98d5b 55%, #caa270); }
 .frame-dore { padding: 3.6%; background: linear-gradient(140deg, #e5c579, #b9902f 52%, #d8b862); }
 .frame-blanc { padding: 3.4%; background: linear-gradient(140deg, #fff, #ece7de 60%, #f6f2ec); }
+.frame-teinte { padding: 3.4%; }
 .frame-aucun { padding: 0; }
 
 .frame.passe { background-clip: padding-box; }
@@ -1608,6 +1609,98 @@ h1, h2, h3, h4 {
   gap: 0.4rem;
 }
 .prod-views button.on { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+
+/* Choix du cadre en vignettes : le coin d'une toile dans sa moulure. */
+.choix-cadre .lab em { font-style: normal; font-weight: 400; }
+.choix-cadre .lab small { font-weight: 400; color: var(--muted); }
+
+.cadre-tuiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 0.6rem;
+  max-width: 520px;
+}
+
+.cadre-tuile {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.3rem;
+  padding: 0;
+  background: none;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+.cadre-tuile .cadre-nom { font-weight: 500; }
+.cadre-tuile .cadre-supp { color: var(--muted); font-size: 0.68rem; }
+
+.cadre-coin {
+  --moulure: none;
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  border-radius: var(--r-s);
+  background: #fff;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.cadre-tuile:hover .cadre-coin { border-color: var(--ink-soft); }
+.cadre-tuile.on .cadre-coin { border-color: var(--clay); box-shadow: 0 0 0 1px var(--clay); }
+.cadre-tuile:focus-visible { outline: none; }
+.cadre-tuile:focus-visible .cadre-coin { outline: 2px solid var(--clay); outline-offset: 2px; }
+
+/* la toile : lin gris clair, vue de face, dont on voit le coin haut droit */
+.cadre-toile {
+  position: absolute;
+  z-index: 2;
+  left: -10%;
+  bottom: -10%;
+  top: 24%;
+  right: 32%;
+  background-color: #cdc9c2;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 3px);
+}
+
+/* moulure et jour d'ombre entre la moulure et la toile (caisse américaine) */
+.cadre-coin::before,
+.cadre-coin::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  bottom: -10%;
+}
+.cadre-coin::before {
+  z-index: 0;
+  top: 11%;
+  right: 19%;
+  background: var(--moulure);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset -3px 0 0 rgba(0, 0, 0, 0.18),
+    9px 6px 14px rgba(22, 18, 14, 0.28);
+}
+.cadre-coin::after {
+  z-index: 1;
+  top: 21%;
+  right: 29%;
+  background: rgba(22, 18, 14, 0.55);
+}
+
+.cadre-coin.clair::before { box-shadow: inset 0 0 0 1px rgba(22, 18, 14, 0.08), inset -3px 0 0 rgba(0, 0, 0, 0.08), 9px 6px 14px rgba(22, 18, 14, 0.24); }
+.cadre-coin.clair::after { background: rgba(22, 18, 14, 0.3); }
+
+/* sans cadre : la toile seule, dont on devine l'épaisseur du châssis */
+.cadre-coin-aucun::before,
+.cadre-coin-aucun::after { display: none; }
+.cadre-coin-aucun .cadre-toile {
+  top: 16%;
+  right: 24%;
+  box-shadow: 4px 0 0 #b6b1a9, 12px 8px 16px rgba(22, 18, 14, 0.28);
+}
 
 .prod-info > .eyebrow { margin-bottom: 0.7rem; }
 .prod-info .d2 { margin-bottom: 0.35rem; }
@@ -2642,6 +2735,26 @@ tbody tr:hover { background: var(--wash); }
   align-items: end;
 }
 .admin-taille .inp { padding: 0.55rem 0.7rem; font-size: 0.86rem; }
+
+.admin-cadres { display: grid; gap: 0.6rem; }
+.admin-cadre {
+  display: grid;
+  grid-template-columns: 30px 64px minmax(0, 1fr) 110px auto;
+  gap: 0.6rem;
+  align-items: end;
+}
+.admin-cadre .inp { padding: 0.55rem 0.7rem; font-size: 0.86rem; }
+.admin-cadre .admin-couleur { padding: 0.2rem; height: 42px; cursor: pointer; }
+.admin-cadre-apercu {
+  width: 30px;
+  height: 42px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--line), 0 1px 3px rgba(22, 18, 14, 0.15);
+}
+@media (max-width: 560px) {
+  .admin-cadre { grid-template-columns: 30px 64px minmax(0, 1fr) auto; }
+  .admin-cadre > .field:nth-of-type(2) { grid-column: 1 / -1; grid-row: 2; }
+}
 
 /* ------------------------------------------------------------- commandes */
 .admin-commande {

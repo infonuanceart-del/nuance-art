@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Cadre from './Cadre';
+import ChoixCadre from './ChoixCadre';
 import Studio from './Studio';
 import { useBoutique } from './Boutique';
-import { CADRES } from '@/lib/taxonomie';
+import { cadresProduit, cadreInitial } from '@/lib/taxonomie';
 import { dh, prixTaille, SEUIL_LIVRAISON } from '@/lib/prix';
 import { AVIS_AFFICHES } from '@/lib/avis';
 import {
@@ -33,7 +34,9 @@ const FABRICATION = [
 export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp }) {
   const { ajouter, favoris, basculerFavori } = useBoutique();
   const [taille, setTaille] = useState(produit.tailles[1] || produit.tailles[0]);
-  const [cadre, setCadre] = useState('noir');
+  const cadres = cadresProduit(produit);
+  const [cadre, setCadre] = useState(() => cadreInitial(cadres));
+  const choix = cadres.find((c) => c.slug === cadre) || cadres[0];
   const [passe, setPasse] = useState(false);
   const [studio, setStudio] = useState(false);
   const [qte, setQte] = useState(1);
@@ -49,6 +52,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
     ratio: taille.l / taille.h,
     taille,
     cadre,
+    cadreNom: choix.nom,
     passe,
     prixUnit: prix.final,
     qte,
@@ -59,37 +63,19 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
       <div className="prod-layout">
         <div>
           <div className="prod-visual">
+            {/* L'œuvre reste montrée telle quelle : le cadre choisi ne change que le prix. */}
             <Cadre
               src={produit.image}
               alt={`${produit.titre} — ${produit.artiste}`}
               ratio={taille.l / taille.h}
-              cadre={cadre}
+              cadre="aucun"
               passe={passe}
               priority
               style={{ maxWidth: 'min(100%, 520px)' }}
             />
           </div>
 
-          <div className="prod-views">
-            {CADRES.map((c) => (
-              <button
-                key={c.slug}
-                className={cadre === c.slug ? 'on' : ''}
-                onClick={() => setCadre(c.slug)}
-              >
-                <span
-                  className="swatch"
-                  style={{ background: c.hex === 'transparent' ? 'repeating-linear-gradient(45deg,#ddd,#ddd 3px,#fff 3px,#fff 6px)' : c.hex }}
-                />
-                {c.nom}{c.supp > 0 ? ` +${c.supp} DH` : ''}
-              </button>
-            ))}
-            <button className={passe ? 'on' : ''} onClick={() => setPasse((v) => !v)}>
-              Passe-partout
-            </button>
-          </div>
-
-          <button className="btn btn-clay btn-block mt-2" onClick={() => setStudio(true)}>
+          <button className="btn btn-clay btn-block mt-3" onClick={() => setStudio(true)}>
             <IcoPinceau size={17} /> Voir cette œuvre sur mon mur
           </button>
         </div>
@@ -115,7 +101,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
             {prix.remise > 0 && <span className="price-old">{dh(prix.base)}</span>}
           </div>
           <p className="tiny muted">
-            Prix pour {taille.l} × {taille.h} cm, {cadre === 'aucun' ? 'toile sans cadre' : `cadre ${CADRES.find((c) => c.slug === cadre)?.nom.toLowerCase()}`}.
+            Prix pour {taille.l} × {taille.h} cm, {cadre === 'aucun' ? 'toile sans cadre' : `cadre ${choix.nom.toLowerCase()}`}.
             Livraison offerte dès {dh(SEUIL_LIVRAISON)}.
           </p>
 
@@ -132,6 +118,15 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
                   <span>{dh(prixTaille(produit, t, cadre).final)}</span>
                 </button>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-3">
+            <ChoixCadre valeur={cadre} onChange={setCadre} cadres={cadres} />
+            <div className="prod-views">
+              <button className={passe ? 'on' : ''} onClick={() => setPasse((v) => !v)}>
+                Passe-partout
+              </button>
             </div>
           </div>
 
