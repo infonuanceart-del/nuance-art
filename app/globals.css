@@ -2017,11 +2017,23 @@ textarea.inp { min-height: 118px; resize: vertical; }
 .footer-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
+  /* minmax(0, 1fr) : une colonne ne s'elargit plus pour loger l'adresse mail */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-bottom: 2.75rem;
 }
 
-@media (min-width: 900px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.3fr; gap: 3rem; } }
+/* Sur telephone, la presentation et les coordonnees prennent toute la largeur :
+   deux colonnes ne suffisent pas a un e-mail ou une adresse sans coupure. */
+.footer-marque,
+.footer-contact { grid-column: 1 / -1; }
+.footer-contact a,
+.footer-contact p { overflow-wrap: anywhere; }
+
+@media (min-width: 900px) {
+  .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.3fr; gap: 3rem; }
+  .footer-marque,
+  .footer-contact { grid-column: auto; }
+}
 
 .footer a { font-size: 0.875rem; line-height: 2.05; transition: color 0.2s var(--ease); }
 .footer a:hover { color: var(--gold); }
@@ -2051,7 +2063,7 @@ textarea.inp { min-height: 118px; resize: vertical; }
   font-size: 0.78rem;
 }
 
-.pay { display: flex; gap: 0.45rem; align-items: center; opacity: 0.75; }
+.pay { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; opacity: 0.75; }
 .pay span {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--r-xs);

@@ -10,7 +10,7 @@ export default function Footer({ reglages }) {
     <footer className="footer">
       <div className="wrap">
         <div className="footer-grid">
-          <div>
+          <div className="footer-marque">
             <span className="logo"><img src="/logo.png" alt="Nuance Art" className="logo-mark" width="384" height="384" /></span>
             <p>
               Atelier d’édition d’art à Casablanca. Nous imprimons, encadrons et livrons
@@ -41,7 +41,7 @@ export default function Footer({ reglages }) {
             <Link href="/studio" style={{ display: 'block' }}>Studio d’essayage</Link>
           </div>
 
-          <div>
+          <div className="footer-contact">
             <h4>Nous joindre</h4>
             <p style={{ display: 'flex', gap: '0.55rem', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
               <IcoLieu size={17} /> {reglages?.adresse}
