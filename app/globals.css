@@ -1633,6 +1633,28 @@ h1, h2, h3, h4 {
   line-height: 1.25;
 }
 .cadre-tuile .cadre-nom { font-weight: 500; }
+
+/* Sur telephone, les vignettes forment un ruban qu'on fait glisser, pose
+   jusqu'aux bords de l'ecran : la suivante depasse a droite et montre qu'il y
+   en a d'autres, au lieu de passer a la ligne en rangees orphelines. */
+@media (max-width: 560px) {
+  .cadre-tuiles {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    /* quatre vignettes et demie a l'ecran, quelle que soit la largeur */
+    grid-auto-columns: min(96px, calc((100vw - var(--gutter) - 2.4rem) / 4.4));
+    max-width: none;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 4px var(--gutter) 6px;
+    scroll-padding-inline: var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .cadre-tuiles::-webkit-scrollbar { display: none; }
+  .cadre-tuile { scroll-snap-align: start; }
+}
 .cadre-tuile .cadre-supp { color: var(--muted); font-size: 0.68rem; }
 
 .cadre-coin {
@@ -2498,6 +2520,8 @@ tbody tr:hover { background: var(--wash); }
 /* Un enfant de grille refuse de descendre sous la largeur de son contenu :
    sans cela, un titre d'oeuvre sans espace elargit toute la colonne. */
 .grille-2 > *,
+.prod-layout > *,
+.perso-layout > *,
 .kpis > *,
 .carte > * { min-width: 0; }
 
