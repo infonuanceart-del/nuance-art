@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { store } from '../db.js';
 import { exigerAdmin } from '../auth.js';
 import { fraisLivraison } from '../partage/prix.js';
-import { CADRE_PAR_SLUG, cadreProduit } from '../partage/taxonomie.js';
+import { CADRE_PAR_SLUG, cadreProduit, suppCadre } from '../partage/taxonomie.js';
 import { STATUTS_COMMANDE } from '../partage/produit.js';
 import { SLUG_PERSO, TAILLE_PERSO_PAR_REF, prixPerso } from '../partage/personnalisation.js';
 
@@ -106,7 +106,7 @@ routesCommandes.post('/commandes', async (req, res) => {
         res.status(400).json({ erreur: 'Cadre indisponible pour cette oeuvre' });
         return;
       }
-      const supp = cadre.supp || 0;
+      const supp = suppCadre(cadre, taille);
       const unitaire = Math.round((taille.prix + supp) * (1 - (p.promo || 0) / 100));
       const qte = Math.max(1, Math.min(20, Number(a.qte) || 1));
 

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { appeler, envoyerFichier } from '@/lib/api';
-import { THEMES, FORMATS, PIECES, CADRES, degradeCadre } from '@/lib/taxonomie';
+import { THEMES, FORMATS, PIECES, CADRES, degradeCadre, suppCadre } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import { IcoPlus, IcoPoubelle, IcoImage } from '@/components/Icones';
 
@@ -68,6 +68,23 @@ export default function FormulaireProduit({ produit }) {
 
   const retirerCadre = (i) => setMoulures(moulures.filter((_, j) => j !== i));
 
+  /** Les formats saisis plus haut, tels que le serveur les référencera (« 50x70 »). */
+  const formats = [];
+  for (const t of f.tailles) {
+    const l = Math.round(Number(t.l));
+    const h = Math.round(Number(t.h));
+    const ref = `${l}x${h}`;
+    if (l > 0 && h > 0 && !formats.some((x) => x.ref === ref)) formats.push({ l, h, ref });
+  }
+
+  /** Supplément affiché dans la grille : celui saisi pour ce format, sinon
+   *  la proposition calculée au périmètre, que l'admin n'a plus qu'à corriger. */
+  const prixCellule = (c, t) =>
+    (c.prix?.[t.ref] !== undefined ? c.prix[t.ref] : suppCadre({ ...c, prix: undefined }, t));
+
+  const setPrixCadre = (i, ref, valeur) =>
+    setMoulures(moulures.map((c, j) => (j === i ? { ...c, prix: { ...c.prix, [ref]: valeur } } : c)));
+
   const basculerSansCadre = (oui) => setF((p) => ({
     ...p,
     cadres: oui
@@ -107,7 +124,14 @@ export default function FormulaireProduit({ produit }) {
     try {
       await appeler(creation ? '/api/produits' : `/api/produits/${produit.slug}`, {
         method: creation ? 'POST' : 'PATCH',
-        corps: f,
+        // la grille part complète : une proposition non retouchée est enregistrée telle quelle
+        corps: {
+          ...f,
+          cadres: f.cadres.map((c) => (c.slug === 'aucun' ? c : {
+            ...c,
+            prix: Object.fromEntries(formats.map((t) => [t.ref, prixCellule(c, t)])),
+          })),
+        },
         avecJeton: true,
       });
       router.push('/admin/produits');
@@ -209,7 +233,8 @@ export default function FormulaireProduit({ produit }) {
             <h2 className="d4">Cadres proposés</h2>
             <p className="admin-aide">
               Le client choisit parmi ces cadres sur la fiche. La couleur sert aux vignettes
-              et à l’aperçu ; le supplément s’ajoute au prix de la taille.
+              et à l’aperçu. Le supplément de chaque cadre se règle par format, dans la
+              grille ci-dessous ; il s’ajoute au prix de la taille.
             </p>
 
             <label className="admin-case mt-2">
@@ -232,11 +257,6 @@ export default function FormulaireProduit({ produit }) {
                     <input id={`cn${i}`} className="inp" value={c.nom} maxLength={40} required
                       placeholder="Noyer foncé" onChange={(e) => setCadre(i, 'nom', e.target.value)} />
                   </div>
-                  <div className="field">
-                    <label htmlFor={`cs${i}`} className="tiny">Supplément (DH)</label>
-                    <input id={`cs${i}`} className="inp" type="number" min="0" step="10" value={c.supp}
-                      onChange={(e) => setCadre(i, 'supp', e.target.value)} />
-                  </div>
                   <button type="button" className="icone-danger"
                     disabled={!sansCadre && moulures.length === 1}
                     onClick={() => retirerCadre(i)} aria-label={`Retirer le cadre ${c.nom}`}>
@@ -249,6 +269,40 @@ export default function FormulaireProduit({ produit }) {
             <button type="button" className="btn btn-ghost btn-sm mt-2" onClick={ajouterCadre}>
               <IcoPlus size={15} /> Ajouter un cadre
             </button>
+
+            {moulures.length > 0 && formats.length > 0 && (
+              <>
+                <h3 className="lab mt-3">Supplément du cadre selon le format (DH)</h3>
+                <p className="admin-aide">
+                  Pré-rempli d’après la taille de la toile : vérifiez et corrigez chaque case.
+                </p>
+                <div className="admin-prix-cadres mt-1">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Cadre</th>
+                        {formats.map((t) => <th scope="col" key={t.ref}>{t.l} × {t.h}</th>)}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {moulures.map((c, i) => (
+                        <tr key={i}>
+                          <th scope="row">{c.nom || 'Nouveau cadre'}</th>
+                          {formats.map((t) => (
+                            <td key={t.ref}>
+                              <input className="inp" type="number" min="0" step="10"
+                                value={prixCellule(c, t)}
+                                aria-label={`${c.nom || 'Nouveau cadre'}, ${t.l} × ${t.h}`}
+                                onChange={(e) => setPrixCadre(i, t.ref, e.target.value)} />
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            )}
           </section>
 
           <section className="admin-carte">

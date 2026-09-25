@@ -98,7 +98,7 @@ export default async function PageAPropos() {
               <div><b>{produits.length}</b><span>œuvres au catalogue</span></div>
               <div><b>{THEMES.length}</b><span>collections</span></div>
               <div><b>{formats}</b><span>formats par œuvre</span></div>
-              <div><b>48 h</b><span>de livraison</span></div>
+              <div><b>Offerte</b><span>livraison au Maroc</span></div>
             </div>
           </Reveal>
         </div>
@@ -145,7 +145,7 @@ export default async function PageAPropos() {
 
       <div className="wrap">
         <div className="reassure">
-          <div><IcoCamion size={22} /><div><strong>Livraison 48 h</strong><p>Casablanca, Rabat, Marrakech, Tanger — offerte dès 600 DH.</p></div></div>
+          <div><IcoCamion size={22} /><div><strong>Livraison dans tout le Maroc</strong><p>Offerte, sans minimum d’achat, jusqu’à votre porte.</p></div></div>
           <div><IcoRegle size={22} /><div><strong>Les vraies mesures</strong><p>Chaque format annonce ses dimensions en centimètres.</p></div></div>
           <div><IcoBouclier size={22} /><div><strong>Paiement à la livraison</strong><p>Vous payez quand le colis est entre vos mains.</p></div></div>
           <div><IcoRetour size={22} /><div><strong>14 jours pour changer</strong><p>Mauvais format ? On échange, sans discussion.</p></div></div>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useBoutique } from './Boutique';
-import { dh, fraisLivraison, SEUIL_LIVRAISON } from '@/lib/prix';
+import { dh, fraisLivraison } from '@/lib/prix';
 import { nomCadre } from '@/lib/taxonomie';
 import { IcoMoins, IcoPanier, IcoPlus, IcoPoubelle } from './Icones';
 
@@ -72,11 +72,6 @@ export default function Panier() {
           <span>Livraison</span>
           <span>{port === 0 ? 'Offerte' : dh(port)}</span>
         </div>
-        {port > 0 && (
-          <p className="tiny muted">
-            Plus que {dh(SEUIL_LIVRAISON - sousTotal)} pour la livraison offerte.
-          </p>
-        )}
         <div className="sum-row total"><span>Total</span><span>{dh(sousTotal + port)}</span></div>
         <Link href="/commande" className="btn btn-primary btn-block mt-1">Passer la commande</Link>
         <p className="tiny muted tc">Paiement à la livraison disponible partout au Maroc.</p>

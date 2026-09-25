@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Personnaliser mon tableau — votre photo encadrée',
   description:
     'Envoyez votre photo, choisissez format et cadre : votre tableau est imprimé au pigment '
-    + 'et encadré à la main à Casablanca. Livraison 48 h au Maroc.',
+    + 'et encadré à la main à Casablanca. Livraison offerte dans tout le Maroc.',
   alternates: { canonical: '/personnaliser' },
 };
 

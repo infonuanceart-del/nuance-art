@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { appeler } from '@/lib/api';
-import { SEUIL_LIVRAISON, FRAIS_LIVRAISON, dh } from '@/lib/prix';
+import { FRAIS_LIVRAISON, dh } from '@/lib/prix';
 
 /** Coordonnées reprises par le pied de page, le bouton WhatsApp et le JSON-LD. */
 const CHAMPS = [
@@ -86,12 +86,8 @@ export default function FormulaireReglages({ reglages }) {
 
         <dl className="admin-totaux mt-2">
           <div>
-            <dt>Livraison offerte dès</dt>
-            <dd>{dh(SEUIL_LIVRAISON)}</dd>
-          </div>
-          <div>
             <dt>Frais de livraison</dt>
-            <dd>{dh(FRAIS_LIVRAISON)}</dd>
+            <dd>{FRAIS_LIVRAISON ? dh(FRAIS_LIVRAISON) : 'Offerte'}</dd>
           </div>
         </dl>
         <p className="admin-aide mt-1"><code>lib/prix.js</code></p>

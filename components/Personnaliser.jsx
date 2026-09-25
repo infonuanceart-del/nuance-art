@@ -6,7 +6,7 @@ import Cadre from './Cadre';
 import ChoixCadre from './ChoixCadre';
 import { useBoutique } from './Boutique';
 import { envoyerFichierPublic } from '@/lib/api';
-import { dh, SEUIL_LIVRAISON } from '@/lib/prix';
+import { dh } from '@/lib/prix';
 import { CADRES } from '@/lib/taxonomie';
 import {
   SLUG_PERSO, TAILLES_PERSO, prixPerso, pixelsConseilles, resolutionSuffisante,
@@ -32,7 +32,7 @@ export default function Personnaliser() {
   const [apercu, setApercu] = useState('');   // objet URL local
   const [mesure, setMesure] = useState(null); // dimensions en pixels
   const [taille, setTaille] = useState(TAILLES_PERSO[1]);
-  const [cadre, setCadre] = useState('noir');
+  const [cadre, setCadre] = useState('aucun');
   const [qte, setQte] = useState(1);
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState('');
@@ -176,7 +176,7 @@ export default function Personnaliser() {
           {cadre === 'aucun'
             ? 'toile sans cadre'
             : `cadre ${CADRES.find((c) => c.slug === cadre)?.nom.toLowerCase()}`}.
-          {' '}Livraison offerte dès {dh(SEUIL_LIVRAISON)}.
+          {' '}Livraison offerte.
         </p>
 
         <div className="mt-3">
@@ -197,7 +197,7 @@ export default function Personnaliser() {
         </div>
 
         <div className="mt-3">
-          <ChoixCadre valeur={cadre} onChange={setCadre} Titre="h2" />
+          <ChoixCadre valeur={cadre} onChange={setCadre} taille={taille} Titre="h2" />
         </div>
 
         <div className="mt-3">

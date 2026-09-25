@@ -11,7 +11,7 @@ export const revalidate = 120;
 
 export const metadata = {
   title: 'Commande',
-  description: 'Finalisez votre commande Nuance Art : livraison 48 h, paiement à la livraison.',
+  description: 'Finalisez votre commande Nuance Art : livraison offerte dans tout le Maroc, paiement à la livraison.',
   robots: { index: false, follow: false },
 };
 

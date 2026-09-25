@@ -8,7 +8,7 @@ import { nomTheme } from '@/lib/taxonomie';
 import { IcoCoeur, IcoEtoile, IcoOeil, IcoPinceau } from './Icones';
 import { AVIS_AFFICHES } from '@/lib/avis';
 
-export default function CarteProduit({ produit, priority = false, cadre = 'noir' }) {
+export default function CarteProduit({ produit, priority = false, cadre = 'aucun' }) {
   const { favoris, basculerFavori } = useBoutique();
   const prix = prixAffiche(produit);
   const aime = favoris.includes(produit.slug);

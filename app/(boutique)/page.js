@@ -3,7 +3,7 @@ import { lireProduits, lireReglages } from '@/lib/catalogue';
 import { THEMES } from '@/lib/taxonomie';
 import { dh } from '@/lib/prix';
 import CarteProduit from '@/components/CarteProduit';
-import HeroScene from '@/components/HeroScene';
+import HeroVideo from '@/components/HeroVideo';
 import Reveal from '@/components/Reveal';
 import Compteur from '@/components/Compteur';
 import Avatar from '@/components/Avatar';
@@ -24,7 +24,7 @@ export const metadata = {
   title: 'Nuance Art — Calligraphie, zellige et art traditionnel encadrés',
   description:
     'Calligraphies arabes, zelliges, tapis anciens et enluminures imprimés au pigment et '
-    + 'encadrés à Casablanca, pour les intérieurs marocains. Livraison 48 h au Maroc.',
+    + 'encadrés à Casablanca, pour les intérieurs marocains. Livraison offerte dans tout le Maroc.',
   alternates: { canonical: '/' },
 };
 
@@ -50,7 +50,7 @@ const FAQ = [
   },
   {
     q: 'Quels sont les délais de livraison ?',
-    r: '48 h à Casablanca, Rabat, Marrakech et Tanger ; 3 à 5 jours ouvrés pour le reste du Maroc. Chaque pièce est imprimée à la commande dans notre atelier, puis expédiée avec son système d’accroche.',
+    r: 'Nous livrons dans tout le Maroc, gratuitement et sans minimum d’achat. Le délai vous est confirmé au moment où nous validons votre commande : chaque pièce est imprimée à la commande dans notre atelier, puis expédiée avec son système d’accroche.',
   },
   {
     q: 'Puis-je payer à la livraison ?',
@@ -75,21 +75,6 @@ export default async function Accueil() {
   const compteBest = tousBest.length;
   const nouveautes = produits.filter((p) => p.nouveaute).slice(0, 4);
   const promos = produits.filter((p) => p.promo > 0).slice(0, 4);
-  // La cimaise du héros montre une œuvre par grande catégorie plutôt que les
-  // quatre premières du catalogue, pour que les quatre cadres ne se ressemblent
-  // pas. Format portrait : c'est celui du cadre accroché au mur.
-  const FAMILLES = ['heritage-marocain', 'art-contemporain', 'nature-paysage', 'art-islamique'];
-  const heros = FAMILLES
-    .map((t) => produits.find((p) => p.theme === t && p.format === 'portrait'))
-    .filter(Boolean);
-  // filet de sécurité si une famille venait à manquer d'œuvre verticale
-  if (heros.length < 3) {
-    for (const p of produits.filter((p) => p.format === 'portrait')) {
-      if (heros.length >= 4) break;
-      if (!heros.includes(p)) heros.push(p);
-    }
-  }
-
   // une image de couverture et un décompte par collection
   const couvertures = Object.fromEntries(
     THEMES.map((t) => [t.slug, produits.find((p) => p.theme === t.slug)]),
@@ -111,7 +96,7 @@ export default async function Accueil() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ---------------------------------------------------------- HÉROS */}
-      <section className="hero">
+      <section className="hero hero--video">
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">Atelier d’édition d’art — Casablanca</span>
@@ -137,7 +122,7 @@ export default async function Accueil() {
             </div>
           </div>
 
-          <HeroScene oeuvres={heros} />
+          <HeroVideo />
         </div>
       </section>
 
@@ -151,7 +136,7 @@ export default async function Accueil() {
               <span>Cadres montés à la main</span>
               <span>Essai sur votre mur, à l’échelle</span>
               <span>Paiement à la livraison</span>
-              <span>Livraison 48 h</span>
+              <span>Livraison offerte dans tout le Maroc</span>
             </div>
           ))}
         </div>
@@ -159,8 +144,8 @@ export default async function Accueil() {
 
       <div className="wrap">
         <div className="reassure">
-          <div><IcoCamion size={22} /><div><strong>Livraison 48 h</strong><p>Casablanca, Rabat, Marrakech, Tanger — offerte dès 600 DH.</p></div></div>
-          <div><IcoRegle size={22} /><div><strong>Cinq formats</strong><p>Du 40 × 30 au 120 × 80, avec les centimètres annoncés.</p></div></div>
+          <div><IcoCamion size={22} /><div><strong>Livraison dans tout le Maroc</strong><p>Offerte, sans minimum d’achat, jusqu’à votre porte.</p></div></div>
+          <div><IcoRegle size={22} /><div><strong>Plusieurs formats disponibles</strong><p>Du 40 × 30 au 120 × 80, avec les centimètres annoncés.</p></div></div>
           <div><IcoBouclier size={22} /><div><strong>Paiement à la livraison</strong><p>Vous payez quand le colis est entre vos mains.</p></div></div>
           <div><IcoRetour size={22} /><div><strong>14 jours pour changer</strong><p>Mauvais format ? On échange, sans discussion.</p></div></div>
         </div>
@@ -280,7 +265,7 @@ export default async function Accueil() {
               <div><b>10</b><span>ans de savoir-faire</span></div>
               <div><b>{THEMES.length}</b><span>collections</span></div>
               <div><b>Toile</b><span>premium</span></div>
-              <div><b>48 h</b><span>de délai</span></div>
+              <div><b>Offerte</b><span>livraison au Maroc</span></div>
             </div>
             <Link href="/a-propos" className="link-arrow mt-3">Visiter l’atelier <IcoFleche size={16} /></Link>
           </Reveal>

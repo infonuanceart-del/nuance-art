@@ -169,7 +169,7 @@ export default function Commande({ whatsapp }) {
         <div className="sum-row"><span>Livraison</span><span>{port === 0 ? 'Offerte' : dh(port)}</span></div>
         <div className="sum-row total"><span>Total</span><span>{dh(total)}</span></div>
         <p className="tiny muted row" style={{ gap: '0.4rem' }}>
-          <IcoCamion size={16} /> Expédition sous 48 h après confirmation.
+          <IcoCamion size={16} /> Livraison offerte dans tout le Maroc, après confirmation de votre commande.
         </p>
         <p className="tiny muted row" style={{ gap: '0.4rem' }}>
           <IcoCheck size={16} /> Retour accepté 14 jours.

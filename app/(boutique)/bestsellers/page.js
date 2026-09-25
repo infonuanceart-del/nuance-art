@@ -19,7 +19,7 @@ export const metadata = {
   title: 'Best-sellers — les tableaux les plus vendus',
   description:
     'Les œuvres les plus commandées chez Nuance Art : calligraphies, zelliges, tapis anciens '
-    + 'et enluminures encadrés à Casablanca, livrés en 48 h au Maroc.',
+    + 'et enluminures encadrés à Casablanca, livrés dans tout le Maroc.',
   alternates: { canonical: '/bestsellers' },
 };
 
@@ -86,7 +86,7 @@ export default async function PageBestsellers() {
         ) : (
           <>
             <div>
-              <b>48 h</b>
+              <b>Offerte</b>
               <span className="small muted">Livraison partout au Maroc</span>
             </div>
             <div>

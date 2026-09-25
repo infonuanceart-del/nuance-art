@@ -41,7 +41,7 @@ export const metadata = {
   },
   description:
     'Galerie en ligne d’art traditionnel : calligraphie arabe, zellige, tapis anciens et '
-    + 'enluminures, imprimés et encadrés à Casablanca. Livraison 48 h partout au Maroc.',
+    + 'enluminures, imprimés et encadrés à Casablanca. Livraison offerte dans tout le Maroc.',
   keywords: [
     'tableau maroc', 'calligraphie arabe tableau', 'tableau zellige',
     'art islamique tableau', 'decoration marocaine murale', 'tableau salon marocain',

@@ -6,7 +6,7 @@ import ChoixCadre from './ChoixCadre';
 import Studio from './Studio';
 import { useBoutique } from './Boutique';
 import { cadresProduit, cadreInitial } from '@/lib/taxonomie';
-import { dh, prixTaille, SEUIL_LIVRAISON } from '@/lib/prix';
+import { dh, prixTaille } from '@/lib/prix';
 import { AVIS_AFFICHES } from '@/lib/avis';
 import {
   IcoBouclier, IcoCamion, IcoCheck, IcoCoeur, IcoCroix, IcoEtoile, IcoImage, IcoMoins,
@@ -16,7 +16,7 @@ import {
 /* Ce que l'atelier garantit vraiment — repris des mentions de la fiche, pour
    qu'aucune promesse affichee ici ne depasse ce que la boutique tient. */
 const GARANTIES = [
-  { Ico: IcoCamion, titre: 'Livré en 48 h', detail: 'Casablanca, Rabat, Marrakech, Tanger' },
+  { Ico: IcoCamion, titre: 'Livraison dans tout le Maroc', detail: 'Offerte, sans minimum d’achat' },
   { Ico: IcoBouclier, titre: 'Emballage renforcé', detail: 'Coins protégés, film et carton double' },
   { Ico: IcoRetour, titre: 'Retour 14 jours', detail: 'Remboursé si l’œuvre ne vous va pas' },
   { Ico: IcoCheck, titre: 'Paiement à la livraison', detail: 'Sans supplément, ou par virement' },
@@ -102,7 +102,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
           </div>
           <p className="tiny muted">
             Prix pour {taille.l} × {taille.h} cm, {cadre === 'aucun' ? 'toile sans cadre' : `cadre ${choix.nom.toLowerCase()}`}.
-            Livraison offerte dès {dh(SEUIL_LIVRAISON)}.
+            Livraison offerte.
           </p>
 
           <div className="mt-3">
@@ -122,7 +122,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
           </div>
 
           <div className="mt-3">
-            <ChoixCadre valeur={cadre} onChange={setCadre} cadres={cadres} />
+            <ChoixCadre valeur={cadre} onChange={setCadre} cadres={cadres} taille={taille} />
             <div className="prod-views">
               <button className={passe ? 'on' : ''} onClick={() => setPasse((v) => !v)}>
                 Passe-partout
@@ -221,9 +221,8 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
             <details className="acc-faq">
               <summary>Livraison & paiement</summary>
               <p>
-                48 h à Casablanca, Rabat, Marrakech et Tanger, 3 à 5 jours ouvrés ailleurs
-                au Maroc. Paiement à la livraison sans supplément, ou virement bancaire.
-                Livraison offerte dès {dh(SEUIL_LIVRAISON)} d’achat.
+                Livraison dans tout le Maroc, offerte sans minimum d’achat. Paiement à la
+                livraison sans supplément, ou virement bancaire.
               </p>
             </details>
           </div>

@@ -20,8 +20,7 @@ const ANNONCES = [
     texte: '— jusqu’à -60 % sur une sélection',
     lien: { href: '/promotions', libelle: 'J’en profite' },
   },
-  { texte: 'Livraison 48 h au Maroc' },
-  { fort: 'Livraison offerte', texte: 'dès 600 DH d’achat' },
+  { fort: 'Livraison offerte', texte: 'dans tout le Maroc' },
   { texte: 'Paiement à la livraison' },
 ];
 

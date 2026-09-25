@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
   const premiere = (await lireProduits()).find((p) => p.theme === theme);
   return {
     title: `${t.nom} — tableaux et affiches`,
-    description: `${t.seo} Imprimé et encadré à Casablanca, livré en 48 h au Maroc.`,
+    description: `${t.seo} Imprimé et encadré à Casablanca, livré dans tout le Maroc.`,
     alternates: { canonical: `/collections/${t.slug}` },
     // Un openGraph declare ici remplace celui du parent, image comprise :
     // sans cette ligne, la page se partage sans visuel.
