@@ -99,7 +99,7 @@ export default async function Accueil() {
       <section className="hero hero--video">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow">Atelier d’édition d’art — Casablanca</span>
+            <span className="eyebrow center">Atelier d’édition d’art — Casablanca</span>
             <h1 className="d1">
               Plus qu’un tableau,<br /><i>une émotion chez vous.</i>
             </h1>

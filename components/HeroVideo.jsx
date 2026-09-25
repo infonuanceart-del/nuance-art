@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from 'react';
 /**
  * Vidéo du héros : déballage, œuvre accrochée, logo.
  *
- * Le film est vertical (9:16). Sur mobile il couvre tout le héros, derrière le
- * texte ; sur grand écran il se tient dans un cadre portrait à droite, à sa
- * taille réelle, plutôt que d'être étiré et rogné sur toute la largeur.
+ * Le film couvre tout le héros, derrière le texte centré, à toutes les tailles
+ * d'écran. Il est vertical (9:16) : sur grand écran on n'en voit que la bande
+ * centrale, agrandie.
  * Muette et en boucle ; un bouton permet de l'arrêter, et une personne qui a
  * demandé moins d'animation ne voit que l'image fixe.
  */
