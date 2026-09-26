@@ -197,7 +197,7 @@ export default function Personnaliser() {
         </div>
 
         <div className="mt-3">
-          <ChoixCadre valeur={cadre} onChange={setCadre} taille={taille} Titre="h2" />
+          <ChoixCadre valeur={cadre} onChange={setCadre} Titre="h2" />
         </div>
 
         <div className="mt-3">

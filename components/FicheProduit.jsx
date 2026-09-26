@@ -130,7 +130,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
           </div>
 
           <div className="mt-3">
-            <ChoixCadre valeur={cadre} onChange={setCadre} cadres={cadres} taille={taille} />
+            <ChoixCadre valeur={cadre} onChange={setCadre} cadres={cadres} />
             <div className="prod-views">
               <button className={passe ? 'on' : ''} onClick={() => setPasse((v) => !v)}>
                 Passe-partout

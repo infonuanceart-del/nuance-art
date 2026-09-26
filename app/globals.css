@@ -1704,7 +1704,6 @@ h1, h2, h3, h4 {
   .cadre-tuiles::-webkit-scrollbar { display: none; }
   .cadre-tuile { scroll-snap-align: start; }
 }
-.cadre-tuile .cadre-supp { color: var(--muted); font-size: 0.68rem; }
 
 .cadre-coin {
   --moulure: none;
