@@ -30,8 +30,18 @@ const MARIE_CM = 4.5;  // largeur du passe-partout
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const uid = () => Math.random().toString(36).slice(2, 9);
 
-export default function Studio({ oeuvres = [], pieces = [], slugInitial = null, compact = false }) {
+/** Quand l'admin a fourni une seconde image (« image sur un mur »), c'est elle
+ *  que le studio pose sur le mur, vignette comprise. Sur une URL Cloudinary, la
+ *  vignette est la même transformation en 520 px ; sinon la grande image sert. */
+function imageStudio(o) {
+  if (!o.imageMur) return o;
+  const thumb = o.imageMur.replace('c_limit,f_webp,q_82,w_1400', 'c_limit,f_webp,q_74,w_520');
+  return { ...o, image: o.imageMur, thumb };
+}
+
+export default function Studio({ oeuvres: liste = [], pieces = [], slugInitial = null, compact = false }) {
   const { ajouter } = useBoutique();
+  const oeuvres = useMemo(() => liste.map(imageStudio), [liste]);
 
   const scene = useRef(null);
   const zone = useRef(null);
