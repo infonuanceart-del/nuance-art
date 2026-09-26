@@ -750,6 +750,7 @@ h1, h2, h3, h4 {
   max-width: 60ch;
   margin-inline: auto;
   color: rgba(255, 255, 255, 0.9);
+  text-wrap: balance;
 }
 .hero--video .eyebrow { color: var(--gold); }
 .hero--video .hero-cta { justify-content: center; }

@@ -99,26 +99,17 @@ export default async function Accueil() {
       <section className="hero hero--video">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow center">Atelier d’édition d’art — Casablanca</span>
+            {/* peu de texte sur la vidéo, comme une affiche : un titre, une ligne, un bouton */}
             <h1 className="d1">
               Plus qu’un tableau,<br /><i>une émotion chez vous.</i>
             </h1>
             <p className="lede">
-              Des œuvres inspirées de grandes collections, rééditées avec une précision
-              exceptionnelle, peintes à la main et encadrées avec soin pour offrir une
-              œuvre singulière, prête à trouver sa place chez vous.
-            </p>
-            <p className="lede" style={{ marginTop: '0.9rem' }}>
-              De l’atelier à votre intérieur, nous prenons soin de chaque détail :
-              livraison, installation et accrochage de votre œuvre à domicile.
+              Des œuvres peintes à la main et encadrées avec soin, livrées et accrochées chez vous.
             </p>
             <div className="hero-cta">
               <Link href="/tableaux" className="btn btn-primary btn-lg">
                 Découvrir les œuvres <IcoFleche size={17} />
               </Link>
-              <a href="#collections" className="btn btn-ghost btn-lg">
-                Parcourir les collections
-              </a>
             </div>
           </div>
 
