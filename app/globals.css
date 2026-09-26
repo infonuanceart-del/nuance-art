@@ -712,8 +712,8 @@ h1, h2, h3, h4 {
 
 /* Heros video : le film couvre tout le heros, a toutes les tailles d'ecran,
    sous un voile sombre, et le texte se centre par-dessus. La <video> est
-   positionnee et non son conteneur, pour que le bouton pause reste au-dessus
-   de la grille et cliquable. Le film est vertical : sur grand ecran on n'en
+   positionnee et non son conteneur : le conteneur reste un element vide de
+   la grille, sans pile d'affichage propre. Le film est vertical : sur grand ecran on n'en
    voit que la bande centrale, agrandie. */
 .hero-video video {
   position: absolute;
@@ -734,25 +734,6 @@ h1, h2, h3, h4 {
     radial-gradient(70% 60% at 50% 50%, rgba(22, 18, 14, 0.62), rgba(22, 18, 14, 0.4) 100%),
     linear-gradient(180deg, rgba(22, 18, 14, 0.25), rgba(22, 18, 14, 0.55));
 }
-
-/* en haut a droite : en bas, il serait sous les bulles telephone et WhatsApp */
-.hero-video-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 3;
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  background: rgba(22, 18, 14, 0.45);
-  color: #fff;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
-}
-.hero-video-btn:hover { background: rgba(22, 18, 14, 0.7); }
 
 .hero--video .hero-grid {
   grid-template-columns: 1fr;
