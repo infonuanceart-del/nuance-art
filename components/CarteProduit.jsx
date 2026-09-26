@@ -45,7 +45,7 @@ export default function CarteProduit({ produit, priority = false, cadre = 'aucun
           {/* sur petit ecran le libelle disparait : il ne reste que l'oeil, et
               aria-label garde l'intitule pour les lecteurs d'ecran */}
           <Link
-            href={`/studio?oeuvre=${produit.slug}`}
+            href={produit.imageMur ? `/tableaux/${produit.slug}/#mur` : `/studio?oeuvre=${produit.slug}`}
             className="btn btn-light btn-sm card-essai"
             aria-label="Voir sur mon mur"
           >

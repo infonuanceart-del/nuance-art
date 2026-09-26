@@ -17,7 +17,7 @@ const TAILLES_DEFAUT = [
 const VIDE = {
   titre: '', artiste: '', epoque: '', technique: '', description: '',
   theme: 'art-islamique', format: 'paysage',
-  image: '', thumb: '', source: '', ratio: 0,
+  image: '', thumb: '', imageMur: '', source: '', ratio: 0,
   tailles: TAILLES_DEFAUT, cadres: CADRES, pieces: [],
   nouveaute: true, bestseller: false, promo: 0,
   note: 4.6, avis: 0, actif: true, ordre: 0,
@@ -99,17 +99,21 @@ export default function FormulaireProduit({ produit }) {
     }));
   }
 
-  /** L'image est traitée par le serveur (webp 1400 px + vignette) avant enregistrement. */
-  async function televerser(fichier) {
+  /** L'image est traitée par le serveur (webp 1400 px + vignette) avant enregistrement.
+   *  `mur` : la photo de l'œuvre dans une pièce — on n'en garde que la grande version,
+   *  le ratio et la vignette restent ceux de l'œuvre. */
+  async function televerser(fichier, mur = false) {
     if (!fichier) return;
-    setChargement(true);
+    setChargement(mur ? 'mur' : 'image');
     setErreur('');
     try {
       const corps = new FormData();
       corps.append('fichier', fichier);
-      corps.append('nom', f.titre || fichier.name);
+      corps.append('nom', `${f.titre || fichier.name}${mur ? ' mur' : ''}`);
       const data = await envoyerFichier('/api/televersement', corps);
-      setF((p) => ({ ...p, image: data.image, thumb: data.thumb, ratio: data.ratio }));
+      setF((p) => (mur
+        ? { ...p, imageMur: data.image }
+        : { ...p, image: data.image, thumb: data.thumb, ratio: data.ratio }));
     } catch (e) {
       setErreur(e.message);
     } finally {
@@ -338,8 +342,8 @@ export default function FormulaireProduit({ produit }) {
             </div>
 
             <label className="btn btn-ghost btn-sm btn-block mt-2" style={{ cursor: 'pointer' }}>
-              {chargement ? 'Traitement…' : 'Choisir un fichier'}
-              <input type="file" accept="image/*" hidden disabled={chargement}
+              {chargement === 'image' ? 'Traitement…' : 'Choisir un fichier'}
+              <input type="file" accept="image/*" hidden disabled={Boolean(chargement)}
                 onChange={(e) => televerser(e.target.files?.[0])} />
             </label>
 
@@ -357,6 +361,38 @@ export default function FormulaireProduit({ produit }) {
               <label className="lab" htmlFor="source">Source (crédit)</label>
               <input id="source" className="inp" value={f.source} placeholder="https://…"
                 onChange={(e) => set('source', e.target.value)} />
+            </div>
+          </section>
+
+          <section className="admin-carte">
+            <h2 className="d4">Image sur un mur</h2>
+            <p className="tiny muted mt-1">
+              L’œuvre accrochée dans une pièce (salon, cuisine…). Elle s’ouvre avec
+              « Voir cette œuvre sur mon mur » ; sans elle, le bouton ouvre le studio d’essayage.
+            </p>
+
+            <div className="admin-apercu mt-2">
+              {f.imageMur
+                ? <img src={f.imageMur} alt="" />
+                : <span className="admin-apercu-vide"><IcoImage size={26} /> Aucune image</span>}
+            </div>
+
+            <label className="btn btn-ghost btn-sm btn-block mt-2" style={{ cursor: 'pointer' }}>
+              {chargement === 'mur' ? 'Traitement…' : 'Choisir un fichier'}
+              <input type="file" accept="image/*" hidden disabled={Boolean(chargement)}
+                onChange={(e) => televerser(e.target.files?.[0], true)} />
+            </label>
+            {f.imageMur && (
+              <button type="button" className="btn btn-ghost btn-sm btn-block mt-1"
+                onClick={() => set('imageMur', '')}>
+                <IcoPoubelle size={15} /> Retirer cette image
+              </button>
+            )}
+
+            <div className="mt-2">
+              <label className="lab" htmlFor="imageMur">Chemin de l’image</label>
+              <input id="imageMur" className="inp" value={f.imageMur} placeholder="https://…"
+                onChange={(e) => set('imageMur', e.target.value)} />
             </div>
           </section>
 

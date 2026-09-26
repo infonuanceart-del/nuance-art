@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cadre from './Cadre';
 import ChoixCadre from './ChoixCadre';
 import Studio from './Studio';
@@ -38,8 +38,16 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
   const [cadre, setCadre] = useState(() => cadreInitial(cadres));
   const choix = cadres.find((c) => c.slug === cadre) || cadres[0];
   const [passe, setPasse] = useState(false);
-  const [studio, setStudio] = useState(false);
+  // null, 'mur' (photo de l'œuvre dans une pièce) ou 'studio' (essai sur la photo du client)
+  const [vue, setVue] = useState(null);
   const [qte, setQte] = useState(1);
+
+  const voirSurMur = () => setVue(produit.imageMur ? 'mur' : 'studio');
+
+  // « Voir sur mon mur » depuis une carte du catalogue arrive ici avec #mur.
+  useEffect(() => {
+    if (window.location.hash === '#mur' && produit.imageMur) setVue('mur');
+  }, [produit.imageMur]);
 
   const prix = prixTaille(produit, taille, cadre);
   const aime = favoris.includes(produit.slug);
@@ -75,7 +83,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
             />
           </div>
 
-          <button className="btn btn-clay btn-block mt-3" onClick={() => setStudio(true)}>
+          <button className="btn btn-clay btn-block mt-3" onClick={voirSurMur}>
             <IcoPinceau size={17} /> Voir cette œuvre sur mon mur
           </button>
         </div>
@@ -229,17 +237,45 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
         </div>
       </div>
 
+      {/* ------------------------- l'œuvre dans une pièce, en superposition ------------------------- */}
+      {vue === 'mur' && (
+        <div className="modale" role="dialog" aria-modal="true" aria-label="L’œuvre sur un mur">
+          <div className="modale-bg" onClick={() => setVue(null)} />
+          <div className="modale-boite modale-mur">
+            <div className="modale-tete">
+              <div>
+                <span className="eyebrow">Sur un mur</span>
+                <h2 className="d4" style={{ marginTop: '0.35rem' }}>{produit.titre}</h2>
+              </div>
+              <button className="icon-btn" onClick={() => setVue(null)} aria-label="Fermer">
+                <IcoCroix />
+              </button>
+            </div>
+            <div className="modale-corps">
+              <img
+                className="mur-photo"
+                src={produit.imageMur}
+                alt={`${produit.titre} accrochée dans une pièce`}
+              />
+              <button className="btn btn-ghost btn-block mt-2" onClick={() => setVue('studio')}>
+                <IcoPinceau size={17} /> Essayer sur la photo de mon mur
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ---------------------------- studio en superposition ---------------------------- */}
-      {studio && (
+      {vue === 'studio' && (
         <div className="modale" role="dialog" aria-modal="true" aria-label="Studio d’essayage">
-          <div className="modale-bg" onClick={() => setStudio(false)} />
+          <div className="modale-bg" onClick={() => setVue(null)} />
           <div className="modale-boite">
             <div className="modale-tete">
               <div>
                 <span className="eyebrow">Studio d’essayage</span>
                 <h2 className="d4" style={{ marginTop: '0.35rem' }}>{produit.titre}</h2>
               </div>
-              <button className="icon-btn" onClick={() => setStudio(false)} aria-label="Fermer le studio">
+              <button className="icon-btn" onClick={() => setVue(null)} aria-label="Fermer le studio">
                 <IcoCroix />
               </button>
             </div>
