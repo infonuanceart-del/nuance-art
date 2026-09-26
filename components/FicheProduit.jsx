@@ -41,6 +41,15 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
   // null, 'mur' (photo de l'œuvre dans une pièce) ou 'studio' (essai sur la photo du client)
   const [vue, setVue] = useState(null);
   const [qte, setQte] = useState(1);
+  // Proportions réelles de l'image : les formats saisis par l'admin ne les
+  // suivent pas toujours, et l'œuvre doit être montrée entière, sans recadrage.
+  const [ratioImage, setRatioImage] = useState(null);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => img.naturalHeight && setRatioImage(img.naturalWidth / img.naturalHeight);
+    img.src = produit.image;
+  }, [produit.image]);
 
   const voirSurMur = () => setVue(produit.imageMur ? 'mur' : 'studio');
 
@@ -75,7 +84,7 @@ export default function FicheProduit({ produit, oeuvresStudio, pieces, whatsapp 
             <Cadre
               src={produit.image}
               alt={`${produit.titre} — ${produit.artiste}`}
-              ratio={taille.l / taille.h}
+              ratio={ratioImage || taille.l / taille.h}
               cadre="aucun"
               passe={passe}
               priority
