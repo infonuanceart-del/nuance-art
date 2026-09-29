@@ -71,7 +71,7 @@ const REGLAGES = {
   telephone: '06 45 44 88 24',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '212645448824',
   email: 'contact@nuanceart.ma',
-  adresse: '20, rue Socrate — Casablanca',
+  adresse: 'Casa Finance City, Casablanca',
 };
 
 async function main() {
